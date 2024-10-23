@@ -75,21 +75,16 @@ declare module '$env/static/private' {
 	export const npm_package_dependencies_tiny_glob: string;
 	export const npm_package_files_5: string;
 	export const npm_package_scripts_check: string;
-	export const npm_config_userconfig: string;
-	export const npm_config_local_prefix: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_package_keywords_0: string;
 	export const npm_package_files_6: string;
 	export const npm_package_scripts_postinstall: string;
-	export const npm_config_yes: string;
 	export const COLORTERM: string;
 	export const WSL_DISTRO_NAME: string;
-	export const COLOR: string;
 	export const npm_package_description: string;
 	export const npm_package_keywords_1: string;
 	export const npm_package_devDependencies__types_connect: string;
 	export const npm_package_devDependencies_typescript: string;
-	export const npm_config_save_dev: string;
 	export const NVM_DIR: string;
 	export const npm_package_keywords_2: string;
 	export const npm_package_homepage: string;
@@ -105,23 +100,19 @@ declare module '$env/static/private' {
 	export const WSL_INTEROP: string;
 	export const PULSE_SERVER: string;
 	export const _: string;
-	export const npm_config_prefix: string;
-	export const npm_config_npm_version: string;
 	export const npm_package_scripts_lint: string;
 	export const npm_config_registry: string;
 	export const TERM: string;
-	export const npm_config_cache: string;
 	export const npm_package_dependencies_devalue: string;
 	export const npm_package_dependencies_kleur: string;
 	export const npm_package_devDependencies_dts_buddy: string;
 	export const npm_package_exports___import: string;
 	export const npm_package_peerDependencies_svelte: string;
 	export const npm_package_exports___package_json: string;
-	export const npm_config_node_gyp: string;
 	export const PATH: string;
-	export const NODE: string;
 	export const npm_package_name: string;
 	export const npm_package_repository_type: string;
+	export const NODE: string;
 	export const XDG_RUNTIME_DIR: string;
 	export const npm_package_devDependencies__types_set_cookie_parser: string;
 	export const npm_package_exports___node_polyfills_import: string;
@@ -140,7 +131,6 @@ declare module '$env/static/private' {
 	export const npm_package_dependencies_esm_env: string;
 	export const npm_package_scripts_test: string;
 	export const SHELL: string;
-	export const NODE_PATH: string;
 	export const npm_package_version: string;
 	export const npm_package_repository_url: string;
 	export const npm_lifecycle_event: string;
@@ -154,8 +144,6 @@ declare module '$env/static/private' {
 	export const VIRTUAL_ENV: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const npm_package_scripts_format: string;
-	export const npm_config_globalconfig: string;
-	export const npm_config_init_module: string;
 	export const PWD: string;
 	export const npm_package_dependencies_set_cookie_parser: string;
 	export const npm_execpath: string;
@@ -163,7 +151,6 @@ declare module '$env/static/private' {
 	export const PYENV_ROOT: string;
 	export const XDG_DATA_DIRS: string;
 	export const npm_package_exports___types: string;
-	export const npm_config_global_prefix: string;
 	export const npm_package_peerDependencies__sveltejs_vite_plugin_svelte: string;
 	export const npm_package_peerDependencies_vite: string;
 	export const npm_command: string;
@@ -173,10 +160,9 @@ declare module '$env/static/private' {
 	export const HOSTTYPE: string;
 	export const npm_package_exports___node_polyfills_types: string;
 	export const WSLENV: string;
-	export const INIT_CWD: string;
-	export const EDITOR: string;
 	export const npm_package_dependencies_import_meta_resolve: string;
 	export const npm_package_exports___hooks_import: string;
+	export const INIT_CWD: string;
 }
 
 /**
@@ -257,21 +243,16 @@ declare module '$env/dynamic/private' {
 		npm_package_dependencies_tiny_glob: string;
 		npm_package_files_5: string;
 		npm_package_scripts_check: string;
-		npm_config_userconfig: string;
-		npm_config_local_prefix: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_package_keywords_0: string;
 		npm_package_files_6: string;
 		npm_package_scripts_postinstall: string;
-		npm_config_yes: string;
 		COLORTERM: string;
 		WSL_DISTRO_NAME: string;
-		COLOR: string;
 		npm_package_description: string;
 		npm_package_keywords_1: string;
 		npm_package_devDependencies__types_connect: string;
 		npm_package_devDependencies_typescript: string;
-		npm_config_save_dev: string;
 		NVM_DIR: string;
 		npm_package_keywords_2: string;
 		npm_package_homepage: string;
@@ -287,23 +268,19 @@ declare module '$env/dynamic/private' {
 		WSL_INTEROP: string;
 		PULSE_SERVER: string;
 		_: string;
-		npm_config_prefix: string;
-		npm_config_npm_version: string;
 		npm_package_scripts_lint: string;
 		npm_config_registry: string;
 		TERM: string;
-		npm_config_cache: string;
 		npm_package_dependencies_devalue: string;
 		npm_package_dependencies_kleur: string;
 		npm_package_devDependencies_dts_buddy: string;
 		npm_package_exports___import: string;
 		npm_package_peerDependencies_svelte: string;
 		npm_package_exports___package_json: string;
-		npm_config_node_gyp: string;
 		PATH: string;
-		NODE: string;
 		npm_package_name: string;
 		npm_package_repository_type: string;
+		NODE: string;
 		XDG_RUNTIME_DIR: string;
 		npm_package_devDependencies__types_set_cookie_parser: string;
 		npm_package_exports___node_polyfills_import: string;
@@ -322,7 +299,6 @@ declare module '$env/dynamic/private' {
 		npm_package_dependencies_esm_env: string;
 		npm_package_scripts_test: string;
 		SHELL: string;
-		NODE_PATH: string;
 		npm_package_version: string;
 		npm_package_repository_url: string;
 		npm_lifecycle_event: string;
@@ -336,8 +312,6 @@ declare module '$env/dynamic/private' {
 		VIRTUAL_ENV: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		npm_package_scripts_format: string;
-		npm_config_globalconfig: string;
-		npm_config_init_module: string;
 		PWD: string;
 		npm_package_dependencies_set_cookie_parser: string;
 		npm_execpath: string;
@@ -345,7 +319,6 @@ declare module '$env/dynamic/private' {
 		PYENV_ROOT: string;
 		XDG_DATA_DIRS: string;
 		npm_package_exports___types: string;
-		npm_config_global_prefix: string;
 		npm_package_peerDependencies__sveltejs_vite_plugin_svelte: string;
 		npm_package_peerDependencies_vite: string;
 		npm_command: string;
@@ -355,10 +328,9 @@ declare module '$env/dynamic/private' {
 		HOSTTYPE: string;
 		npm_package_exports___node_polyfills_types: string;
 		WSLENV: string;
-		INIT_CWD: string;
-		EDITOR: string;
 		npm_package_dependencies_import_meta_resolve: string;
 		npm_package_exports___hooks_import: string;
+		INIT_CWD: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

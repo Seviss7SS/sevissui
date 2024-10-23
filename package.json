@@ -36,6 +36,7 @@
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
     "@storybook/addon-links": "^8.3.6",
+    "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/addon-svelte-csf": "^4.1.7",
     "@storybook/blocks": "^8.3.6",
     "@storybook/svelte": "^8.3.6",
@@ -59,5 +60,8 @@
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "classnames": "^2.5.1"
+  }
 }
