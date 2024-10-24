@@ -8,5 +8,7 @@ export const BUTTON = {
   },
   colors: {
     primary: "primary",
+    gray: "gray",
+    darkgray: "darkgray",
   },
 };

@@ -11,10 +11,10 @@
 
 <aside class="w-64 h-screen">
   <div
-    class="overflow-y-auto py-4 px-3 bg-gray-800 h-full rounded-none space-y-2"
+    class="overflow-y-auto py-4 px-3 bg-gray-900 h-full rounded-none space-y-2"
   >
     {#each links as link}
-      <Button className="w-full">
+      <Button dark className="w-full" color="gray" variant="subtle">
         <div class="flex gap-x-2">
           <Home />
           <span class="my-auto">{link.label}</span>
