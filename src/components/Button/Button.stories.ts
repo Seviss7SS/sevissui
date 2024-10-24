@@ -1,16 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/svelte';
+import type { Meta, StoryObj } from "@storybook/svelte";
+import { BUTTON } from "$lib/config";
 
-import Button from './Button.svelte';
+import Button from "./Button.svelte";
 
 const meta = {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+    backgroundColor: { control: "color" },
+    variant: {
+      control: { type: "select" },
+      options: Object.keys(BUTTON.variants),
     },
   },
 } satisfies Meta<Button>;
@@ -21,28 +22,28 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: 'Button',
-    variant: 'primary'
+    label: "Button",
+    variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
-    variant: 'secondary'
+    label: "Button",
+    variant: "secondary",
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    size: "large",
+    label: "Button",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    size: "small",
+    label: "Button",
   },
 };

@@ -1,20 +1,24 @@
 <script lang="ts">
   import cx from "classnames";
+  import { BUTTON } from "$lib/config";
 
-  type ButtonVariant = "base" | "primary" | "secondary";
-
-  export let variant: ButtonVariant = "base";
+  export let variant: keyof typeof BUTTON.variants = "filled";
   export let label = "";
   export let loading = false;
+  export let skeleton = false;
+  export let type: "button" | "submit" | "reset" | null | undefined = "button";
+  export let color: keyof typeof BUTTON.colors = "primary";
+  export let className = "";
 
-  const btnClass = cx(
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
-  );
+  $: btnClass = cx("btn", {
+    [color]: color,
+    [variant]: variant,
+    [className]: className,
+  });
 </script>
 
-<button type="button" class={btnClass}>
-  {label}
-  <slot />
+<button {type} class={btnClass}>
+  <slot>{label}</slot>
 </button>
 
 <style scoped>

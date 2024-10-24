@@ -85,6 +85,7 @@ declare module '$env/static/private' {
 	export const npm_package_keywords_1: string;
 	export const npm_package_devDependencies__types_connect: string;
 	export const npm_package_devDependencies_typescript: string;
+	export const npm_config_save_dev: string;
 	export const NVM_DIR: string;
 	export const npm_package_keywords_2: string;
 	export const npm_package_homepage: string;
@@ -253,6 +254,7 @@ declare module '$env/dynamic/private' {
 		npm_package_keywords_1: string;
 		npm_package_devDependencies__types_connect: string;
 		npm_package_devDependencies_typescript: string;
+		npm_config_save_dev: string;
 		NVM_DIR: string;
 		npm_package_keywords_2: string;
 		npm_package_homepage: string;
