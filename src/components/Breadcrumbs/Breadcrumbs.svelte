@@ -3,6 +3,8 @@
   import ChevronRight from "@tabler/icons-svelte/icons/chevron-right";
   // TODO: horizontal list of buttons with a seperator between them
 
+  export let dark = false;
+
   const breadcrumbs = [
     {
       label: "Home",
@@ -20,6 +22,7 @@
 <nav class="flex">
   {#each breadcrumbs as breadcrumb, i}
     <Button
+      {dark}
       variant="text"
       href={breadcrumb.active ? "" : breadcrumb.href}
       disabled={breadcrumb.active}

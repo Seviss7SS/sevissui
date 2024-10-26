@@ -30,6 +30,10 @@
     &.primary {
       @apply text-blue-700;
 
+      &.dark {
+        @apply text-blue-300;
+      }
+
       &.filled {
         @apply text-white bg-blue-700 hover:bg-blue-800 active:bg-blue-600;
       }
@@ -46,6 +50,10 @@
     &.gray {
       @apply text-gray-700;
 
+      &.dark {
+        @apply text-gray-300;
+      }
+
       &.filled {
         @apply text-white bg-gray-700 hover:bg-gray-800 active:bg-gray-600;
       }
@@ -58,7 +66,7 @@
         @apply hover:bg-gray-100 active:bg-gray-200;
 
         &.dark {
-          @apply text-gray-300 hover:bg-gray-700 active:bg-gray-600;
+          @apply hover:bg-gray-700 active:bg-gray-600;
         }
       }
     }
@@ -68,6 +76,22 @@
       &:disabled {
         @apply bg-gray-100 text-gray-400 hover:bg-gray-100;
       }
+    }
+  }
+
+  .card {
+    @apply block p-6 bg-white border rounded-lg shadow;
+
+    &.clickable {
+      @apply border-gray-200 hover:bg-gray-100 cursor-pointer;
+
+      &.dark {
+        @apply hover:bg-gray-700;
+      }
+    }
+
+    &.dark {
+      @apply bg-gray-800 border-gray-700;
     }
   }
 }
