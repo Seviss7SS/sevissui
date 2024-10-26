@@ -1,6 +1,6 @@
 <script>
   import cx from "classnames";
-  import Card from "@/atoms/Card/Card.svelte";
+  import Card from "$lib/atoms/Card/Card.svelte";
 
   export let imgSrc = "";
   export let imgAlt = "";

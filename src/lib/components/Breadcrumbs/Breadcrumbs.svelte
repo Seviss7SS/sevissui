@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from "@/atoms/Button/Button.svelte";
-  import ChevronRight from "@tabler/icons-svelte/icons/chevron-right";
+  import Button from "$lib/atoms/Button/Button.svelte";
+  import ChevronRight from "$lib/icons/ChevronRight.svelte";
   // TODO: horizontal list of buttons with a seperator between them
 
   export let dark = false;
@@ -29,7 +29,7 @@
       color={breadcrumb.active ? "gray" : "primary"}>{breadcrumb.label}</Button
     >
     {#if i < breadcrumbs.length - 1}
-      <ChevronRight class="text-gray-400 my-auto" />
+      <ChevronRight className="text-gray-400 my-auto" />
     {/if}
   {/each}
 </nav>

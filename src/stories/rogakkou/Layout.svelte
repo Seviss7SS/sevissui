@@ -1,6 +1,6 @@
 <script>
   import Sidebar from "./Sidebar.svelte";
-  import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs.svelte";
+  import Breadcrumbs from "$lib/components/Breadcrumbs/Breadcrumbs.svelte";
 </script>
 
 <div class="bg-black w-screen h-screen flex">
