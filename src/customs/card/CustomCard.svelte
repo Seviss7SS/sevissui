@@ -5,9 +5,7 @@
 </script>
 
 {#if VARIANTS[variant]}
-  <svelte:component this={VARIANTS[variant]}>
-    <slot>
-      <div class="bg-red-500 h-10 w-10" />
-    </slot>
+  <svelte:component this={VARIANTS[variant]} {...$$props}>
+    <slot>Hello world</slot>
   </svelte:component>
 {/if}

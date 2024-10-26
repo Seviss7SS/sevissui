@@ -80,10 +80,10 @@
   }
 
   .card {
-    @apply block p-6 bg-white border rounded-lg shadow;
+    @apply block p-6 bg-white border border-gray-200 rounded-lg shadow overflow-hidden;
 
     &.clickable {
-      @apply border-gray-200 hover:bg-gray-100 cursor-pointer;
+      @apply cursor-pointer relative;
 
       &.dark {
         @apply hover:bg-gray-700;
