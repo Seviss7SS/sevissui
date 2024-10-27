@@ -1,6 +1,7 @@
 import colors from "tailwindcss/colors.js";
 
 import { generateSafeList } from "./src/lib/utils/tailwindcss.js";
+import { createThemes } from "tw-colors";
 
 const theme = {
   extend: {
@@ -16,6 +17,7 @@ const theme = {
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme,
-  plugins: [],
+  plugins: [createThemes({ dark: {} })],
   safelist: [...generateSafeList(theme)],
+  darkMode: "selector",
 };

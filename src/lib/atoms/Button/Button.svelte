@@ -10,7 +10,7 @@
   export let type: "button" | "submit" | "reset" | null | undefined = "button";
   export let color: string = "primary";
   export let className = "";
-  export let dark = false;
+  export let theme: string = "";
   export let href = "";
 
   const generateColorClass = () => {
@@ -18,13 +18,9 @@
 
     const colorStr = color.toString();
 
-    let textColorClass = `text-${colorStr}-700`;
+    let textColorClass = `text-${colorStr}-700 dark:text-${colorStr}-300`;
     let bgColorClass = "bg-transparent";
     let borderClass = "";
-
-    if (dark) {
-      textColorClass = `text-${colorStr}-300`;
-    }
 
     if (variant === "filled") {
       textColorClass = "text-white";
@@ -53,6 +49,7 @@
     {
       [variant]: variant,
       [className]: className,
+      [theme]: theme,
     }
   );
 </script>

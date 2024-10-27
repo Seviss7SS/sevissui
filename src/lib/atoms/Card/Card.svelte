@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import cx from "classnames";
 
   export let className = "";
-  export let dark = false;
+  export let theme: string = "";
   export let clickable = false;
   export let href = "";
   export let paddingClass = "p-6";
@@ -12,10 +12,10 @@
 
 <div
   class={cx("card block rounded-lg shadow overflow-hidden", {
-    dark: dark,
     [paddingClass]: paddingClass,
     clickable: isClickable,
     [className]: className,
+    [theme]: theme,
   })}
 >
   {#if isClickable}

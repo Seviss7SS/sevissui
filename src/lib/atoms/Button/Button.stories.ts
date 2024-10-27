@@ -12,9 +12,6 @@ const meta = {
       control: { type: "select" },
       options: Object.keys(BUTTON.colors),
     },
-    dark: {
-      control: { type: "boolean" },
-    },
     variant: {
       control: { type: "select" },
       options: Object.keys(BUTTON.variants),

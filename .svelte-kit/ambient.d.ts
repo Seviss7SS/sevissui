@@ -39,7 +39,6 @@ declare module '$env/static/private' {
 	export const LD_LIBRARY_PATH: string;
 	export const npm_package_files_0: string;
 	export const npm_package_devDependencies__storybook_addon_links: string;
-	export const npm_config_noproxy: string;
 	export const MOTD_SHOWN: string;
 	export const HOME: string;
 	export const ASDF_DIR: string;
@@ -47,7 +46,6 @@ declare module '$env/static/private' {
 	export const TERM_PROGRAM_VERSION: string;
 	export const NVM_BIN: string;
 	export const VSCODE_IPC_HOOK_CLI: string;
-	export const npm_package_json: string;
 	export const PYENV_SHELL: string;
 	export const PYTHONUNBUFFERED: string;
 	export const NVM_INC: string;
@@ -57,15 +55,12 @@ declare module '$env/static/private' {
 	export const PS1: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const npm_package_scripts_check: string;
-	export const npm_config_userconfig: string;
-	export const npm_config_local_prefix: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_package_exports___svelte: string;
 	export const COLORTERM: string;
 	export const WSL_DISTRO_NAME: string;
 	export const npm_package_devDependencies_tailwindcss: string;
 	export const npm_package_devDependencies_typescript: string;
-	export const COLOR: string;
 	export const NVM_DIR: string;
 	export const npm_package_devDependencies__storybook_addon_styling_webpack: string;
 	export const npm_package_devDependencies__storybook_svelte: string;
@@ -84,17 +79,13 @@ declare module '$env/static/private' {
 	export const _: string;
 	export const npm_package_scripts_check_watch: string;
 	export const npm_package_devDependencies_autoprefixer: string;
-	export const npm_config_prefix: string;
-	export const npm_config_npm_version: string;
 	export const npm_package_scripts_lint: string;
 	export const npm_config_registry: string;
 	export const TERM: string;
 	export const npm_package_devDependencies__storybook_addon_interactions: string;
 	export const npm_package_devDependencies_publint: string;
-	export const npm_config_cache: string;
 	export const npm_package_peerDependencies_svelte: string;
 	export const npm_package_devDependencies__chromatic_com_storybook: string;
-	export const npm_config_node_gyp: string;
 	export const PATH: string;
 	export const npm_package_name: string;
 	export const npm_package_scripts_package: string;
@@ -127,15 +118,12 @@ declare module '$env/static/private' {
 	export const VIRTUAL_ENV: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const npm_package_scripts_format: string;
-	export const npm_config_globalconfig: string;
-	export const npm_config_init_module: string;
 	export const PWD: string;
 	export const npm_execpath: string;
 	export const NVM_CD_FLAGS: string;
 	export const PYENV_ROOT: string;
 	export const XDG_DATA_DIRS: string;
 	export const npm_package_exports___types: string;
-	export const npm_config_global_prefix: string;
 	export const npm_package_scripts_build_storybook: string;
 	export const npm_package_devDependencies__sveltejs_adapter_auto: string;
 	export const npm_package_devDependencies_postcss: string;
@@ -151,7 +139,6 @@ declare module '$env/static/private' {
 	export const HOSTTYPE: string;
 	export const WSLENV: string;
 	export const INIT_CWD: string;
-	export const EDITOR: string;
 }
 
 /**
@@ -196,7 +183,6 @@ declare module '$env/dynamic/private' {
 		LD_LIBRARY_PATH: string;
 		npm_package_files_0: string;
 		npm_package_devDependencies__storybook_addon_links: string;
-		npm_config_noproxy: string;
 		MOTD_SHOWN: string;
 		HOME: string;
 		ASDF_DIR: string;
@@ -204,7 +190,6 @@ declare module '$env/dynamic/private' {
 		TERM_PROGRAM_VERSION: string;
 		NVM_BIN: string;
 		VSCODE_IPC_HOOK_CLI: string;
-		npm_package_json: string;
 		PYENV_SHELL: string;
 		PYTHONUNBUFFERED: string;
 		NVM_INC: string;
@@ -214,15 +199,12 @@ declare module '$env/dynamic/private' {
 		PS1: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		npm_package_scripts_check: string;
-		npm_config_userconfig: string;
-		npm_config_local_prefix: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_package_exports___svelte: string;
 		COLORTERM: string;
 		WSL_DISTRO_NAME: string;
 		npm_package_devDependencies_tailwindcss: string;
 		npm_package_devDependencies_typescript: string;
-		COLOR: string;
 		NVM_DIR: string;
 		npm_package_devDependencies__storybook_addon_styling_webpack: string;
 		npm_package_devDependencies__storybook_svelte: string;
@@ -241,17 +223,13 @@ declare module '$env/dynamic/private' {
 		_: string;
 		npm_package_scripts_check_watch: string;
 		npm_package_devDependencies_autoprefixer: string;
-		npm_config_prefix: string;
-		npm_config_npm_version: string;
 		npm_package_scripts_lint: string;
 		npm_config_registry: string;
 		TERM: string;
 		npm_package_devDependencies__storybook_addon_interactions: string;
 		npm_package_devDependencies_publint: string;
-		npm_config_cache: string;
 		npm_package_peerDependencies_svelte: string;
 		npm_package_devDependencies__chromatic_com_storybook: string;
-		npm_config_node_gyp: string;
 		PATH: string;
 		npm_package_name: string;
 		npm_package_scripts_package: string;
@@ -284,15 +262,12 @@ declare module '$env/dynamic/private' {
 		VIRTUAL_ENV: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		npm_package_scripts_format: string;
-		npm_config_globalconfig: string;
-		npm_config_init_module: string;
 		PWD: string;
 		npm_execpath: string;
 		NVM_CD_FLAGS: string;
 		PYENV_ROOT: string;
 		XDG_DATA_DIRS: string;
 		npm_package_exports___types: string;
-		npm_config_global_prefix: string;
 		npm_package_scripts_build_storybook: string;
 		npm_package_devDependencies__sveltejs_adapter_auto: string;
 		npm_package_devDependencies_postcss: string;
@@ -308,7 +283,6 @@ declare module '$env/dynamic/private' {
 		HOSTTYPE: string;
 		WSLENV: string;
 		INIT_CWD: string;
-		EDITOR: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
