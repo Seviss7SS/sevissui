@@ -1,13 +1,5 @@
 // @ts-nocheck
 
-import plugin from "tailwindcss";
-
-const sevissui = plugin(({ addComponents, theme }) => {
-  addComponents({
-    ".btn": {},
-  });
-});
-
 const generateSafeList = (theme) => {
   const colors = {
     ...theme.extend.colors,
