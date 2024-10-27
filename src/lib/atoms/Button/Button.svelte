@@ -41,7 +41,11 @@
       bgColorClass = `hover:bg-${colorStr}-100 active:bg-${colorStr}-200`;
     }
 
-    return "";
+    return cx("", {
+      [textColorClass]: textColorClass,
+      [bgColorClass]: bgColorClass,
+      [borderClass]: borderClass,
+    });
   };
 
   $: btnClass = cx(
