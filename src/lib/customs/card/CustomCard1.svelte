@@ -10,7 +10,7 @@
   export let clickable = false;
 </script>
 
-<Card disablePadding {clickable} {className}>
+<Card paddingClass="p-0" {clickable} {className}>
   <div class="flex h-full">
     <img src={imgSrc} alt={imgAlt} class="h-full w-auto" />
     <div class="p-6 flex-1">

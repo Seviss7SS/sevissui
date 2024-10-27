@@ -4,6 +4,7 @@
   export let progress = 0;
   export let dark = false;
   export let className = "";
+  export let color = "primary";
 </script>
 
 <div
@@ -13,5 +14,8 @@
     [className]: Boolean(className),
   })}
 >
-  <div class="bg-blue-600 h-2.5 rounded-full" style="width: {progress}%"></div>
+  <div
+    class={`bg-${color}-600 h-2.5 rounded-full`}
+    style="width: {progress}%"
+  ></div>
 </div>

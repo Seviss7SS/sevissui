@@ -72,6 +72,7 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_prettier: string;
 	export const npm_package_devDependencies_sass_embedded: string;
 	export const LOGNAME: string;
+	export const npm_package_scripts_package_local: string;
 	export const npm_package_type: string;
 	export const NAME: string;
 	export const WSL_INTEROP: string;
@@ -139,7 +140,6 @@ declare module '$env/static/private' {
 	export const HOSTTYPE: string;
 	export const WSLENV: string;
 	export const INIT_CWD: string;
-	export const NODE_ENV: string;
 }
 
 /**
@@ -217,6 +217,7 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_prettier: string;
 		npm_package_devDependencies_sass_embedded: string;
 		LOGNAME: string;
+		npm_package_scripts_package_local: string;
 		npm_package_type: string;
 		NAME: string;
 		WSL_INTEROP: string;
@@ -284,7 +285,6 @@ declare module '$env/dynamic/private' {
 		HOSTTYPE: string;
 		WSLENV: string;
 		INIT_CWD: string;
-		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

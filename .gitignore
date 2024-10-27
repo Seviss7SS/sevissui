@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 *storybook.log
+.svelte-kit/__package__/

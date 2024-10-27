@@ -3,19 +3,19 @@
 
   export let className = "";
   export let dark = false;
-  export let disablePadding = false;
   export let clickable = false;
   export let href = "";
+  export let paddingClass = "p-6";
 
   const isClickable = Boolean(clickable || href);
 </script>
 
 <div
-  class={cx("card", {
+  class={cx("card block rounded-lg shadow overflow-hidden", {
     dark: dark,
-    [className]: className,
-    "p-0": disablePadding,
+    [paddingClass]: paddingClass,
     clickable: isClickable,
+    [className]: className,
   })}
 >
   {#if isClickable}
@@ -25,3 +25,23 @@
   {/if}
   <slot />
 </div>
+
+<style scoped lang="postcss">
+  .card {
+    &.clickable {
+      cursor: pointer;
+      position: relative;
+
+      &.dark {
+        &:hover {
+          background-color: theme("colors.gray.700");
+        }
+      }
+    }
+
+    &.dark {
+      background-color: theme("colors.gray.800");
+      border-color: theme("colors.gray.700");
+    }
+  }
+</style>
