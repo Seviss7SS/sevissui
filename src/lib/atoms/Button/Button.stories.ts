@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
-import { BUTTON } from "$lib/config";
+import { BUTTON } from "$lib/config.js";
 
 import Button from "./Button.svelte";
 

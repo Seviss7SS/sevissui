@@ -1,6 +1,6 @@
 <script lang="ts">
   import cx from "classnames";
-  import { BUTTON } from "$lib/config";
+  import { BUTTON } from "$lib/config.js";
 
   export let variant: keyof typeof BUTTON.variants = "filled";
   export let label = "";
