@@ -12,7 +12,7 @@
 		"strict": true,
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"baseUrl": "./src",
+		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./*"]
 		},
