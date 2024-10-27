@@ -1,8 +1,6 @@
 import colors from "tailwindcss/colors.js";
 
-import { BUTTON } from "./src/lib/config";
-
-console.log(BUTTON);
+import { generateSafeList } from "./src/lib/utils/tailwindcss.ts";
 
 const theme = {
   extend: {
@@ -19,12 +17,5 @@ export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme,
   plugins: [],
-  safelist: [
-    {
-      pattern: /bg-(primary|disabled)-\d+/,
-    },
-    {
-      pattern: /text-primary-\d+/,
-    },
-  ],
+  safelist: [...generateSafeList(theme)],
 };
