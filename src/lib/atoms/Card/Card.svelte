@@ -11,11 +11,10 @@
 </script>
 
 <div
-  class={cx("card block rounded-lg shadow overflow-hidden", {
+  class={cx(`card bg-white block rounded-lg shadow overflow-hidden ${theme}`, {
     [paddingClass]: paddingClass,
     clickable: isClickable,
     [className]: className,
-    [theme]: theme,
   })}
 >
   {#if isClickable}
@@ -28,6 +27,8 @@
 
 <style scoped lang="postcss">
   .card {
+    color: white;
+
     &.clickable {
       cursor: pointer;
       position: relative;
@@ -41,7 +42,7 @@
 
     &.dark {
       background-color: theme("colors.gray.800");
-      border-color: theme("colors.gray.700");
+      border: 1px solid theme("colors.gray.700");
     }
   }
 </style>

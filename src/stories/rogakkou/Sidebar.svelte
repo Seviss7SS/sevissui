@@ -27,7 +27,7 @@
   <div class="text-white text-xl pb-5 leading-none font-bold">Rogakkou</div>
   <div class="overflow-y-auto h-full rounded-none">
     {#each links as link}
-      <Button dark className="w-full" color="gray" variant="subtle">
+      <Button theme="dark" className="w-full" color="gray" variant="subtle">
         <div class="flex gap-x-2">
           <span class="my-auto">{link.label}</span>
         </div>

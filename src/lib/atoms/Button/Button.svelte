@@ -18,9 +18,13 @@
 
     const colorStr = color.toString();
 
-    let textColorClass = `text-${colorStr}-700 dark:text-${colorStr}-300`;
+    let textColorClass = `text-${colorStr}-700`;
     let bgColorClass = "bg-transparent";
     let borderClass = "";
+
+    if (theme === "dark") {
+      textColorClass = `text-${colorStr}-300`;
+    }
 
     if (variant === "filled") {
       textColorClass = "text-white";
@@ -45,11 +49,10 @@
   };
 
   $: btnClass = cx(
-    `btn font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none ${generateColorClass()}`,
+    `${theme} btn font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none ${generateColorClass()}`,
     {
       [variant]: variant,
       [className]: className,
-      [theme]: theme,
     }
   );
 </script>

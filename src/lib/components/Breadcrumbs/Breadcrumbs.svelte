@@ -1,9 +1,8 @@
 <script lang="ts">
   import Button from "$lib/atoms/Button/Button.svelte";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
-  // TODO: horizontal list of buttons with a seperator between them
 
-  export let dark = false;
+  export let theme = "";
 
   const breadcrumbs = [
     {
@@ -22,7 +21,7 @@
 <nav class="flex">
   {#each breadcrumbs as breadcrumb, i}
     <Button
-      {dark}
+      {theme}
       variant="text"
       href={breadcrumb.active ? "" : breadcrumb.href}
       disabled={breadcrumb.active}

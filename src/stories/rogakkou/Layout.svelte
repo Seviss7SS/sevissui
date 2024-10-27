@@ -7,7 +7,8 @@
   <Sidebar />
   <div class="flex-1">
     <div class="bg-gray-900 w-full">
-      <Breadcrumbs dark />
+      <Breadcrumbs theme="dark" />
     </div>
+    <slot />
   </div>
 </div>

@@ -43,6 +43,7 @@ declare module '$env/static/private' {
 	export const HOME: string;
 	export const ASDF_DIR: string;
 	export const OLDPWD: string;
+	export const npm_package_devDependencies_tw_colors: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const NVM_BIN: string;
 	export const VSCODE_IPC_HOOK_CLI: string;
@@ -187,6 +188,7 @@ declare module '$env/dynamic/private' {
 		HOME: string;
 		ASDF_DIR: string;
 		OLDPWD: string;
+		npm_package_devDependencies_tw_colors: string;
 		TERM_PROGRAM_VERSION: string;
 		NVM_BIN: string;
 		VSCODE_IPC_HOOK_CLI: string;
