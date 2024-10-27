@@ -1,6 +1,6 @@
 import colors from "tailwindcss/colors.js";
 
-import { generateSafeList } from "./src/lib/utils/tailwindcss.ts";
+import { generateSafeList } from "./src/lib/utils/tailwindcss.js";
 
 const theme = {
   extend: {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
 
 import CustomCard from "./CustomCard.svelte";
-import { VARIANTS } from "./variants.ts";
+import { VARIANTS } from "./variants.js";
 
 const meta = {
   title: "Customs/CustomCard",

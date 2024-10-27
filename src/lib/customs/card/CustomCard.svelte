@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VARIANTS } from "./variants.ts";
+  import { VARIANTS } from "./variants.js";
 
   export let variant: keyof typeof VARIANTS = "variant1";
 </script>

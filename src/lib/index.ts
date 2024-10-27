@@ -13,7 +13,7 @@ import InputField from "$lib/components/InputField/InputField.svelte";
 import CustomCard from "$lib/customs/card/CustomCard.svelte";
 
 // utils
-import { generateSafeList } from "$lib/utils/tailwindcss.ts";
+import { generateSafeList } from "$lib/utils/tailwindcss.js";
 
 export {
   Button,
