@@ -1,15 +1,11 @@
-import colors from "tailwindcss/colors.js";
-
-import { generateSafeList } from "./src/lib/utils/tailwindcss.js";
 import { createThemes } from "tw-colors";
+import { colors, generateSafeList } from "./src/lib/utils/tailwindcss.js";
 
 const theme = {
-  extend: {
-    colors: {
-      ...colors,
-      primary: colors.blue,
-      disabled: colors.gray,
-    },
+  colors: {
+    ...colors,
+    primary: colors.blue,
+    disabled: colors.gray,
   },
 };
 

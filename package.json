@@ -63,6 +63,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "color-contrast-finder": "^1.0.2"
   }
 }

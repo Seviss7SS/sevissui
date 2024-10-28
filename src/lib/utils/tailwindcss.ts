@@ -1,4 +1,11 @@
 // @ts-nocheck
+import tailwindColors from "tailwindcss/colors.js";
+
+const colors = {
+  ...tailwindColors,
+  primary: colors.blue,
+  disabled: colors.gray,
+};
 
 const generateSafeList = (theme) => {
   const colors = {
@@ -25,4 +32,4 @@ const generateSafeList = (theme) => {
   return safelist;
 };
 
-export { generateSafeList };
+export { generateSafeList, colors };

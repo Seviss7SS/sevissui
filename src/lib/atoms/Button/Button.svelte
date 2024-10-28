@@ -1,5 +1,11 @@
 <script lang="ts">
   import cx from "classnames";
+  import { colors } from "$lib/utils/tailwindcss.js";
+  import { findContrastColor } from "color-contrast-finder"; // TODO: remove?
+
+  // TODO: write algorithm to determine color contrast
+  // run through a list of options to choose the best color
+
   import { BUTTON } from "$lib/config.js";
 
   export let variant: keyof typeof BUTTON.variants = "filled";
@@ -13,6 +19,7 @@
   export let theme: string = "";
   export let href = "";
   export let roundedClass = "rounded-lg";
+  export let weight: number = 700;
 
   const generateColorClass = () => {
     if (!color) return "";
@@ -30,22 +37,26 @@
 
     if (variant === "filled") {
       textColorClass = isWhite ? "" : "text-white";
-      bgColorClass = `bg-${colorStr}-700 hover:bg-${colorStr}-800 active:bg-${colorStr}-600`;
+      bgColorClass = `bg-${colorStr}-${weight} hover:brightness-90 active:brightness-80`;
     }
 
     if (variant === "outlined") {
-      textColorClass = `text-${colorStr}-700`;
-      borderClass = `border-${colorStr}-700`;
-      bgColorClass = `hover:bg-${colorStr}-300 active:bg-${colorStr}-400 bg-white`;
+      textColorClass = `text-${colorStr}-${weight}`;
+      borderClass = `border-${colorStr}-${weight}`;
+
+      const hoverWeight = Math.min(Math.floor(weight / 2), 50);
+      const activeWeight = Math.max(Math.ceil(weight + 1 / 2), 950);
+
+      bgColorClass = `hover:bg-${colorStr}-${hoverWeight} active:bg-${colorStr}-${activeWeight} bg-white`;
     }
 
     if (variant === "subtle") {
-      textColorClass = `text-${colorStr}-700`;
+      textColorClass = `text-${colorStr}-${weight}`;
       bgColorClass = `hover:bg-${colorStr}-100 active:bg-${colorStr}-200`;
     }
 
     if (variant === "text") {
-      textColorClass = `text-${colorStr}-700`;
+      textColorClass = `text-${colorStr}-${weight}`;
     }
 
     return cx("", {
@@ -56,7 +67,7 @@
   };
 
   $: btnClass = cx(
-    `${theme} btn font-medium text-sm px-5 py-2.5 focus:outline-none ${generateColorClass()}`,
+    `${theme} btn font-medium text-sm px-5 py-2.5 focus:outline-none filter ${generateColorClass()}`,
     {
       [variant]: variant,
       [roundedClass]: roundedClass,
