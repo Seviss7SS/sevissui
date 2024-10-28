@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import Login from "./Login.svelte";
+import Login from "./LoginPage.svelte";
 
 const meta = {
-  title: "Rogakkou/Login",
+  title: "Rogakkou/LoginPage",
   component: Login,
   tags: ["rogakkou"],
 } satisfies Meta<Login>;

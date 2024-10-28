@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import Sidebar from "./Sidebar.svelte";
+import StudySetsPage from "./StudySetsPage.svelte";
 
 const meta = {
-  title: "Rogakkou/Sidebar",
-  component: Sidebar,
+  title: "Rogakkou/StudySetsPage",
+  component: StudySetsPage,
   tags: ["rogakkou"],
-} satisfies Meta<Sidebar>;
+} satisfies Meta<StudySetsPage>;
 
 export default meta;
 

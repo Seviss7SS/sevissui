@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import Readings from "./Readings.svelte";
+import ReadingPage from "./ReadingPage.svelte";
 
 const meta = {
-  title: "Rogakkou/Readings",
-  component: Readings,
+  title: "Rogakkou/ReadingPage",
+  component: ReadingPage,
   tags: ["rogakkou"],
-} satisfies Meta<Readings>;
+} satisfies Meta<ReadingPage>;
 
 export default meta;
 
