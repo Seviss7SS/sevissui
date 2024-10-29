@@ -1,10 +1,5 @@
 <script lang="ts">
   import cx from "classnames";
-  import { colors } from "$lib/utils/tailwindcss.js";
-  import { findContrastColor } from "color-contrast-finder"; // TODO: remove?
-
-  // TODO: write algorithm to determine color contrast
-  // run through a list of options to choose the best color
 
   import { BUTTON } from "$lib/config.js";
 
@@ -16,47 +11,46 @@
   export let type: "button" | "submit" | "reset" | null | undefined = "button";
   export let color: string = "primary";
   export let className = "";
-  export let theme: string = "";
+  export let theme: "dark" | "light" | "base" = "base";
   export let href = "";
   export let roundedClass = "rounded-lg";
-  export let weight: number = 700;
+  export let colorClass = "";
 
   const generateColorClass = () => {
     if (!color) return "";
 
     const colorStr = color.toString();
-    const isWhite = color === "white";
 
     let textColorClass = "";
     let bgColorClass = "bg-transparent";
     let borderClass = "";
 
-    if (theme === "dark" && color !== "white") {
-      textColorClass = `text-${colorStr}-300`;
-    }
-
     if (variant === "filled") {
-      textColorClass = isWhite ? "" : "text-white";
-      bgColorClass = `bg-${colorStr}-${weight} hover:brightness-90 active:brightness-80`;
+      if (theme === "dark") {
+        textColorClass = `text-${colorStr}-contrast`;
+        bgColorClass = `bg-${colorStr}-dark hover:brightness-90 active:brightness-80`;
+      } else if (theme === "light") {
+        textColorClass = `bg-${colorStr}-dark`;
+        bgColorClass = `bg-${colorStr}-light hover:brightness-90 active:brightness-80`;
+      } else {
+        textColorClass = `text-${colorStr}-contrast`;
+        bgColorClass = `bg-${colorStr}-base hover:brightness-90 active:brightness-80`;
+      }
     }
 
     if (variant === "outlined") {
-      textColorClass = `text-${colorStr}-${weight}`;
-      borderClass = `border-${colorStr}-${weight}`;
-
-      const hoverWeight = Math.min(Math.floor(weight / 2), 50);
-      const activeWeight = Math.max(Math.ceil(weight + 1 / 2), 950);
-
-      bgColorClass = `hover:bg-${colorStr}-${hoverWeight} active:bg-${colorStr}-${activeWeight} bg-white`;
+      textColorClass = `text-${colorStr}-${theme}`;
+      borderClass = `border-${colorStr}-${theme}`;
+      bgColorClass = `hover:brightness-90 active:brightness-80 bg-white`;
     }
 
     if (variant === "subtle") {
-      textColorClass = `text-${colorStr}-${weight}`;
-      bgColorClass = `hover:bg-${colorStr}-100 active:bg-${colorStr}-200`;
+      textColorClass = `text-${colorStr}-${theme}`;
+      bgColorClass = `hover:brightness-90 active:brightness-80`;
     }
 
     if (variant === "text") {
-      textColorClass = `text-${colorStr}-${weight}`;
+      textColorClass = `text-${colorStr}-${theme}`;
     }
 
     return cx("", {
@@ -67,10 +61,12 @@
   };
 
   $: btnClass = cx(
-    `${theme} btn font-medium text-sm px-5 py-2.5 focus:outline-none filter ${generateColorClass()}`,
+    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter",
     {
       [variant]: variant,
       [roundedClass]: roundedClass,
+      [colorClass]: colorClass,
+      [generateColorClass()]: !colorClass,
       [className]: className,
     }
   );

@@ -16,6 +16,10 @@ const meta = {
       control: { type: "select" },
       options: Object.keys(BUTTON.variants),
     },
+    theme: {
+      control: { type: "select" },
+      options: ["base", "light", "dark", "contrast"],
+    },
   },
 } satisfies Meta<Button>;
 
@@ -26,7 +30,9 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     label: "Button",
-    variant: "primary",
+    variant: "filled",
+    color: "primary",
+    weight: 700,
   },
 };
 
