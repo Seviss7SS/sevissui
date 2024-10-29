@@ -32,7 +32,6 @@ export const Primary: Story = {
     label: "Button",
     variant: "filled",
     color: "primary",
-    weight: 700,
   },
 };
 

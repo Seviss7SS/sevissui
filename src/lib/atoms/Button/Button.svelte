@@ -1,7 +1,7 @@
 <script lang="ts">
   import cx from "classnames";
 
-  import { BUTTON } from "$lib/config.js";
+  import { BUTTON, type ComponentTheme } from "$lib/config.js";
 
   export let variant: keyof typeof BUTTON.variants = "filled";
   export let label = "";
@@ -11,7 +11,7 @@
   export let type: "button" | "submit" | "reset" | null | undefined = "button";
   export let color: string = "primary";
   export let className = "";
-  export let theme: "dark" | "light" | "base" = "base";
+  export let theme: ComponentTheme = "base";
   export let href = "";
   export let roundedClass = "rounded-lg";
   export let colorClass = "";
@@ -46,7 +46,12 @@
 
     if (variant === "subtle") {
       textColorClass = `text-${colorStr}-${theme}`;
-      bgColorClass = `hover:brightness-90 active:brightness-80`;
+
+      if (theme === "light") {
+        bgColorClass = `hover:bg-${colorStr}-dark active:brightness-110`;
+      } else {
+        bgColorClass = `hover:bg-${colorStr}-light active:brightness-90`;
+      }
     }
 
     if (variant === "text") {
@@ -107,11 +112,11 @@
     /* State Overrides */
     &.filled {
       &:disabled {
-        background-color: theme(colors.disabled.100);
-        color: theme(colors.disabled.400);
+        background-color: theme(colors.disabled.light);
+        color: theme(colors.disabled.dark);
 
         &:hover {
-          background-color: theme(colors.disabled.100);
+          background-color: theme(colors.disabled.light);
         }
       }
     }

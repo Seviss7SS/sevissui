@@ -1,6 +1,5 @@
 // @ts-nocheck
 import tailwindColors from "tailwindcss/colors.js";
-import get from "lodash.get";
 
 const colors = {
   ...tailwindColors,
@@ -10,7 +9,19 @@ const colors = {
     dark: tailwindColors.blue[900],
     contrast: tailwindColors.white,
   },
-  disabled: tailwindColors.gray,
+  gray: {
+    ...tailwindColors.gray,
+    light: tailwindColors.gray[200],
+    base: tailwindColors.gray[700],
+    dark: tailwindColors.gray[900],
+    contrast: tailwindColors.white,
+  },
+  disabled: {
+    light: tailwindColors.gray[100],
+    base: tailwindColors.gray[200],
+    dark: tailwindColors.gray[400],
+    contrast: tailwindColors.gray[400],
+  },
 };
 
 const generateSafeList = (themeColors) => {

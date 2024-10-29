@@ -1,8 +1,9 @@
 <script lang="ts">
   import Button from "$lib/atoms/Button/Button.svelte";
+  import type { ComponentTheme } from "$lib/config.ts";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
 
-  export let theme = "";
+  export let theme: ComponentTheme = "base";
 
   const breadcrumbs = [
     {

@@ -12,3 +12,5 @@ export const BUTTON = {
     darkgray: "darkgray",
   },
 };
+
+export type ComponentTheme = "base" | "light" | "dark";
