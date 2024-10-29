@@ -24,7 +24,9 @@
     "**/*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "!*.stories.*",
+    "colors.ts"
   ],
   "peerDependencies": {
     "svelte": "^4.0.0"
