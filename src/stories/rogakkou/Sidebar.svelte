@@ -23,7 +23,7 @@
   ];
 </script>
 
-<aside class="w-64 h-screen bg-gray-900 py-4 px-3">
+<aside class="w-64 h-screen bg-gray-800 py-4 px-3">
   <div class="text-white text-xl pb-5 leading-none font-bold">Rogakkou</div>
   <div class="overflow-y-auto h-full rounded-none">
     {#each links as link}

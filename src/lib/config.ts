@@ -6,11 +6,6 @@ export const BUTTON = {
     text: "text",
     icon: "icon",
   },
-  colors: {
-    primary: "primary",
-    gray: "gray",
-    darkgray: "darkgray",
-  },
 };
 
 export type ComponentTheme = "base" | "light" | "dark";

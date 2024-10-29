@@ -15,3 +15,9 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {
   args: {},
 };
+
+export const Dark: Story = {
+  args: {
+    theme: "dark",
+  },
+};

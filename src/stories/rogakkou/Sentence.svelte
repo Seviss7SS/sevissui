@@ -32,7 +32,6 @@
       variant="outlined"
       color="dark"
       on:click={() => (showTranslation = !showTranslation)}
-      className="h-8 w-16"
     >
       {!showTranslation ? "JP" : "EN"}
     </Button>

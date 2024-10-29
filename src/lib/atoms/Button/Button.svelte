@@ -28,20 +28,20 @@
     if (variant === "filled") {
       if (theme === "dark") {
         textColorClass = `text-${colorStr}-contrast`;
-        bgColorClass = `bg-${colorStr}-dark hover:brightness-90 active:brightness-80`;
+        bgColorClass = `bg-${colorStr}-dark hover:brightness-110 active:brightness-95`;
       } else if (theme === "light") {
         textColorClass = `bg-${colorStr}-dark`;
         bgColorClass = `bg-${colorStr}-light hover:brightness-90 active:brightness-80`;
       } else {
         textColorClass = `text-${colorStr}-contrast`;
-        bgColorClass = `bg-${colorStr}-base hover:brightness-90 active:brightness-80`;
+        bgColorClass = `bg-${colorStr}-base hover:brightness-110 active:brightness-95`;
       }
     }
 
     if (variant === "outlined") {
       textColorClass = `text-${colorStr}-${theme}`;
       borderClass = `border-${colorStr}-${theme}`;
-      bgColorClass = `hover:brightness-90 active:brightness-80 bg-white`;
+      bgColorClass = `hover:brightness-95 active:brightness-90 bg-white`;
     }
 
     if (variant === "subtle") {
@@ -50,12 +50,16 @@
       if (theme === "light") {
         bgColorClass = `hover:bg-${colorStr}-dark active:brightness-110`;
       } else {
-        bgColorClass = `hover:bg-${colorStr}-light active:brightness-90`;
+        bgColorClass = `hover:bg-${colorStr}-light active:brightness-95`;
       }
     }
 
     if (variant === "text") {
       textColorClass = `text-${colorStr}-${theme}`;
+    }
+
+    if (disabled) {
+      bgColorClass = "";
     }
 
     return cx("", {
@@ -101,10 +105,6 @@
       border-style: solid;
     }
 
-    &.subtle {
-      background-color: transparent;
-    }
-
     &.text {
       background-color: transparent;
     }
@@ -114,10 +114,6 @@
       &:disabled {
         background-color: theme(colors.disabled.light);
         color: theme(colors.disabled.dark);
-
-        &:hover {
-          background-color: theme(colors.disabled.light);
-        }
       }
     }
   }

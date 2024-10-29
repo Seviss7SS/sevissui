@@ -13,16 +13,8 @@
       theme="dark"
     >
       <div class={"flex-1 p-6"}>
-        <h5
-          class={"mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-white"}
-        >
-          Variant1
-        </h5>
-        <div
-          class={"font-normal leading-tight text-gray-700 dark:text-gray-400"}
-        >
-          Hello world
-        </div>
+        <h5 class={"mb-2 text-2xl font-bold tracking-tight"}>Variant1</h5>
+        <div class={"font-normal leading-tight"}>Hello world</div>
       </div>
     </CustomCard>
     <CustomCard
@@ -33,16 +25,8 @@
       theme="dark"
     >
       <div class={"flex-1 p-6"}>
-        <h5
-          class={"mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-white"}
-        >
-          Variant1
-        </h5>
-        <div
-          class={"font-normal leading-tight text-gray-700 dark:text-gray-400"}
-        >
-          Hello world
-        </div>
+        <h5 class={"mb-2 text-2xl font-bold tracking-tight"}>Variant1</h5>
+        <div class={"font-normal leading-tight"}>Hello world</div>
       </div>
     </CustomCard>
   </div>
