@@ -36,7 +36,7 @@
     {required}
     {placeholder}
     type={inputType}
-    class={cx("border text-sm rounded-lg block w-full p-2.5", {
+    class={cx("border text-sm rounded-lg block w-full p-md", {
       [generateColorClass()]: true,
     })}
   />

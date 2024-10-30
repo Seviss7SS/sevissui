@@ -26,7 +26,8 @@
       variant="text"
       href={breadcrumb.active ? "" : breadcrumb.href}
       disabled={breadcrumb.active}
-      color={breadcrumb.active ? "gray" : "primary"}>{breadcrumb.label}</Button
+      colorClass={breadcrumb.active ? "text-gray-light" : ""}
+      color="primary">{breadcrumb.label}</Button
     >
     {#if i < breadcrumbs.length - 1}
       <ChevronRight className="text-gray-400 my-auto" />

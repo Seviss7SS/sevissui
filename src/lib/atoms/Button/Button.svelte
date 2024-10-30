@@ -1,5 +1,6 @@
 <script lang="ts">
   import cx from "classnames";
+  import { Button } from "bits-ui";
 
   import { BUTTON, type ComponentTheme } from "$lib/config.js";
 
@@ -8,11 +9,11 @@
   export let loading = false;
   export let skeleton = false;
   export let disabled = false;
-  export let type: "button" | "submit" | "reset" | null | undefined = "button";
+  export let type: "button" | "submit" | "reset" | undefined = "button";
   export let color: string = "primary";
   export let className = "";
   export let theme: ComponentTheme = "base";
-  export let href = "";
+  export let href: string = "";
   export let roundedClass = "rounded-lg";
   export let colorClass = "";
 
@@ -28,34 +29,42 @@
     if (variant === "filled") {
       if (theme === "dark") {
         textColorClass = `text-${colorStr}-contrast`;
-        bgColorClass = `bg-${colorStr}-dark hover:brightness-110 active:brightness-95`;
+        bgColorClass = `bg-${colorStr}-dark hover:brightness-125 active:brightness-200`;
       } else if (theme === "light") {
         textColorClass = `bg-${colorStr}-dark`;
-        bgColorClass = `bg-${colorStr}-light hover:brightness-90 active:brightness-80`;
+        bgColorClass = `bg-${colorStr}-light hover:brightness-125 active:brightness-200`;
       } else {
         textColorClass = `text-${colorStr}-contrast`;
-        bgColorClass = `bg-${colorStr}-base hover:brightness-110 active:brightness-95`;
+        bgColorClass = `bg-${colorStr}-base hover:brightness-125 active:brightness-200`;
       }
     }
 
     if (variant === "outlined") {
       textColorClass = `text-${colorStr}-${theme}`;
       borderClass = `border-${colorStr}-${theme}`;
-      bgColorClass = `hover:brightness-95 active:brightness-90 bg-white`;
+      bgColorClass = `hover:brightness-125 active:brightness-200 bg-white`;
     }
 
     if (variant === "subtle") {
       textColorClass = `text-${colorStr}-${theme}`;
 
       if (theme === "light") {
-        bgColorClass = `hover:bg-${colorStr}-dark active:brightness-110`;
+        bgColorClass = `hover:bg-${colorStr}-dark active:brightness-125`;
       } else {
-        bgColorClass = `hover:bg-${colorStr}-light active:brightness-95`;
+        bgColorClass = `hover:bg-${colorStr}-light active:brightness-125`;
       }
     }
 
     if (variant === "text") {
       textColorClass = `text-${colorStr}-${theme}`;
+
+      if (theme === "dark") {
+        textColorClass = `${textColorClass} hover:brightness-125 active:brightness-200`;
+      } else if (theme === "light") {
+        textColorClass = `${textColorClass} hover:brightness-90 active:brightness-50`;
+      } else {
+        textColorClass = `${textColorClass} hover:brightness-125 active:brightness-200`;
+      }
     }
 
     if (disabled) {
@@ -70,7 +79,7 @@
   };
 
   $: btnClass = cx(
-    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter block",
+    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter block text-center",
     {
       [variant]: variant,
       [roundedClass]: roundedClass,
@@ -82,7 +91,7 @@
 </script>
 
 {#if href && !disabled}
-  <a {href} class={btnClass}>
+  <a {href} {type} class={btnClass}>
     <slot>{label}</slot>
   </a>
 {:else}

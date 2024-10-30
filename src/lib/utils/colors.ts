@@ -3,7 +3,7 @@ import tailwindColors from "tailwindcss/colors.js";
 
 const definedColors = {
   primary: {
-    light: tailwindColors.blue[200],
+    light: tailwindColors.blue[300],
     base: tailwindColors.blue[700],
     dark: tailwindColors.blue[900],
     contrast: tailwindColors.white,

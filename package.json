@@ -64,6 +64,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
+    "bits-ui": "^0.21.16",
     "classnames": "^2.5.1"
   }
 }

@@ -6,7 +6,7 @@
   export let theme: ComponentTheme = "base";
   export let clickable = false;
   export let href = "";
-  export let paddingClass = "p-6";
+  export let paddingClass = "p-xl";
   export let colorClass: string = "";
 
   const generateColorClass = () => {

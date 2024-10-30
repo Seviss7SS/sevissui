@@ -1,6 +1,8 @@
 {
 	"/": [],
 	"/rogakkou/(auth)": [],
+	"/rogakkou/(auth)/admin": [],
+	"/rogakkou/(auth)/admin/words": [],
 	"/rogakkou/login": [],
 	"/rogakkou/(auth)/readings": [],
 	"/rogakkou/(auth)/readings/[readingId]": [],
