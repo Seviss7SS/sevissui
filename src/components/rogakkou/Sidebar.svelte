@@ -39,7 +39,7 @@
         variant="subtle"
         href={link.href}
       >
-        <div class="flex gap-x-2">
+        <div class="flex gap-x-md">
           <span class="my-auto">{link.label}</span>
         </div>
       </Button>

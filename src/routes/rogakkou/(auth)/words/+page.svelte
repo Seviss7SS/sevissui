@@ -16,7 +16,7 @@
   </form>
   <div class="w-full overflow-auto flex-1">
     <div
-      class="container max-w-[1024px] flex flex-col items-center justify-center gap-4 text-center mx-auto pb-8 pt-4"
+      class="container max-w-[1024px] flex flex-col items-center justify-center gap-lg text-center mx-auto pb-8 pt-4"
     >
       <!--       {#each wordsList as word}
         <WordCard {word} />

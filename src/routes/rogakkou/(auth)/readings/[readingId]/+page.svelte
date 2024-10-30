@@ -10,9 +10,9 @@
 </script>
 
 <div
-  class="container max-w-[1024px] flex flex-col align-middle justify-center gap-4 text-center mx-auto pb-8 pt-4 text-white"
+  class="container max-w-[1024px] flex flex-col align-middle justify-center gap-lg text-center mx-auto pb-8 pt-4 text-white"
 >
-  <div class="gap-1 flex flex-col">
+  <div class="gap-sm flex flex-col">
     <h1 class="text-5xl">{reading.title}</h1>
     {#if reading.youtube_embed_id}
       <iframe

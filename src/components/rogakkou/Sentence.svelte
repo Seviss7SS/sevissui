@@ -17,7 +17,7 @@
       {sentence.translation}
     </div>
   {:else}
-    <div class="flex flex-wrap content-center justify-center w-full gap-1">
+    <div class="flex flex-wrap content-center justify-center w-full gap-md">
       <!--       {#each sentence.words as word}
         {#if word.word}
           <Word word={word.word} />

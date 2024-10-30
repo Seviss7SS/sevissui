@@ -9,7 +9,7 @@
 >
   <Card theme="dark" className="w-96">
     <form
-      class="flex flex-col gap-y-3"
+      class="flex flex-col gap-y-md"
       on:submit={() => (window.location.href = "/rogakkou/")}
     >
       <h1 class="text-2xl font-bold">Login</h1>
