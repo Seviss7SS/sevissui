@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from "$lib/atoms/Button/Button.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
   import type { ComponentTheme } from "$lib/config.ts";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
 

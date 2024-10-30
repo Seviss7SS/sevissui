@@ -1,6 +1,8 @@
+// @ts-nocheck
+
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import Breadcrumbs from "./Breadcrumbs.svelte";
+import Breadcrumbs from "$lib/components/Breadcrumbs/Breadcrumbs.svelte";
 
 const meta = {
   title: "Components/Breadcrumbs",

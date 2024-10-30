@@ -1,6 +1,5 @@
 <script lang="ts">
   import cx from "classnames";
-  import { Button } from "bits-ui";
 
   import { BUTTON, type ComponentTheme } from "$lib/config.js";
 
@@ -16,6 +15,8 @@
   export let href: string = "";
   export let roundedClass = "rounded-lg";
   export let colorClass = "";
+  export let size = "";
+  export let id: string | undefined = undefined;
 
   const generateColorClass = () => {
     if (!color) return "";
@@ -91,11 +92,11 @@
 </script>
 
 {#if href && !disabled}
-  <a {href} {type} class={btnClass}>
+  <a {id} {href} {type} class={btnClass}>
     <slot>{label}</slot>
   </a>
 {:else}
-  <button {disabled} {type} class={btnClass}>
+  <button {id} {disabled} {type} class={btnClass}>
     <slot>{label}</slot>
   </button>
 {/if}

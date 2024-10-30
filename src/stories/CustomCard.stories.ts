@@ -1,7 +1,9 @@
+// @ts-nocheck
+
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import CustomCard from "./CustomCard.svelte";
-import { VARIANTS } from "./variants.js";
+import CustomCard from "$lib/customs/card/CustomCard.svelte";
+import { VARIANTS } from "$lib/customs/card/variants.ts";
 
 const meta = {
   title: "Customs/CustomCard",

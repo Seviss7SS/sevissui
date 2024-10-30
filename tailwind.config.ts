@@ -14,8 +14,8 @@ export default {
     ...theme,
     extend: {
       spacing: {
-        /** 2px */
-        xs: "0.125rem",
+        /** 4px */
+        xs: "0.25rem",
         /** 8px */
         sm: "0.5rem",
         /** 12px */

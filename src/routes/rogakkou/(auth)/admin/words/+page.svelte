@@ -1,5 +1,14 @@
 <script>
-  import Button from "$lib/atoms/Button/Button.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
+  import Dropdown from "$lib/components/Dropdown/Dropdown.svelte";
+  import Pagination from "$lib/components/Pagination/Pagination.svelte";
+
+  import EditableWordInline from "../../../../../components/rogakkou/EditableWordInline.svelte";
+
+  const filterMethods = [
+    { href: "?meaning=1", label: "Needs meaning" },
+    { value: "?studyset=1", label: "In study set" },
+  ];
 </script>
 
 <div class="flex justify-center">
@@ -10,32 +19,15 @@
         <Button>Autofill blank</Button>
       </div>
       <div class="flex gap-x-md">
-        <Button>
-          Filter by...<ChevronDownOutline class="w-6 h-6 ms-2 text-white" />
-        </Button>
-        <Dropdown>
-          {#each filterMethods as fm}
-            <DropdownItem href={fm.href}>{fm.label}</DropdownItem>
-          {/each}
-        </Dropdown>
+        <Button>Filter by...</Button>
+        <Dropdown dropdownItems={filterMethods} />
       </div>
     </div>
-    {#key words}
-      {#each words as word}
-        <EditableWordInline {word} />
-      {/each}
-    {/key}
+    <EditableWordInline />
+    <EditableWordInline />
+    <EditableWordInline />
     <div class="flex justify-center py-6">
-      <Pagination {pages} large on:previous={previous} on:next={next} icon>
-        <svelte:fragment slot="prev">
-          <span class="sr-only">Previous</span>
-          <ChevronLeftOutline class="w-6 h-6" />
-        </svelte:fragment>
-        <svelte:fragment slot="next">
-          <span class="sr-only">Next</span>
-          <ChevronRightOutline class="w-6 h-6" />
-        </svelte:fragment>
-      </Pagination>
+      <Pagination total={100} pageSize={10}></Pagination>
     </div>
   </div>
 </div>

@@ -14,9 +14,9 @@
 
   const generateColorClass = () => {
     if (theme === "dark") {
-      return `focus:border-${color}-base bg-gray-dark border-gray-base placeholder-gray-light text-white`;
+      return `focus:border-${color}-base bg-gray-dark border-gray-base focus:ring focus:ring-${color}-light placeholder-gray-light text-white`;
     } else {
-      return `focus:border-${color}-base bg-white border-gray-light text-gray-dark`;
+      return `focus:border-${color}-base focus:ring focus:ring-${color}-light bg-white border-gray-light text-gray-dark`;
     }
   };
 </script>
@@ -36,7 +36,7 @@
     {required}
     {placeholder}
     type={inputType}
-    class={cx("border text-sm rounded-lg block w-full p-md", {
+    class={cx("border text-sm rounded-lg block w-full p-md outline-none", {
       [generateColorClass()]: true,
     })}
   />

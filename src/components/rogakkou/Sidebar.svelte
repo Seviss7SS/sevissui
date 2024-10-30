@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from "$lib/atoms/Button/Button.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
 
   const links = [
     {

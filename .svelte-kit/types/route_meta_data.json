@@ -2,10 +2,16 @@
 	"/": [],
 	"/rogakkou/(auth)": [],
 	"/rogakkou/(auth)/admin": [],
+	"/rogakkou/(auth)/admin/readings": [],
+	"/rogakkou/(auth)/admin/readings/[id]/text": [],
+	"/rogakkou/(auth)/admin/study-set": [],
 	"/rogakkou/(auth)/admin/words": [],
 	"/rogakkou/login": [],
 	"/rogakkou/(auth)/readings": [],
 	"/rogakkou/(auth)/readings/[readingId]": [],
+	"/rogakkou/(auth)/readings/[readingId]/review": [],
 	"/rogakkou/(auth)/study-sets": [],
+	"/rogakkou/(auth)/study-sets/[id]": [],
+	"/rogakkou/(auth)/study-sets/[id]/edit": [],
 	"/rogakkou/(auth)/words": []
 }

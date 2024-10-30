@@ -1,10 +1,8 @@
 <script>
-  /*   import WordCard from "../components/WordCard.svelte"; */
+  import WordCard from "../../../../components/rogakkou/WordCard.svelte";
   import InputField from "$lib/components/InputField/InputField.svelte";
-  import Button from "$lib/atoms/Button/Button.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
   import Search from "$lib/icons/Search.svelte";
-
-  export let words = [];
 </script>
 
 <div class="h-full flex flex-col">
@@ -18,9 +16,7 @@
     <div
       class="container max-w-[1024px] flex flex-col items-center justify-center gap-lg text-center mx-auto pb-8 pt-4"
     >
-      <!--       {#each wordsList as word}
-        <WordCard {word} />
-      {/each} -->
+      <WordCard />
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <script>
-  import Card from "$lib/atoms/Card/Card.svelte";
+  import Card from "$lib/components/Card/Card.svelte";
   import InputField from "$lib/components/InputField/InputField.svelte";
-  import Button from "$lib/atoms/Button/Button.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
 </script>
 
 <div

@@ -1,6 +1,6 @@
 <script lang="ts">
   import CustomCard from "$lib/customs/card/CustomCard.svelte";
-  import Progress from "$lib/atoms/Progress/Progress.svelte";
+  import Progress from "$lib/components/Progress/Progress.svelte";
 </script>
 
 <div

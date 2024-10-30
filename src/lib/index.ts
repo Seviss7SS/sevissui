@@ -1,11 +1,9 @@
 // @ts-nocheck
 
-// atoms
-import Button from "$lib/atoms/Button/Button.svelte";
-import Card from "$lib/atoms/Card/Card.svelte";
-import Progress from "$lib/atoms/Progress/Progress.svelte";
-
 // components
+import Button from "$lib/components/Button/Button.svelte";
+import Card from "$lib/components/Card/Card.svelte";
+import Progress from "$lib/components/Progress/Progress.svelte";
 import Breadcrumbs from "$lib/components/Breadcrumbs/Breadcrumbs.svelte";
 import InputField from "$lib/components/InputField/InputField.svelte";
 

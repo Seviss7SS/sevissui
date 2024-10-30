@@ -1,11 +1,13 @@
+// @ts-nocheck
+
 import type { Meta, StoryObj } from "@storybook/svelte";
 import { BUTTON } from "$lib/config.js";
 import { definedColors } from "$lib/utils/colors.ts";
 
-import Button from "./Button.svelte";
+import Button from "$lib/components/Button/Button.svelte";
 
 const meta = {
-  title: "Atoms/Button",
+  title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
