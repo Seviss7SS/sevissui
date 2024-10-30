@@ -70,7 +70,7 @@
   };
 
   $: btnClass = cx(
-    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter",
+    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter block",
     {
       [variant]: variant,
       [roundedClass]: roundedClass,

@@ -11,8 +11,8 @@ const definedColors = {
   gray: {
     ...tailwindColors.gray,
     light: tailwindColors.gray[200],
-    base: tailwindColors.gray[700],
-    dark: tailwindColors.gray[900],
+    base: tailwindColors.gray[600],
+    dark: tailwindColors.gray[700],
     contrast: tailwindColors.white,
   },
   disabled: {

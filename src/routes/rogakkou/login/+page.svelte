@@ -8,13 +8,21 @@
   class="h-screen w-screen bg-gray-800 flex pt-[20vh] justify-center items-center"
 >
   <Card theme="dark" className="w-96">
-    <form class="flex flex-col gap-y-3">
+    <form
+      class="flex flex-col gap-y-3"
+      on:submit={() => (window.location.href = "/rogakkou/")}
+    >
       <h1 class="text-2xl font-bold">Login</h1>
       <div>
-        <InputField label="Username" name="username" />
+        <InputField theme="dark" label="Username" name="username" />
       </div>
       <div>
-        <InputField inputType="password" label="Password" name="password" />
+        <InputField
+          theme="dark"
+          inputType="password"
+          label="Password"
+          name="password"
+        />
       </div>
       <Button type="submit">Login</Button>
     </form>

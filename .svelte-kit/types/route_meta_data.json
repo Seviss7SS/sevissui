@@ -1,3 +1,8 @@
 {
-	"/": []
+	"/": [],
+	"/rogakkou/(auth)": [],
+	"/rogakkou/login": [],
+	"/rogakkou/(auth)/readings": [],
+	"/rogakkou/(auth)/readings/[readingId]": [],
+	"/rogakkou/(auth)/study-sets": []
 }
