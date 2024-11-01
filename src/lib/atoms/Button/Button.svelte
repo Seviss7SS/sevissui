@@ -4,17 +4,17 @@
   import { BUTTON, type ComponentTheme } from "$lib/config.js";
 
   export let variant: keyof typeof BUTTON.variants = "filled";
-  export let label = "";
-  export let loading = false;
-  export let skeleton = false;
-  export let disabled = false;
+  export let label: string = "";
+  export let loading: boolean = false;
+  export let skeleton: boolean = false;
+  export let disabled: boolean = false;
   export let type: "button" | "submit" | "reset" | null | undefined = "button";
   export let color: string = "primary";
-  export let className = "";
+  export let className: string = "";
   export let theme: ComponentTheme = "base";
-  export let href = "";
-  export let roundedClass = "rounded-lg";
-  export let colorClass = "";
+  export let href: string = "";
+  export let roundedClass: string = "rounded-lg";
+  export let colorClass: string = "";
 
   const generateColorClass = () => {
     if (!color) return "";
@@ -65,16 +65,13 @@
     });
   };
 
-  $: btnClass = cx(
-    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter",
-    {
-      [variant]: variant,
-      [roundedClass]: roundedClass,
-      [colorClass]: colorClass,
-      [generateColorClass()]: !colorClass,
-      [className]: className,
-    }
-  );
+  $: btnClass = cx("btn text-sm px-5 py-2.5 focus:outline-none filter", {
+    [variant]: variant,
+    [roundedClass]: roundedClass,
+    [colorClass]: colorClass,
+    [generateColorClass()]: !colorClass,
+    [className]: className,
+  });
 </script>
 
 {#if href && !disabled}
@@ -86,39 +83,3 @@
     <slot>{label}</slot>
   </button>
 {/if}
-
-<style scoped lang="postcss">
-  .btn {
-    /* States */
-    &:disabled {
-      cursor: default;
-    }
-
-    /* Variants */
-
-    &.outlined {
-      border-width: 1px;
-      border-style: solid;
-    }
-
-    &.subtle {
-      background-color: transparent;
-    }
-
-    &.text {
-      background-color: transparent;
-    }
-
-    /* State Overrides */
-    &.filled {
-      &:disabled {
-        background-color: theme(colors.disabled.light);
-        color: theme(colors.disabled.dark);
-
-        &:hover {
-          background-color: theme(colors.disabled.light);
-        }
-      }
-    }
-  }
-</style>

@@ -37,11 +37,35 @@ const sevissui = plugin(function ({
   config,
   theme,
 }) {
-  // Add your custom styles here
+  addComponents({
+    ".btn": {
+      fontWeight: "600",
+      "&:disabled": {
+        cursor: "default",
+      },
+      "&:outlined": {
+        borderWidth: "1px",
+        borderStyle: "solid",
+      },
+      "&:subtle": {
+        backgroundColor: "transparent",
+      },
+      "&:text": {
+        backgroundColor: "transparent",
+      },
+      "&:filled": {
+        "&:disabled": {
+          backgroundColor: "theme(colors.disabled.light)",
+          color: "theme(colors.disabled.dark)",
+        },
+      },
+    },
+  });
+
   matchUtilities(
     {
       btn: (value) => ({
-        backgroundColor: console.log(value) || value,
+        backgroundColor: value,
       }),
     },
     { values: flattenColorPalette(theme("colors")), type: "color" }
