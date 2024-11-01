@@ -1,4 +1,4 @@
-import { generateSafeList } from "./src/lib/utils/tailwindcss.js";
+import { generateSafeList, sevissui } from "./src/lib/utils/tailwindcss.js";
 import { colors } from "./src/lib/utils/colors.js";
 
 const theme = {
@@ -27,7 +27,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [sevissui],
   safelist: [...generateSafeList(colors)],
   darkMode: "selector",
 };
