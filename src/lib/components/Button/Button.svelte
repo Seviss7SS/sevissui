@@ -15,7 +15,7 @@
   export let href: string = "";
   export let roundedClass = "rounded-lg";
   export let colorClass = "";
-  export let size = "";
+  export let size = "md";
   export let id: string | undefined = undefined;
 
   const generateColorClass = () => {
@@ -79,13 +79,30 @@
     });
   };
 
+  const generateSizeClass = () => {
+    if (size === "xs") {
+      return "px-3 py-2 text-xs";
+    } else if (size === "sm") {
+      return "px-3 py-2 text-sm";
+    } else if (size === "md") {
+      return "px-5 py-2.5 text-sm";
+    } else if (size === "lg") {
+      return "px-5 py-3 text-base";
+    } else if (size === "xl") {
+      return "px-6 py-3.5 text-base";
+    }
+
+    return "";
+  };
+
   $: btnClass = cx(
-    "btn font-medium text-sm px-5 py-2.5 focus:outline-none filter block text-center",
+    "btn font-medium focus:outline-none filter block text-center",
     {
       [variant]: variant,
       [roundedClass]: roundedClass,
       [colorClass]: colorClass,
       [generateColorClass()]: !colorClass,
+      [generateSizeClass()]: generateSizeClass(),
       [className]: className,
     }
   );
@@ -102,6 +119,7 @@
 {/if}
 
 <style scoped lang="postcss">
+  /* TODO: move to component in plugin */
   .btn {
     /* States */
     &:disabled {
