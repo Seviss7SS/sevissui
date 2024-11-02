@@ -65,6 +65,7 @@
   "type": "module",
   "dependencies": {
     "bits-ui": "^0.21.16",
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "get-best-contrast-color": "^0.3.1"
   }
 }

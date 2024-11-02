@@ -2,6 +2,7 @@
 import tailwindColors from "tailwindcss/colors.js";
 import plugin from "tailwindcss/plugin";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import bestContrast from "get-best-contrast-color";
 
 const generateSafeList = (themeColors) => {
   const colorNames = Object.keys(themeColors);
@@ -64,24 +65,10 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      btn: (value) => {
-        const variants = theme("components.btn.variants");
-
-        console.log(value);
-
-        if (variants[value]) {
-          if (value === "outlined") {
-            return {
-              border: "1px solid",
-              backgroundColor: "transparent",
-            };
-          }
-        }
-
-        console.log(variants);
-
+      btn: (color) => {
         return {
-          backgroundColor: value,
+          backgroundColor: color,
+          color: bestContrast(color, ["#fff", "#000"]),
         };
       },
     },
@@ -95,32 +82,20 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      btn: (value) => {
-        const variants = theme("components.btn.variants");
-
-        console.log(value);
-
-        if (variants[value]) {
-          if (value === "outlined") {
-            return {
-              border: "1px solid",
-              backgroundColor: "transparent",
-            };
-          }
-        }
-
-        console.log(variants);
-
+      "btn-outlined": (color) => {
+        console.log(color);
         return {
-          backgroundColor: value,
+          borderColor: color,
+          borderWidth: "1px",
+          borderStyle: "solid",
         };
       },
     },
     {
       values: {
-        ...theme("components.btn.variants"),
+        ...flattenColorPalette(theme("colors")),
       },
-      type: "genericName",
+      type: "color",
     }
   );
 });
