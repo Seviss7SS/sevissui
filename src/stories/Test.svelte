@@ -1,1 +1,1 @@
-<button class="btn-blue-500">Hello world</button>
+<button class="btn-blue-500 btn-outlined">Hello world</button>

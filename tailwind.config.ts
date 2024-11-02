@@ -12,6 +12,17 @@ export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     ...theme,
+    components: {
+      btn: {
+        variants: {
+          filled: "filled",
+          outlined: "outlined",
+          subtle: "subtle",
+          text: "text",
+          icon: "icon",
+        },
+      },
+    },
     extend: {
       spacing: {
         /** 4px */

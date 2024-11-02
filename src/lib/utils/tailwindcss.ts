@@ -64,11 +64,64 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      btn: (value) => ({
-        backgroundColor: value,
-      }),
+      btn: (value) => {
+        const variants = theme("components.btn.variants");
+
+        console.log(value);
+
+        if (variants[value]) {
+          if (value === "outlined") {
+            return {
+              border: "1px solid",
+              backgroundColor: "transparent",
+            };
+          }
+        }
+
+        console.log(variants);
+
+        return {
+          backgroundColor: value,
+        };
+      },
     },
-    { values: flattenColorPalette(theme("colors")), type: "color" }
+    {
+      values: {
+        ...flattenColorPalette(theme("colors")),
+      },
+      type: "color",
+    }
+  );
+
+  matchUtilities(
+    {
+      btn: (value) => {
+        const variants = theme("components.btn.variants");
+
+        console.log(value);
+
+        if (variants[value]) {
+          if (value === "outlined") {
+            return {
+              border: "1px solid",
+              backgroundColor: "transparent",
+            };
+          }
+        }
+
+        console.log(variants);
+
+        return {
+          backgroundColor: value,
+        };
+      },
+    },
+    {
+      values: {
+        ...theme("components.btn.variants"),
+      },
+      type: "genericName",
+    }
   );
 });
 

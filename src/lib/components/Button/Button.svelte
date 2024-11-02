@@ -117,32 +117,3 @@
     <slot>{label}</slot>
   </button>
 {/if}
-
-<style scoped lang="postcss">
-  /* TODO: move to component in plugin */
-  .btn {
-    /* States */
-    &:disabled {
-      cursor: default;
-    }
-
-    /* Variants */
-
-    &.outlined {
-      border-width: 1px;
-      border-style: solid;
-    }
-
-    &.text {
-      background-color: transparent;
-    }
-
-    /* State Overrides */
-    &.filled {
-      &:disabled {
-        background-color: theme(colors.disabled.light);
-        color: theme(colors.disabled.dark);
-      }
-    }
-  }
-</style>
