@@ -33,32 +33,28 @@ type Story = StoryObj<typeof meta>;
 export const Filled: Story = {
   args: {
     label: "Button",
-    variant: "filled",
-    color: "primary",
+    variant: "btn-filled-primary-base",
   },
 };
 
 export const Outlined: Story = {
   args: {
     label: "Button",
-    variant: "outlined",
-    color: "primary",
+    variant: "btn-outlined-primary-base",
   },
 };
 
 export const Subtle: Story = {
   args: {
     label: "Button",
-    variant: "subtle",
-    color: "primary",
+    variant: "btn-subtle-primary-base",
   },
 };
 
 export const Text: Story = {
   args: {
     label: "Button",
-    variant: "text",
-    color: "primary",
+    variant: "btn-text-primary-base",
   },
 };
 
