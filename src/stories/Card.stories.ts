@@ -20,6 +20,6 @@ export const Base: Story = {
 
 export const Dark: Story = {
   args: {
-    theme: "dark",
+    variant: "card-dark",
   },
 };

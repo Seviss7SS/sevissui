@@ -38,6 +38,7 @@ const sevissui = plugin(function ({
   config,
   theme,
 }) {
+  // button
   addComponents({
     ".btn": {
       fontWeight: "600",
@@ -134,6 +135,27 @@ const sevissui = plugin(function ({
       type: "color",
     }
   );
+
+  // card
+  addComponents({
+    ".card": {
+      display: "block",
+      borderRadius: theme("borderRadius.lg"),
+      overflow: "hidden",
+      backgroundColor: "white",
+      position: "relative",
+      "&.clickable": {
+        cursor: "pointer",
+      },
+    },
+    ".card-dark": {
+      backgroundColor: theme("colors.gray.dark"),
+      borderColor: theme("colors.gray.base"),
+      borderWidth: "1px",
+      borderStyle: "solid",
+      color: theme("colors.gray.contrast"),
+    },
+  });
 });
 
 export { generateSafeList, sevissui };
