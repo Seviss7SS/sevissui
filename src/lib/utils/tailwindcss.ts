@@ -132,15 +132,23 @@ const sevissui = plugin(function ({
 
   // input
   addComponents({
-    ".input": {
-      borderWidth: "1px",
-      borderStyle: "solid",
-      fontSize: "0.875rem",
-      lineHeight: "1.25rem",
-      borderRadius: "0.5rem",
-      display: "block",
-      width: "100%",
-      padding: theme("spacing.md"),
+    ".input-field": {
+      "& > input": {
+        borderWidth: "1px",
+        borderStyle: "solid",
+        fontSize: "0.875rem",
+        lineHeight: "1.25rem",
+        borderRadius: "0.5rem",
+        display: "block",
+        width: "100%",
+        padding: theme("spacing.md"),
+      },
+      "& > label": {
+        display: "block",
+        marginBottom: theme("spacing.sm"),
+        fontWeight: "500",
+        lineHeight: "100%",
+      },
     },
   });
 

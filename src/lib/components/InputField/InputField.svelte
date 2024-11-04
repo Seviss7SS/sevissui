@@ -8,16 +8,17 @@
   export let required: boolean = false;
   export let placeholder: string | undefined = undefined;
   export let label: string | undefined = undefined;
-  export let variant: string = "input-primary-base";
+  export let variant: string = "input-primary-light";
 </script>
 
-<div class={cx("", { [variant]: variant, [$$props.class]: $$props.class })}>
+<div
+  class={cx("input-field", {
+    [variant]: variant,
+    [$$props.class]: $$props.class,
+  })}
+>
   {#if label}
-    <label
-      for={name || id}
-      class={cx("block mb-2 text-sm font-medium text-gray-900 ring-white")}
-      >{label}</label
-    >
+    <label for={name || id}>{label}</label>
   {/if}
   <input
     {id}
@@ -25,6 +26,6 @@
     {required}
     {placeholder}
     type={inputType}
-    class="input outline-none focus:ring"
+    class="outline-none focus:ring"
   />
 </div>
