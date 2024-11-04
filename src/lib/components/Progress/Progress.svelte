@@ -3,7 +3,6 @@
 
   export let progress = 0;
   export let dark = false;
-  export let className = "";
   export let color = "primary";
 </script>
 
@@ -11,7 +10,7 @@
   class={cx("w-full rounded-full h-2.5", {
     "bg-gray-700": dark,
     "bg-gray-200": !dark,
-    [className]: Boolean(className),
+    [$$props.class]: Boolean($$props.class),
   })}
 >
   <div

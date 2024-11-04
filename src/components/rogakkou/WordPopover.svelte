@@ -12,7 +12,7 @@
   <div slot="content">
     <div class="text-lg leading-tight text-white">{word.meaning}</div>
 
-    <Button href="/auth/login" size="xs" className="mt-4 cursor-pointer">
+    <Button href="/auth/login" size="xs" class="mt-4 cursor-pointer">
       <div>Log in to track progress</div>
     </Button>
   </div>

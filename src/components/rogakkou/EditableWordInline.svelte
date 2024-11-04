@@ -28,9 +28,9 @@
       <InputField placeholder="Kana" />
     </div>
     <div class="flex gap-x-2 col-span-2">
-      <Button className="flex-1" color="primary">Save</Button>
+      <Button class="flex-1" color="primary">Save</Button>
       <Popover>
-        <Button id={`delete-word-${word.id}`} className="flex-1" color="red"
+        <Button id={`delete-word-${word.id}`} class="flex-1" color="red"
           >Delete</Button
         >
         <Button slot="content" size="xs" color="red">Confirm deletion</Button>

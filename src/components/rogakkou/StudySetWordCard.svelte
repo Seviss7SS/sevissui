@@ -11,6 +11,6 @@
     <div class="p-2 text-center font-bold text-3xl text-white">
       {word.kanji}
     </div>
-    <Button className="rounded-none !bg-transparent !ring-0">X</Button>
+    <Button class="rounded-none !bg-transparent !ring-0">X</Button>
   </div>
 </Card>

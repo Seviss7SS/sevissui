@@ -10,7 +10,7 @@
       class="border-2 rounded-full p-4 text-2xl font-bold flex justify-between cursor-pointer hover:bg-gray-800 active:bg-gray-700"
     >
       Sentence
-      <Button disabled color="light" size="xs" className="w-6 h-6 px-0 my-auto">
+      <Button disabled color="light" size="xs" class="w-6 h-6 px-0 my-auto">
         Check
       </Button>
     </button>

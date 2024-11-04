@@ -10,7 +10,7 @@
     clickable
     variant="variant1"
     imgSrc="https://images.unsplash.com/photo-1714679374077-830e435178b2?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    className="h-16 w-96"
+    class="h-16 w-96"
     theme="dark"
     paddingClass="p-sm"
   >
@@ -20,7 +20,7 @@
       >
         Study set
       </h5>
-      <Progress className="mt-auto" />
+      <Progress class="mt-auto" />
     </div>
   </CustomCard>
 </div>

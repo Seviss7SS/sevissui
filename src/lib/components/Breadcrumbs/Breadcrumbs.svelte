@@ -30,7 +30,7 @@
       color="primary">{breadcrumb.label}</Button
     >
     {#if i < breadcrumbs.length - 1}
-      <ChevronRight className="text-gray-400 my-auto" />
+      <ChevronRight class="text-gray-400 my-auto" />
     {/if}
   {/each}
 </nav>

@@ -17,6 +17,6 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {
   args: {
     progress: 50,
-    className: "w-96",
+    class: "w-96",
   },
 };

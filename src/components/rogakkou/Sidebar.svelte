@@ -34,7 +34,7 @@
     {#each links as link}
       <Button
         theme="light"
-        className="w-full"
+        class="w-full"
         color="gray"
         variant="subtle"
         href={link.href}

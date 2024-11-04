@@ -35,7 +35,7 @@
     >
       {!showTranslation ? "JP" : "EN"}
     </Button>
-    <Button className="h-8 w-8 !ring-0" color="transparent">
+    <Button class="h-8 w-8 !ring-0" color="transparent">
       <!--       <DotsVerticalOutline /> -->
     </Button>
     <!--     <Dropdown>

@@ -7,7 +7,7 @@
 <div
   class="h-screen w-screen bg-gray-800 flex pt-[20vh] justify-center items-center"
 >
-  <Card theme="dark" className="w-96">
+  <Card theme="dark" class="w-96">
     <form
       class="flex flex-col gap-y-md"
       on:submit={() => (window.location.href = "/rogakkou/")}

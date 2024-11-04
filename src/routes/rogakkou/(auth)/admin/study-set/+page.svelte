@@ -12,6 +12,6 @@
       placeholder="日本語 にほんご nihongo japanese (one per line)"
       rows="24"
     />
-    <Button type="submit" className="w-full mt-2">Save</Button>
+    <Button type="submit" class="w-full mt-2">Save</Button>
   </form>
 </div>

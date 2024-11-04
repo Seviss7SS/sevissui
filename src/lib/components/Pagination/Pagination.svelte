@@ -11,7 +11,7 @@
     <Pagination.PrevButton
       class="mr-[25px] inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent hover:bg-dark-10 active:scale-98 disabled:cursor-not-allowed disabled:text-muted-foreground hover:disabled:bg-transparent"
     >
-      <ChevronRight className="transform rotate-180" />
+      <ChevronRight class="transform rotate-180" />
     </Pagination.PrevButton>
     <div class="flex items-center gap-2.5">
       {#each pages as page (page.key)}
