@@ -10,9 +10,6 @@ import InputField from "$lib/components/InputField/InputField.svelte";
 // customs
 import CustomCard from "$lib/customs/card/CustomCard.svelte";
 
-// utils
-import { generateSafeList } from "$lib/utils/tailwindcss.js";
-
 export {
   Button,
   Breadcrumbs,
@@ -20,5 +17,4 @@ export {
   Progress,
   InputField,
   CustomCard,
-  generateSafeList,
 };

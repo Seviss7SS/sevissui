@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+// TODO: move to route file
+
 import type { Meta, StoryObj } from "@storybook/svelte";
 
 import CustomCard from "$lib/customs/card/CustomCard.svelte";

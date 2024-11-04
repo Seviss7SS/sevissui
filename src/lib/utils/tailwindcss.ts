@@ -4,33 +4,6 @@ import plugin from "tailwindcss/plugin";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 import bestContrast from "get-best-contrast-color";
 
-const generateSafeList = (themeColors) => {
-  const colorNames = Object.keys(themeColors);
-
-  const safelist = [
-    {
-      pattern: new RegExp(
-        `bg-(${colorNames.join("|")})-(light|dark|base|contrast)`
-      ),
-      variants: ["hover", "active"],
-    },
-    {
-      pattern: new RegExp(
-        `text-(${colorNames.join("|")})-(light|dark|base|contrast)`
-      ),
-      variants: ["hover", "active"],
-    },
-    {
-      pattern: new RegExp(
-        `border-(${colorNames.join("|")})-(light|dark|base|contrast)`
-      ),
-      variants: ["hover", "active"],
-    },
-  ];
-
-  return safelist;
-};
-
 const sevissui = plugin(function ({
   matchUtilities,
   addComponents,
@@ -156,6 +129,41 @@ const sevissui = plugin(function ({
       color: theme("colors.gray.contrast"),
     },
   });
+
+  // input
+  addComponents({
+    ".input": {
+      borderWidth: "1px",
+      borderStyle: "solid",
+      fontSize: "0.875rem",
+      lineHeight: "1.25rem",
+      borderRadius: "0.5rem",
+      display: "block",
+      width: "100%",
+      padding: theme("spacing.md"),
+    },
+  });
+
+  matchUtilities(
+    {
+      input: (color) => {
+        return {
+          backgroundColor: "white",
+          color: "black",
+          "& > input:focus": {
+            borderColor: color,
+            "--tw-ring-color": color,
+          },
+        };
+      },
+    },
+    {
+      values: {
+        ...flattenColorPalette(theme("colors")),
+      },
+      type: "color",
+    }
+  );
 });
 
-export { generateSafeList, sevissui };
+export { sevissui };

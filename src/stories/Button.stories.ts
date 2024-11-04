@@ -1,7 +1,6 @@
 // @ts-nocheck
 
 import type { Meta, StoryObj } from "@storybook/svelte";
-import { BUTTON } from "$lib/config.js";
 import { definedColors } from "$lib/utils/colors.ts";
 
 import Button from "$lib/components/Button/Button.svelte";
@@ -10,20 +9,7 @@ const meta = {
   title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
-  argTypes: {
-    color: {
-      control: { type: "select" },
-      options: Object.keys(definedColors),
-    },
-    variant: {
-      control: { type: "select" },
-      options: Object.keys(BUTTON.variants),
-    },
-    theme: {
-      control: { type: "select" },
-      options: ["base", "light", "dark", "contrast"],
-    },
-  },
+  argTypes: {},
 } satisfies Meta<Button>;
 
 export default meta;
