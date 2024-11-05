@@ -10,6 +10,7 @@ const definedColors = {
   },
   gray: {
     ...tailwindColors.gray,
+    undefined: tailwindColors.gray[600],
     light: tailwindColors.gray[200],
     base: tailwindColors.gray[600],
     dark: tailwindColors.gray[700],

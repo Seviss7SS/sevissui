@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CustomCard from "$lib/customs/card/CustomCard.svelte";
+  import CustomCard from "$lib/custom/card/FlowbiteCard/FlowbiteCard.svelte";
   import Progress from "$lib/components/Progress/Progress.svelte";
 </script>
 

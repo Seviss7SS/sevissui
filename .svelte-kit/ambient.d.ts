@@ -27,7 +27,6 @@
  */
 declare module '$env/static/private' {
 	export const LESSOPEN: string;
-	export const PYTHONIOENCODING: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
 	export const SSH_AGENT_PID: string;
@@ -49,12 +48,10 @@ declare module '$env/static/private' {
 	export const VSCODE_IPC_HOOK_CLI: string;
 	export const npm_package_files_2: string;
 	export const PYENV_SHELL: string;
-	export const PYTHONUNBUFFERED: string;
 	export const NVM_INC: string;
 	export const npm_package_devDependencies__sveltejs_adapter_static: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const npm_package_devDependencies_svelte_check: string;
-	export const PS1: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
 	export const npm_package_scripts_check: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
@@ -81,6 +78,7 @@ declare module '$env/static/private' {
 	export const npm_package_scripts_check_watch: string;
 	export const npm_package_devDependencies_autoprefixer: string;
 	export const npm_package_scripts_lint: string;
+	export const npm_package_dependencies_get_best_contrast_color: string;
 	export const npm_config_registry: string;
 	export const TERM: string;
 	export const npm_package_devDependencies__storybook_addon_interactions: string;
@@ -117,7 +115,6 @@ declare module '$env/static/private' {
 	export const npm_package_svelte: string;
 	export const npm_package_devDependencies__storybook_blocks: string;
 	export const npm_package_dependencies_classnames: string;
-	export const VIRTUAL_ENV: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const npm_package_scripts_format: string;
 	export const PWD: string;
@@ -174,7 +171,6 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		LESSOPEN: string;
-		PYTHONIOENCODING: string;
 		USER: string;
 		npm_config_user_agent: string;
 		SSH_AGENT_PID: string;
@@ -196,12 +192,10 @@ declare module '$env/dynamic/private' {
 		VSCODE_IPC_HOOK_CLI: string;
 		npm_package_files_2: string;
 		PYENV_SHELL: string;
-		PYTHONUNBUFFERED: string;
 		NVM_INC: string;
 		npm_package_devDependencies__sveltejs_adapter_static: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		npm_package_devDependencies_svelte_check: string;
-		PS1: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
 		npm_package_scripts_check: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
@@ -228,6 +222,7 @@ declare module '$env/dynamic/private' {
 		npm_package_scripts_check_watch: string;
 		npm_package_devDependencies_autoprefixer: string;
 		npm_package_scripts_lint: string;
+		npm_package_dependencies_get_best_contrast_color: string;
 		npm_config_registry: string;
 		TERM: string;
 		npm_package_devDependencies__storybook_addon_interactions: string;
@@ -264,7 +259,6 @@ declare module '$env/dynamic/private' {
 		npm_package_svelte: string;
 		npm_package_devDependencies__storybook_blocks: string;
 		npm_package_dependencies_classnames: string;
-		VIRTUAL_ENV: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		npm_package_scripts_format: string;
 		PWD: string;

@@ -1,5 +1,5 @@
 <script>
-  import CustomCard from "$lib/customs/card/CustomCard.svelte";
+  import CustomCard from "$lib/custom/card/FlowbiteCard/FlowbiteCard.svelte";
 </script>
 
 <div class="p-md grid grid-cols-1 md:grid-cols-2 gap-sm">

@@ -23,8 +23,6 @@
   );
 </script>
 
-<div class="px-6 py-3.5 text-base"></div>
-
 {#if href && !disabled}
   <a {id} {href} {type} class={btnClass}>
     <slot>{label}</slot>

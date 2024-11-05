@@ -1,9 +1,6 @@
 <script lang="ts">
   import Button from "$lib/components/Button/Button.svelte";
-  import type { ComponentTheme } from "$lib/config.ts";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
-
-  export let theme: ComponentTheme = "base";
 
   const breadcrumbs = [
     {
@@ -22,15 +19,14 @@
 <nav class="flex">
   {#each breadcrumbs as breadcrumb, i}
     <Button
-      {theme}
-      variant="text"
+      variant="btn-text-gray-base"
       href={breadcrumb.active ? "" : breadcrumb.href}
       disabled={breadcrumb.active}
       colorClass={breadcrumb.active ? "text-gray-light" : ""}
-      color="primary">{breadcrumb.label}</Button
+      >{breadcrumb.label}</Button
     >
     {#if i < breadcrumbs.length - 1}
-      <ChevronRight class="text-gray-400 my-auto" />
+      <ChevronRight class="text-gray-light my-auto" />
     {/if}
   {/each}
 </nav>

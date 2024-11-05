@@ -13,5 +13,6 @@
 	"/rogakkou/(auth)/study-sets": [],
 	"/rogakkou/(auth)/study-sets/[id]": [],
 	"/rogakkou/(auth)/study-sets/[id]/edit": [],
-	"/rogakkou/(auth)/words": []
+	"/rogakkou/(auth)/words": [],
+	"/sb-admin-pro": []
 }

@@ -8,13 +8,6 @@ import Breadcrumbs from "$lib/components/Breadcrumbs/Breadcrumbs.svelte";
 import InputField from "$lib/components/InputField/InputField.svelte";
 
 // customs
-import CustomCard from "$lib/customs/card/CustomCard.svelte";
+import CustomCard from "$lib/custom/card/FlowbiteCard/FlowbiteCard.svelte";
 
-export {
-  Button,
-  Breadcrumbs,
-  Card,
-  Progress,
-  InputField,
-  CustomCard,
-};
+export { Button, Breadcrumbs, Card, Progress, InputField, CustomCard };

@@ -25,8 +25,6 @@ const sevissui = plugin(function ({
 
       "&:disabled": {
         cursor: "default",
-      },
-      "&:disabled": {
         backgroundColor: "theme(colors.disabled.light)",
         color: "theme(colors.disabled.dark)",
       },
@@ -90,6 +88,9 @@ const sevissui = plugin(function ({
       "btn-text": (color) => {
         return {
           color: color,
+          "&:disabled": {
+            backgroundColor: "transparent",
+          },
         };
       },
       "btn-subtle": (color) => {
@@ -97,6 +98,9 @@ const sevissui = plugin(function ({
           color: color,
           "&:hover": {
             backgroundColor: `${color}40`,
+          },
+          "&:disabled": {
+            backgroundColor: "transparent",
           },
         };
       },
@@ -117,6 +121,7 @@ const sevissui = plugin(function ({
       overflow: "hidden",
       backgroundColor: "white",
       position: "relative",
+      padding: theme("spacing.xl"),
       "&.clickable": {
         cursor: "pointer",
       },

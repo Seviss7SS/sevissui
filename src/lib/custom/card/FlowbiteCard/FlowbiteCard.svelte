@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { VARIANTS } from "./variants.js";
+  // @ts-nocheck
+  import { VARIANTS } from "./config.js";
 
-  export let variant: keyof typeof VARIANTS = "variant1";
+  export let variant: keyof typeof VARIANTS = "default";
 </script>
 
 {#if VARIANTS[variant]}
   <svelte:component this={VARIANTS[variant]} {...$$props}>
-    <slot slot="content">
+    <slot>
       <div class="text-black p-lg">Hello world</div>
     </slot>
   </svelte:component>
