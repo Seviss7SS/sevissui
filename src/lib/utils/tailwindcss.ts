@@ -82,7 +82,6 @@ const sevissui = plugin(function ({
           borderColor: color,
           borderWidth: "1px",
           borderStyle: "solid",
-          color: color,
         };
       },
       "btn-text": (color) => {

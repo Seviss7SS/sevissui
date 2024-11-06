@@ -15,10 +15,10 @@
   $: btnClass = cx(
     "btn font-medium focus:outline-none filter block text-center enabled:hover:opacity-75 enabled:active:opacity-50",
     {
-      [variant]: variant,
       [radius]: radius,
       [size]: size,
       [$$props.class]: $$props.class,
+      [variant]: variant,
     }
   );
 </script>

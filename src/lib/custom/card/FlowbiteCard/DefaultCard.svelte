@@ -2,8 +2,7 @@
   import cx from "classnames";
   import Card from "$lib/components/Card/Card.svelte";
 
-  export let imgSrc = "";
-  export let imgAlt = "";
+  export let title = "";
 
   const className = cx("", {
     [$$props.class]: $$props.class,
@@ -11,10 +10,8 @@
 </script>
 
 <Card {...$$props} class={className}>
-  <div class="flex h-full">
-    <img src={imgSrc} alt={imgAlt} class="h-full w-auto" />
-    <div class="flex-1">
-      <slot />
-    </div>
-  </div>
+  <h5 class="card-header mb-sm text-2xl font-bold tracking-tight">
+    {title}
+  </h5>
+  <slot />
 </Card>
