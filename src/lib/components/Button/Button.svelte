@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Spinner from "$lib/icons/Spinner.svelte";
   import cx from "classnames";
 
   export let label = "";
@@ -25,10 +26,22 @@
 
 {#if href && !disabled}
   <a {id} {href} {type} class={btnClass}>
-    <slot>{label}</slot>
+    {#if !loading}
+      <slot>{label}</slot>
+    {:else}
+      <slot name="loader"
+        ><Spinner class="animate-spin text-gray-base h-6 w-6" /></slot
+      >
+    {/if}
   </a>
 {:else}
   <button {id} {disabled} {type} class={btnClass}>
-    <slot>{label}</slot>
+    {#if !loading}
+      <slot>{label}</slot>
+    {:else}
+      <slot name="loader"
+        ><Spinner class="animate-spin text-gray-base h-6 w-6" /></slot
+      >
+    {/if}
   </button>
 {/if}
