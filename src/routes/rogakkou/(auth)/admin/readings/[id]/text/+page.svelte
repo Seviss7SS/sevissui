@@ -11,6 +11,7 @@
       name="text"
       placeholder="日本語 | translation (one line per sentence)"
       rows={24}
+      class="w-full"
     />
     <Button type="submit" class="w-full mt-2">Save</Button>
   </form>

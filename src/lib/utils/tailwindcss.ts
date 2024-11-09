@@ -176,6 +176,42 @@ const sevissui = plugin(function ({
       type: "color",
     }
   );
+
+  // textarea
+  addComponents({
+    ".textarea-field": {
+      "& > textarea": {
+        display: "block",
+        padding: theme("spacing.sm"),
+        width: "100%",
+        fontSize: "0.875rem",
+        lineHeight: "1.25rem",
+        backgroundColor: "white",
+        borderRadius: "0.5rem",
+        borderWidth: "1px",
+        borderColor: theme("colors.gray.light"),
+      },
+    },
+  });
+
+  matchUtilities(
+    {
+      textarea: (color) => {
+        return {
+          backgroundColor: "white",
+          color: "black",
+          borderColor: color,
+          "--tw-ring-color": color,
+        };
+      },
+    },
+    {
+      values: {
+        ...flattenColorPalette(theme("colors")),
+      },
+      type: "color",
+    }
+  );
 });
 
 export { sevissui };

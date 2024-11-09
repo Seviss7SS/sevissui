@@ -1,15 +1,35 @@
 <script lang="ts">
+  import cx from "classnames";
+
   export let value: string = "";
   export let id: string | undefined = undefined;
   export let name: string | undefined = undefined;
   export let placeholder: string = "";
-  export let rows: number | string | undefined = undefined;
+  export let rows: number | string | undefined = "4";
+  export let label: string = "";
+  export let containerClass: string = "";
+
+  $: className = cx("textarea outline-none focus:ring", {
+    [$$props.class]: $$props.class,
+  });
+
+  $: containerClassName = cx("textarea-field", {
+    [containerClass]: containerClass,
+  });
 </script>
 
-<textarea
-  {value}
-  {id}
-  {name}
-  {placeholder}
-  rows={typeof rows === "string" ? parseInt(rows) : rows}
-/>
+<div class={containerClassName}>
+  {#if label}
+    <label for={name || id} class="block mb-xs text-sm font-medium"
+      >{label}</label
+    >
+  {/if}
+  <textarea
+    {value}
+    {id}
+    {name}
+    {placeholder}
+    class={className}
+    rows={typeof rows === "string" ? parseInt(rows) : rows}
+  />
+</div>

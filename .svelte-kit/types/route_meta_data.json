@@ -1,5 +1,7 @@
 {
 	"/": [],
+	"/components/card": [],
+	"/components/textarea": [],
 	"/rogakkou/(auth)": [],
 	"/rogakkou/(auth)/admin": [],
 	"/rogakkou/(auth)/admin/readings": [],
@@ -13,6 +15,5 @@
 	"/rogakkou/(auth)/study-sets": [],
 	"/rogakkou/(auth)/study-sets/[id]": [],
 	"/rogakkou/(auth)/study-sets/[id]/edit": [],
-	"/rogakkou/(auth)/words": [],
-	"/sb-admin-pro": []
+	"/rogakkou/(auth)/words": []
 }
