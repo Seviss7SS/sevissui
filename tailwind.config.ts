@@ -13,6 +13,12 @@ export default {
   theme: {
     ...theme,
     extend: {
+      width: {
+        sidebar: '14.5rem',
+      },
+      height: {
+        header: '4.875rem'
+      },
       spacing: {
         /** 4px */
         xs: "0.25rem",

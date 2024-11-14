@@ -28,15 +28,42 @@
   ];
 </script>
 
-<aside class="w-64 h-screen bg-gray-800 py-4 px-3">
-  <div class="text-white text-xl pb-5 leading-none font-bold">Rogakkou</div>
-  <div class="overflow-y-auto h-full rounded-none">
-    {#each links as link}
-      <Button class="w-full" variant="btn-subtle-gray-light" href={link.href}>
+<aside
+  class="w-sidebar h-screen flex flex-col bg-gray-dark border-r border-solid border-r-gray-base"
+>
+  <div
+    class="text-white text-xl w-full leading-none font-bold h-header px-3 py-6"
+  >
+    <div>Rogakkou</div>
+  </div>
+  <div
+    class="overflow-y-auto flex-1 w-full rounded-none flex flex-col justify-between"
+  >
+    <div>
+      {#each links as link}
+        <Button
+          class="w-full"
+          radius="rounded-none"
+          variant="btn-subtle-gray-light"
+          href={link.href}
+        >
+          <div class="flex gap-x-md">
+            <span class="my-auto">{link.label}</span>
+          </div>
+        </Button>
+      {/each}
+    </div>
+    <div class="pb-3">
+      <hr class="border-gray-dark my-3" />
+      <Button
+        class="w-full"
+        radius="rounded-none"
+        variant="btn-subtle-gray-light"
+      >
         <div class="flex gap-x-md">
-          <span class="my-auto">{link.label}</span>
+          <span class="my-auto">Logout</span>
         </div>
       </Button>
-    {/each}
+    </div>
   </div>
 </aside>
