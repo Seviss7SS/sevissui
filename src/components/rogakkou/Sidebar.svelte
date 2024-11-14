@@ -32,13 +32,7 @@
   <div class="text-white text-xl pb-5 leading-none font-bold">Rogakkou</div>
   <div class="overflow-y-auto h-full rounded-none">
     {#each links as link}
-      <Button
-        theme="light"
-        class="w-full"
-        color="gray"
-        variant="subtle"
-        href={link.href}
-      >
+      <Button class="w-full" variant="btn-subtle-gray-light" href={link.href}>
         <div class="flex gap-x-md">
           <span class="my-auto">{link.label}</span>
         </div>
