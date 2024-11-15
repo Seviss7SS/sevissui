@@ -9,14 +9,19 @@
   };
 </script>
 
-<WordPopover {word}>
-  <Card paddingClass="p-0">
-    <div class={`h-full w-full flex justify-between`}>
+<WordPopover class="w-full">
+  <Card class="p-0 w-full">
+    <div class="h-full w-full flex justify-between">
       <div class="w-[50px]" />
-      <div class="p-2 text-center font-bold text-3xl">
+      <div class="p-2 text-center font-bold text-3xl flex-1">
         {word.kanji}
       </div>
-      <Button></Button>
+      <Button
+        class="w-[50px]"
+        variant="btn-subtle-gray-base"
+        radius="rounded-l-none"
+        onClick={(e) => e.stopPropagation()}>+</Button
+      >
     </div>
   </Card>
 </WordPopover>

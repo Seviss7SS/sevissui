@@ -1,26 +1,26 @@
 <script lang="ts">
-  import Card from "$lib/components/Card/Card.svelte";
-  import Progress from "$lib/components/Progress/Progress.svelte";
+  import StudySetCard from "../../../../components/rogakkou/StudySetCard.svelte";
+
+  const readings = [
+    {
+      imageSrc:
+        "https://www.oliverpetcare.com/wp-content/uploads/2020/12/pexels-helena-lopes-1790446.jpg",
+      imageAlt: "",
+      title: "Japanese Vocabulary",
+    },
+    {
+      imageSrc:
+        "https://www.oliverpetcare.com/wp-content/uploads/2020/12/pexels-helena-lopes-1790446.jpg",
+      imageAlt: "",
+      title: "Japanese Vocabulary",
+    },
+  ];
 </script>
 
 <div
-  class="container max-w-[1024px] flex flex-col items-center justify-center gap-lg text-center mx-auto pb-8 pt-4 px-3"
+  class="container max-w-[720px] flex flex-col items-center justify-center gap-lg text-center mx-auto pb-8 pt-4 px-3"
 >
-  <Card
-    clickable
-    variant="variant1"
-    imgSrc="https://images.unsplash.com/photo-1714679374077-830e435178b2?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    class="h-16 w-96"
-    theme="dark"
-    paddingClass="p-sm"
-  >
-    <div class="h-full flex flex-col justify-between p-sm">
-      <h5
-        class="text-2xl font-bold tracking-tight text-white leading-none text-left"
-      >
-        Study set
-      </h5>
-      <Progress class="mt-auto" />
-    </div>
-  </Card>
+  {#each readings as reading}
+    <StudySetCard {...reading} />
+  {/each}
 </div>

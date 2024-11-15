@@ -8,8 +8,8 @@
 
 <div
   class={cx("w-full rounded-full h-2.5", {
-    "bg-gray-700": dark,
-    "bg-gray-200": !dark,
+    "bg-gray-dark": dark,
+    "bg-gray-lightest": !dark,
     [$$props.class]: Boolean($$props.class),
   })}
 >

@@ -136,9 +136,11 @@ const sevissui = plugin(function ({
   // input
   addComponents({
     ".input-field": {
-      "& > input": {
+      "& .input-group": {
         borderWidth: "1px",
         borderStyle: "solid",
+      },
+      "& input": {
         fontSize: "0.875rem",
         lineHeight: "1.25rem",
         borderRadius: "0.5rem",
@@ -146,7 +148,7 @@ const sevissui = plugin(function ({
         width: "100%",
         padding: theme("spacing.md"),
       },
-      "& > label": {
+      "& label": {
         display: "block",
         marginBottom: theme("spacing.sm"),
         fontWeight: "500",
@@ -159,11 +161,13 @@ const sevissui = plugin(function ({
     {
       input: (color) => {
         return {
-          backgroundColor: "white",
-          color: "black",
-          "& > input:focus": {
-            borderColor: color,
+          "& .input-group": {
+            backgroundColor: "white",
+            color: "black",
             "--tw-ring-color": color,
+          },
+          "& .input-group:focus-within": {
+            borderColor: color,
           },
         };
       },

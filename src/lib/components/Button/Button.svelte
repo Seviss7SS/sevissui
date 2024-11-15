@@ -12,6 +12,7 @@
   export let variant: string = "btn-primary-base";
   export let size: string = "";
   export let id: string | undefined = undefined;
+  export let onClick: (e: MouseEvent) => void = () => {};
 
   $: btnClass = cx(
     "btn font-medium focus:outline-none filter block text-center enabled:hover:opacity-75 enabled:active:opacity-50",
@@ -25,7 +26,7 @@
 </script>
 
 {#if href && !disabled}
-  <a {id} {href} {type} class={btnClass}>
+  <a {id} {href} {type} class={btnClass} on:click={onClick}>
     {#if !loading}
       <slot>{label}</slot>
     {:else}
@@ -35,7 +36,7 @@
     {/if}
   </a>
 {:else}
-  <button {id} {disabled} {type} class={btnClass}>
+  <button {id} {disabled} {type} class={btnClass} on:click={onClick}>
     {#if !loading}
       <slot>{label}</slot>
     {:else}

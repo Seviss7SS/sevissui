@@ -7,7 +7,7 @@
   };
 </script>
 
-<Popover>
+<Popover class={$$props.class}>
   <slot></slot>
   <div slot="content">
     <div class="text-lg leading-tight text-white">{word.meaning}</div>

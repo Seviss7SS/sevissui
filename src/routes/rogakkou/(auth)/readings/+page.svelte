@@ -21,7 +21,7 @@
   ];
 </script>
 
-<div class="p-md grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
   {#each readings as reading}
     <ReadingCard {...reading} />
   {/each}

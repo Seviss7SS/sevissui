@@ -9,6 +9,15 @@
   export let placeholder: string | undefined = undefined;
   export let label: string | undefined = undefined;
   export let variant: string = "input-primary-light";
+  export let radius: string = "";
+
+  $: inputClass = cx("outline-none");
+  $: inputGroupClass = cx(
+    "input-group flex items-center relative overflow-hidden focus-within:ring",
+    {
+      [radius]: radius,
+    }
+  );
 </script>
 
 <div
@@ -20,12 +29,18 @@
   {#if label}
     <label for={name || id}>{label}</label>
   {/if}
-  <input
-    {id}
-    {name}
-    {required}
-    {placeholder}
-    type={inputType}
-    class="outline-none focus:ring"
-  />
+  <div class={inputGroupClass}>
+    <div class="flex items-center h-full pl-sm">
+      <slot name="left" />
+    </div>
+    <input
+      {id}
+      {name}
+      {required}
+      {placeholder}
+      type={inputType}
+      class={inputClass}
+    />
+    <slot name="right" />
+  </div>
 </div>

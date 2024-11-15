@@ -3,7 +3,7 @@
 </script>
 
 <Popover.Root>
-  <Popover.Trigger>
+  <Popover.Trigger class={$$props.class}>
     <slot />
   </Popover.Trigger>
   <Popover.Content
