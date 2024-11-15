@@ -1,9 +1,10 @@
 <script>
   import Sidebar from "../../../components/rogakkou/Sidebar.svelte";
   import Header from "../../../components/rogakkou/Header.svelte";
+  import DetailsAside from "../../../components/rogakkou/DetailsAside.svelte";
 </script>
 
-<div class="bg-black w-screen h-screen flex overflow-hidden">
+<div class="bg-gray-darkest w-screen h-screen flex overflow-hidden">
   <Sidebar />
   <div class="flex-1">
     <div class="bg-gray-dark w-full">
@@ -13,4 +14,5 @@
       <slot />
     </div>
   </div>
+  <DetailsAside />
 </div>

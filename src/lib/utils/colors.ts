@@ -3,17 +3,22 @@ import tailwindColors from "tailwindcss/colors.js";
 
 const definedColors = {
   primary: {
-    light: tailwindColors.blue[300],
-    base: tailwindColors.blue[700],
-    dark: tailwindColors.blue[900],
+    darkest: "#e50d06",
+    darker: "#ed4125",
+    dark: "#f45f3f",
+    base: "#fa7859",
+    light: "#ff9073",
+    lighter: "#ffa78e",
     contrast: tailwindColors.white,
   },
   gray: {
-    ...tailwindColors.gray,
-    undefined: tailwindColors.gray[600],
-    light: tailwindColors.gray[200],
-    base: tailwindColors.gray[600],
-    dark: tailwindColors.gray[700],
+    darkest: "#121212",
+    darker: "#282828",
+    dark: "#3f3f3f",
+    base: "#575757",
+    light: "#717171",
+    lighter: "#8b8b8b",
+    lightest: "#a5a5a5",
     contrast: tailwindColors.white,
   },
   disabled: {

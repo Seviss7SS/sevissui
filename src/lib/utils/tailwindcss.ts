@@ -126,10 +126,9 @@ const sevissui = plugin(function ({
       },
     },
     ".card-dark": {
-      backgroundColor: theme("colors.gray.dark"),
-      borderColor: theme("colors.gray.base"),
-      borderWidth: "1px",
-      borderStyle: "solid",
+      backgroundColor: theme("colors.gray.darker"),
+      borderWidth: "0px",
+      borderStyle: "none",
       color: theme("colors.gray.contrast"),
     },
   });

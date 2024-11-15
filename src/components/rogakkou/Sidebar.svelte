@@ -28,9 +28,7 @@
   ];
 </script>
 
-<aside
-  class="w-sidebar h-screen flex flex-col bg-gray-dark border-r border-solid border-r-gray-base"
->
+<aside class="w-sidebar h-screen flex flex-col bg-gray-darker">
   <div
     class="text-white text-xl w-full leading-none font-bold h-header px-3 py-6"
   >
@@ -42,9 +40,9 @@
     <div>
       {#each links as link}
         <Button
-          class="w-full"
+          class="w-full !text-white"
           radius="rounded-none"
-          variant="btn-subtle-gray-light"
+          variant="btn-subtle-gray-lightest"
           href={link.href}
         >
           <div class="flex gap-x-md">
@@ -54,7 +52,7 @@
       {/each}
     </div>
     <div class="pb-3">
-      <hr class="border-gray-dark my-3" />
+      <hr class="border-gray-base my-3" />
       <Button
         class="w-full"
         radius="rounded-none"
