@@ -3,7 +3,7 @@
   import Modal from "$lib/components/Modal/Modal.svelte";
   import FormRenderer from "$lib/components/FormRenderer/FormRenderer.svelte";
 
-  export let open: boolean = true;
+  export let open: boolean = false;
 </script>
 
 <Modal {open}>
