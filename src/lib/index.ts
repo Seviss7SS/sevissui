@@ -21,7 +21,6 @@ export {
   Checkbox,
   Dropdown,
   FormRenderer,
-  Progress,
   InputField,
   Modal,
   Pagination,
