@@ -19,7 +19,7 @@
   {#each fields as field}
     <InputField {...field} />
   {/each}
-  {#if handleSubmit}
+  <slot name="submit">
     <Button type="submit" label="Submit" />
-  {/if}
+  </slot>
 </form>
