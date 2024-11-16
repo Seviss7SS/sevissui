@@ -15,12 +15,13 @@
   export let onClick: (e: MouseEvent) => void = () => {};
 
   $: btnClass = cx(
-    "btn font-medium focus:outline-none filter block text-center enabled:hover:opacity-75 enabled:active:opacity-50",
+    "btn font-medium focus:outline-none filter block text-center enabled:hover:opacity-75 enabled:active:opacity-50 relative overflow-hidden",
     {
       [radius]: radius,
       [size]: size,
       [$$props.class]: $$props.class,
       [variant]: variant,
+      "animate-pulse": skeleton,
     }
   );
 </script>
@@ -37,12 +38,14 @@
   </a>
 {:else}
   <button {id} {disabled} {type} class={btnClass} on:click={onClick}>
-    {#if !loading}
-      <slot>{label}</slot>
-    {:else}
+    {#if skeleton}
+      <div></div>
+    {:else if loading}
       <slot name="loader"
         ><Spinner class="animate-spin text-gray-base h-6 w-6" /></slot
       >
+    {:else}
+      <slot>{label}</slot>
     {/if}
   </button>
 {/if}
