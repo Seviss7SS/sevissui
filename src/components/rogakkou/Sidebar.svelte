@@ -76,7 +76,7 @@
       </Button>
     </div>
     <div class="pb-3">
-      <hr class="border-gray-base my-3" />
+      <hr class="border-gray my-3" />
       <Button
         class="w-full !text-white"
         radius="rounded-none"

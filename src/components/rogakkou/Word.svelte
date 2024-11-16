@@ -6,6 +6,6 @@
   };
 </script>
 
-<Button roundedClass="rounded-full" color="white">
+<Button radius="rounded-full" color="white">
   {word.kanji}
 </Button>

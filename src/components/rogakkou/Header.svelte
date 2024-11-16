@@ -9,7 +9,7 @@
   <h1 class="text-white font-bold text-3xl h-full">
     {title}
   </h1>
-  <InputField placeholder="Search" radius="rounded-full">
+  <InputField placeholder="Search">
     <Search slot="left" />
   </InputField>
 </header>

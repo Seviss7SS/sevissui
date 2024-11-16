@@ -10,8 +10,8 @@
   <div class="gap-8 flex flex-col">
     <div class="text-9xl leading-none text-white">ピアス</div>
     <form class="w-full">
-      <InputField size="lg" radius="rounded-full" align="text-center">
-        <Button type="button" variant="btn-subtle-gray-base" slot="right">
+      <InputField size="lg" align="text-center">
+        <Button type="button" variant="btn-subtle-gray" slot="right">
           {">"}
         </Button>
       </InputField>

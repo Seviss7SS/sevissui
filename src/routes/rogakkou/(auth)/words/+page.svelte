@@ -7,7 +7,7 @@
 
 <div class="h-full flex flex-col">
   <form novalidate class="max-w-[1024px] w-full mx-auto py-4 flex">
-    <InputField name="search" radius="rounded-full" class="w-full">
+    <InputField name="search" class="w-full">
       <Button radius="rounded-none" slot="right" type="submit">
         <Search />
       </Button>
