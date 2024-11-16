@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "$lib/components/Button/Button.svelte";
+  import { page } from "$app/stores";
 
   const links = [
     {
@@ -26,6 +27,23 @@
       href: "/rogakkou/admin",
     },
   ];
+
+  const adminLinks = [
+    {
+      label: "Admin",
+      href: "/rogakkou/admin",
+    },
+    {
+      label: "Readings",
+      href: "/rogakkou/admin/readings",
+    },
+    {
+      label: "Words",
+      href: "/rogakkou/admin/words",
+    },
+  ];
+
+  $: sidebarLinks = $page.url.pathname.includes("admin") ? adminLinks : links;
 </script>
 
 <aside class="w-sidebar h-screen flex flex-col bg-gray-darker">
@@ -38,7 +56,7 @@
     class="overflow-y-auto flex-1 w-full rounded-none flex flex-col justify-between"
   >
     <div>
-      {#each links as link}
+      {#each sidebarLinks as link}
         <Button
           class="w-full !text-white"
           radius="rounded-none"
