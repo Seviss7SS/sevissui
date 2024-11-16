@@ -125,12 +125,6 @@ const sevissui = plugin(function ({
         cursor: "pointer",
       },
     },
-    ".card-dark": {
-      backgroundColor: theme("colors.gray.darker"),
-      borderWidth: "0px",
-      borderStyle: "none",
-      color: theme("colors.gray.contrast"),
-    },
   });
 
   // input

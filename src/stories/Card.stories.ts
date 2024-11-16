@@ -19,7 +19,5 @@ export const Base: Story = {
 };
 
 export const Dark: Story = {
-  args: {
-    class: "card-dark",
-  },
+  args: {},
 };

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card {
+    @apply dark:bg-gray-darker dark:border-none dark:text-gray-contrast;
+  }
+}

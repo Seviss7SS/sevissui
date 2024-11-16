@@ -3,9 +3,10 @@
   import Card from "$lib/components/Card/Card.svelte";
 
   const labelClass = "text-xl mb-sm font-bold";
+  const containerClass = "p-lg flex flex-col gap-y-md";
 </script>
 
-<div class="p-lg flex flex-col gap-y-md">
+<div class={containerClass}>
   <h1 class="text-3xl mb-md font-black">Flowbite</h1>
   <hr />
   <div>
