@@ -10,8 +10,11 @@
   export let label: string | undefined = undefined;
   export let variant: string = "input-primary-light";
   export let radius: string = "";
+  export let align: string = "text-left";
 
-  $: inputClass = cx("outline-none");
+  $: inputClass = cx("outline-none", {
+    [align]: align,
+  });
   $: inputGroupClass = cx(
     "input-group flex items-center relative overflow-hidden focus-within:ring",
     {

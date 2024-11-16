@@ -10,18 +10,13 @@
 </script>
 
 <WordPopover class="w-full">
-  <Card class="p-0 w-full">
+  <Card class="p-0">
     <div class="h-full w-full flex justify-between">
       <div class="w-[50px]" />
-      <div class="p-2 text-center font-bold text-3xl flex-1">
+      <div class="p-2 text-center font-bold text-3xl">
         {word.kanji}
       </div>
-      <Button
-        class="w-[50px]"
-        variant="btn-subtle-gray-base"
-        radius="rounded-l-none"
-        onClick={(e) => e.stopPropagation()}>+</Button
-      >
+      <Button radius="rounded-none" variant="btn-subtle-gray-light">+</Button>
     </div>
   </Card>
 </WordPopover>
