@@ -1,5 +1,6 @@
 <script lang="ts">
   import cx from "classnames";
+  import type { ChangeEventHandler } from "svelte/elements";
 
   export let value: string = "";
   export let id: string | undefined = undefined;
@@ -8,6 +9,7 @@
   export let rows: number | string | undefined = "4";
   export let label: string = "";
   export let containerClass: string = "";
+  export let onChange: ChangeEventHandler<HTMLTextAreaElement> = () => {};
 
   $: className = cx("textarea outline-none focus:ring", {
     [$$props.class]: $$props.class,
@@ -25,11 +27,12 @@
     >
   {/if}
   <textarea
-    {value}
     {id}
     {name}
     {placeholder}
     class={className}
     rows={typeof rows === "string" ? parseInt(rows) : rows}
+    bind:value
+    on:change={onChange}
   />
 </div>
