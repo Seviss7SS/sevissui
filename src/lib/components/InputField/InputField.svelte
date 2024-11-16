@@ -1,16 +1,17 @@
 <script lang="ts">
   import cx from "classnames";
-  import type { HTMLInputTypeAttribute } from "svelte/elements";
 
-  export let inputType: HTMLInputTypeAttribute | null | undefined = "text";
-  export let id: string | undefined = undefined;
-  export let name: string | undefined = undefined;
-  export let required: boolean = false;
-  export let placeholder: string | undefined = undefined;
-  export let label: string | undefined = undefined;
-  export let variant: string = "input-primary-light";
-  export let radius: string = "rounded-full";
-  export let align: string = "text-left";
+  import type { InputFieldProps } from "./types.ts";
+
+  export let inputType: InputFieldProps["inputType"] = "text";
+  export let id: InputFieldProps["id"] = undefined;
+  export let name: InputFieldProps["name"] = undefined;
+  export let required: InputFieldProps["required"] = false;
+  export let placeholder: InputFieldProps["placeholder"] = undefined;
+  export let label: InputFieldProps["label"] = undefined;
+  export let variant: InputFieldProps["variant"] = "input-primary-light";
+  export let radius: InputFieldProps["radius"] = "rounded-full";
+  export let align: InputFieldProps["align"] = "text-left";
 
   $: inputClass = cx("outline-none", {
     [align]: align,
