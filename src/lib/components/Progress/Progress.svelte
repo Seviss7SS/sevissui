@@ -1,20 +1,19 @@
-<script>
+<script lang="ts">
   import cx from "classnames";
 
-  export let progress = 0;
-  export let dark = false;
-  export let color = "primary";
+  export let progress: number = 0;
+  export let color: string = "progress-primary-base";
+  export let size: string = "progress-md";
+  export let background: string = "progress-bg-gray-lightest";
 </script>
 
 <div
-  class={cx("w-full rounded-full h-2.5", {
-    "bg-gray-dark": dark,
-    "bg-gray-lightest": !dark,
+  class={cx("progress w-full rounded-full", {
+    [color]: color,
+    [size]: size,
+    [background]: background,
     [$$props.class]: Boolean($$props.class),
   })}
 >
-  <div
-    class={`bg-${color}-600 h-2.5 rounded-full`}
-    style="width: {progress}%"
-  ></div>
+  <div class="progress-fill rounded-full" style="width: {progress}%"></div>
 </div>

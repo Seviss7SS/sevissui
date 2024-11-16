@@ -14,10 +14,17 @@ export default {
     ...theme,
     extend: {
       width: {
-        sidebar: '14.5rem',
+        sidebar: "14.5rem",
       },
       height: {
-        header: '4.875rem'
+        header: "4.875rem",
+        progress: {
+          xs: "0.25rem",
+          sm: "0.375rem",
+          md: "0.625rem",
+          lg: "1rem",
+          xl: "1.5rem",
+        },
       },
       spacing: {
         /** 4px */

@@ -215,6 +215,68 @@ const sevissui = plugin(function ({
       type: "color",
     }
   );
+
+  // progress
+  addComponents({
+    ".progress": {
+      width: "100%",
+      borderRadius: "9999px",
+    },
+    ".progress-xs": {
+      height: theme("height.progress.xs"),
+      "& .progress-fill": {
+        height: theme("height.progress.xs"),
+      },
+    },
+    ".progress-sm": {
+      height: theme("height.progress.sm"),
+      "& .progress-fill": {
+        height: theme("height.progress.sm"),
+      },
+    },
+    ".progress-md": {
+      height: theme("height.progress.md"),
+      "& .progress-fill": {
+        height: theme("height.progress.md"),
+      },
+    },
+    ".progress-lg": {
+      height: theme("height.progress.lg"),
+      "& .progress-fill": {
+        height: theme("height.progress.lg"),
+      },
+    },
+    ".progress-xl": {
+      height: theme("height.progress.xl"),
+      "& .progress-fill": {
+        height: theme("height.progress.xl"),
+      },
+    },
+  });
+
+  matchUtilities(
+    {
+      progress: (color) => {
+        return {
+          "& .progress-fill": {
+            backgroundColor: color,
+          },
+          color: bestContrast(color, ["#fff", "#000"]),
+        };
+      },
+      "progress-bg": (color) => {
+        return {
+          backgroundColor: color,
+        };
+      },
+    },
+    {
+      values: {
+        ...flattenColorPalette(theme("colors")),
+      },
+      type: "color",
+    }
+  );
 });
 
 export { sevissui };
