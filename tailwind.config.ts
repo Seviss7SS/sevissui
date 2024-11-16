@@ -38,6 +38,9 @@ export default {
         /** 24px */
         xl: "1.5rem",
       },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+      },
     },
   },
   plugins: [sevissui],

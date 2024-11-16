@@ -8,8 +8,8 @@
   export let disabled = false;
   export let type: "button" | "submit" | "reset" | undefined = "button";
   export let href: string = "";
-  export let radius = "rounded-lg";
-  export let variant: string = "btn-primary-base";
+  export let radius = "rounded";
+  export let variant: string = "btn-primary";
   export let size: string = "";
   export let id: string | undefined = undefined;
   export let onClick: (e: MouseEvent) => void = () => {};
@@ -32,7 +32,7 @@
       <slot>{label}</slot>
     {:else}
       <slot name="loader"
-        ><Spinner class="animate-spin text-gray-base h-6 w-6" /></slot
+        ><Spinner class="animate-spin text-grayase h-6 w-6" /></slot
       >
     {/if}
   </a>
@@ -42,7 +42,7 @@
       <div></div>
     {:else if loading}
       <slot name="loader"
-        ><Spinner class="animate-spin text-gray-base h-6 w-6" /></slot
+        ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
       >
     {:else}
       <slot>{label}</slot>

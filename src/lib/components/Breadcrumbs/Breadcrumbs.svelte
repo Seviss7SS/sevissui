@@ -19,7 +19,7 @@
 <nav class="flex">
   {#each breadcrumbs as breadcrumb, i}
     <Button
-      variant="btn-text-gray-base"
+      variant="btn-text-gray"
       href={breadcrumb.active ? "" : breadcrumb.href}
       disabled={breadcrumb.active}
       colorClass={breadcrumb.active ? "text-gray-light" : ""}

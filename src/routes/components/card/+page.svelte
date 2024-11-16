@@ -173,7 +173,7 @@
         />
         <h5 class="mb-sm text-xl font-medium">Bonnie Green</h5>
         <div class="flex mt-lg md:mt-xl gap-x-sm">
-          <Button variant="btn-filled-primary-base" label="Add Friend" />
+          <Button variant="btn-filled-primary" label="Add Friend" />
           <Button variant="btn-outlined-gray-light" label="Message" />
         </div>
       </div>

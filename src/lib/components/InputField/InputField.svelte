@@ -10,7 +10,7 @@
   export let placeholder: InputFieldProps["placeholder"] = undefined;
   export let label: InputFieldProps["label"] = undefined;
   export let variant: InputFieldProps["variant"] = "input-primary-light";
-  export let radius: InputFieldProps["radius"] = "rounded-full";
+  export let radius: InputFieldProps["radius"] = "rounded";
   export let align: InputFieldProps["align"] = "text-left";
 
   $: inputClass = cx("outline-none", {
