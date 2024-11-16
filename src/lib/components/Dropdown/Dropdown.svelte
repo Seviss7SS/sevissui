@@ -12,7 +12,7 @@
     <slot />
   </DropdownMenu.Trigger>
   <DropdownMenu.Content
-    class="w-full max-w-[229px] rounded-xl border px-xs py-sm shadow"
+    class="w-full max-w-[229px] rounded border px-xs py-sm shadow"
     sideOffset={8}
   >
     {#each dropdownItems as dropdownItem}

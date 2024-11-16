@@ -9,10 +9,6 @@
   <hr />
   <div>
     <h3 class={labelClass}>Default</h3>
-    <Textarea
-      label="Your message"
-      name="message"
-      class="textarea-primary-base"
-    />
+    <Textarea label="Your message" name="message" class="textarea-primary" />
   </div>
 </div>

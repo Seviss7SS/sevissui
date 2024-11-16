@@ -21,7 +21,7 @@ const sevissui = plugin(function ({
       paddingBottom: "0.625rem",
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
-      borderRadius: "0.5rem",
+      borderRadius: theme("borderRadius.DEFAULT"),
 
       "&:disabled": {
         cursor: "default",
@@ -116,7 +116,7 @@ const sevissui = plugin(function ({
   addComponents({
     ".card": {
       display: "block",
-      borderRadius: theme("borderRadius.lg"),
+      borderRadius: theme("borderRadius.DEFAULT"),
       overflow: "hidden",
       backgroundColor: "white",
       position: "relative",
@@ -143,7 +143,7 @@ const sevissui = plugin(function ({
       "& input": {
         fontSize: "0.875rem",
         lineHeight: "1.25rem",
-        borderRadius: "0.5rem",
+        borderRadius: theme("borderRadius.DEFAULT"),
         display: "block",
         width: "100%",
         padding: theme("spacing.md"),
@@ -190,7 +190,7 @@ const sevissui = plugin(function ({
         fontSize: "0.875rem",
         lineHeight: "1.25rem",
         backgroundColor: "white",
-        borderRadius: "0.5rem",
+        borderRadius: theme("borderRadius.DEFAULT"),
         borderWidth: "1px",
         borderColor: theme("colors.gray.light"),
       },

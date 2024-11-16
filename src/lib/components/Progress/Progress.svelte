@@ -2,7 +2,7 @@
   import cx from "classnames";
 
   export let progress: number = 0;
-  export let color: string = "progress-primary-base";
+  export let color: string = "progress-primary";
   export let size: string = "progress-md";
   export let background: string = "progress-bg-gray-lightest";
 </script>
