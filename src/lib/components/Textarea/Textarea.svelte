@@ -27,12 +27,12 @@
     >
   {/if}
   <textarea
-    {value}
     {id}
     {name}
     {placeholder}
     class={className}
     rows={typeof rows === "string" ? parseInt(rows) : rows}
+    bind:value
     on:change={onChange}
   />
 </div>

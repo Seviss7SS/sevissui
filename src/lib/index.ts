@@ -12,6 +12,7 @@ import Modal from "$lib/components/Modal/Modal.svelte";
 import Pagination from "$lib/components/Pagination/Pagination.svelte";
 import Progress from "$lib/components/Progress/Progress.svelte";
 import Textarea from "$lib/components/Textarea/Textarea.svelte";
+import { sevissui } from "$lib/utils/tailwindcss.ts";
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   Pagination,
   Progress,
   Textarea,
+  sevissui,
 };
