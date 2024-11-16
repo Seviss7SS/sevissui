@@ -9,7 +9,7 @@
   export let placeholder: string | undefined = undefined;
   export let label: string | undefined = undefined;
   export let variant: string = "input-primary-light";
-  export let radius: string = "";
+  export let radius: string = "rounded-full";
   export let align: string = "text-left";
 
   $: inputClass = cx("outline-none", {

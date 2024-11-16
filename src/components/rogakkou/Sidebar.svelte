@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "$lib/components/Button/Button.svelte";
+  import AddWordModal from "./AddWordModal.svelte";
   import { page } from "$app/stores";
 
   const links = [
@@ -18,9 +19,6 @@
     {
       label: "Words",
       href: "/rogakkou/words",
-    },
-    {
-      label: "Add Word",
     },
     {
       label: "Admin",
@@ -68,6 +66,15 @@
           </div>
         </Button>
       {/each}
+      <Button
+        class="w-full !text-white"
+        radius="rounded-none"
+        variant="btn-subtle-gray-lightest"
+      >
+        <div class="flex gap-x-md">
+          <span class="my-auto">Add Word</span>
+        </div>
+      </Button>
     </div>
     <div class="pb-3">
       <hr class="border-gray-base my-3" />
