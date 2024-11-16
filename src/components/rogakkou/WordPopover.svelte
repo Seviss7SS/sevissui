@@ -12,7 +12,7 @@
 
 <Popover class={$$props.class} fullWidth={false} contentClass="max-w-96">
   <slot></slot>
-  <Card slot="content" class="w-full text-sm font-light p-md card-dark mx-auto">
+  <Card slot="content" class="w-full text-sm font-light p-md mx-auto">
     <div class="text-xl font-bold text-center">{word.kanji}</div>
     <div class="text-sm text-gray-lightest text-center mb-md">(kotoba)</div>
     <div class="text-lg leading-tight text-white text-center">

@@ -7,7 +7,7 @@
 </script>
 
 <Modal {open}>
-  <Card slot="content" class="card-dark">
+  <Card slot="content">
     <h6 class="font-bold mb-xl">Add Word</h6>
     <FormRenderer fields={[{ label: "Word" }]} handleSubmit={() => {}} />
   </Card>

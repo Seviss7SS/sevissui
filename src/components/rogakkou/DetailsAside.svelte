@@ -4,7 +4,7 @@
 
 <aside class="px-lg pt-xl w-[352px] h-screen bg-gray-darker">
   <h3 class="text-xl font-bold text-white mb-xl">Word Details</h3>
-  <Card class="card-dark p-0">
+  <Card class="p-0">
     <img
       class="w-full"
       alt=""
@@ -16,7 +16,7 @@
     </div>
   </Card>
   <h3 class="text-xl font-bold text-white my-xl">Progress</h3>
-  <Card class="card-dark border border-solid border-gray-lightest p-lg">
+  <Card class="border border-solid border-gray-lightest p-lg">
     <div class="flex gap-x-md">
       <div class="w-12 h-12 flex rounded-full bg-white text-black">
         <span class="m-auto font-bold">W</span>

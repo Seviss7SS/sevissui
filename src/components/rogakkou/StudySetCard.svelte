@@ -6,7 +6,7 @@
   export let title = "";
 </script>
 
-<Card class="w-full h-20 p-sm flex gap-x-md text-white card-dark rounded-3xl">
+<Card class="w-full h-20 p-sm flex gap-x-md text-white rounded-3xl">
   <div
     style={`background-image: url("${imageSrc}");`}
     class="w-32 rounded-3xl bg-center"
