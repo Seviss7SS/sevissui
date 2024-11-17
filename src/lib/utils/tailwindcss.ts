@@ -45,8 +45,9 @@ function calculateContrastRatio(L1, L2) {
   return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
 }
 
-function extractColor(color) {
-  return typeof color === "string" ? color : color({});
+function extractColor(color, opacity) {
+  // TODO: string color to support opacity (will require a hex map)
+  return typeof color === "string" ? color : color({ opacityValue: opacity });
 }
 
 const sevissui = plugin(function ({
@@ -143,10 +144,11 @@ const sevissui = plugin(function ({
       },
       "btn-subtle": (_color) => {
         const color = extractColor(_color);
+        const colorBg = extractColor(_color, 0.25);
         return {
           color: color,
           "&:hover": {
-            backgroundColor: `${color}40`,
+            backgroundColor: colorBg,
           },
           "&:disabled": {
             backgroundColor: "transparent",
