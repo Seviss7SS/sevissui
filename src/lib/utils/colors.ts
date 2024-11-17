@@ -9,7 +9,7 @@ const definedColors = {
     DEFAULT: "#fa7859",
     light: "#ff9073",
     lighter: "#ffa78e",
-    contrast: tailwindColors.white,
+    contrast: "#ffffff",
   },
   gray: {
     darkest: "#121212",
@@ -19,13 +19,11 @@ const definedColors = {
     light: "#717171",
     lighter: "#8b8b8b",
     lightest: "#a5a5a5",
-    contrast: tailwindColors.white,
+    contrast: "#ffffff",
   },
   disabled: {
-    light: tailwindColors.gray[100],
-    DEFAULT: tailwindColors.gray[200],
-    dark: tailwindColors.gray[400],
-    contrast: tailwindColors.gray[400],
+    DEFAULT: "#a5a5a5",
+    contrast: "#575757",
   },
 };
 
