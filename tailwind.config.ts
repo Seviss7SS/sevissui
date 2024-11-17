@@ -1,3 +1,4 @@
+import { createThemes } from "tw-colors";
 import { sevissui } from "./src/lib/utils/tailwindcss.js";
 import { colors } from "./src/lib/utils/colors.js";
 
@@ -43,6 +44,35 @@ export default {
       },
     },
   },
-  plugins: [sevissui],
+  plugins: [
+    sevissui,
+    createThemes(({ light, dark }) => ({
+      test: dark({
+        primary: {
+          darkest: "#e50d06",
+          darker: "#ed4125",
+          dark: "#f45f3f",
+          DEFAULT: "#ff0000",
+          light: "#ff9073",
+          lighter: "#ffa78e",
+        },
+        gray: {
+          darkest: "#121212",
+          darker: "#282828",
+          dark: "#3f3f3f",
+          DEFAULT: "#575757",
+          light: "#717171",
+          lighter: "#8b8b8b",
+          lightest: "#a5a5a5",
+        },
+        disabled: {
+          light: "#a5a5a5",
+          DEFAULT: "#8b8b8b",
+          dark: "#575757",
+        },
+      }),
+      sevissrs: {},
+    })),
+  ],
   darkMode: "selector",
 };

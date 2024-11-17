@@ -45,6 +45,10 @@ function calculateContrastRatio(L1, L2) {
   return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
 }
 
+function extractColor(color) {
+  return typeof color === "string" ? color : color({});
+}
+
 const sevissui = plugin(function ({
   matchUtilities,
   addComponents,
@@ -106,26 +110,30 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      btn: (color) => {
+      btn: (_color) => {
+        const color = extractColor(_color);
         return {
           backgroundColor: color,
           color: bestContrast(color),
         };
       },
-      "btn-filled": (color) => {
+      "btn-filled": (_color) => {
+        const color = extractColor(_color);
         return {
           backgroundColor: color,
           color: bestContrast(color),
         };
       },
-      "btn-outlined": (color) => {
+      "btn-outlined": (_color) => {
+        const color = extractColor(_color);
         return {
           borderColor: color,
           borderWidth: "1px",
           borderStyle: "solid",
         };
       },
-      "btn-text": (color) => {
+      "btn-text": (_color) => {
+        const color = extractColor(_color);
         return {
           color: color,
           "&:disabled": {
@@ -133,7 +141,8 @@ const sevissui = plugin(function ({
           },
         };
       },
-      "btn-subtle": (color) => {
+      "btn-subtle": (_color) => {
+        const color = extractColor(_color);
         return {
           color: color,
           "&:hover": {
@@ -194,7 +203,8 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      input: (color) => {
+      input: (_color) => {
+        const color = extractColor(_color);
         return {
           "& .input-group": {
             backgroundColor: "white",
@@ -234,7 +244,8 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      textarea: (color) => {
+      textarea: (_color) => {
+        const color = extractColor(_color);
         return {
           backgroundColor: "white",
           color: "black",
@@ -291,7 +302,8 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      progress: (color) => {
+      progress: (_color) => {
+        const color = extractColor(_color);
         return {
           "& .progress-fill": {
             backgroundColor: color,
@@ -299,7 +311,8 @@ const sevissui = plugin(function ({
           color: bestContrast(color),
         };
       },
-      "progress-bg": (color) => {
+      "progress-bg": (_color) => {
+        const color = extractColor(_color);
         return {
           backgroundColor: color,
         };
