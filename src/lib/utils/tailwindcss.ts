@@ -111,13 +111,6 @@ const sevissui = plugin(function ({
 
   matchUtilities(
     {
-      btn: (_color) => {
-        const color = extractColor(_color);
-        return {
-          backgroundColor: color,
-          color: bestContrast(color),
-        };
-      },
       "btn-filled": (_color) => {
         const color = extractColor(_color);
         return {

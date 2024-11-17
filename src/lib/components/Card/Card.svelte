@@ -7,11 +7,23 @@
   const isClickable = Boolean(clickable || href);
 </script>
 
-<div
-  class={cx("card shadow filter", {
-    "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
-    [$$props.class]: $$props.class,
-  })}
->
-  <slot />
-</div>
+{#if href}
+  <a
+    {href}
+    class={cx("card shadow filter", {
+      "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
+      [$$props.class]: $$props.class,
+    })}
+  >
+    <slot />
+  </a>
+{:else}
+  <div
+    class={cx("card shadow filter", {
+      "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
+      [$$props.class]: $$props.class,
+    })}
+  >
+    <slot />
+  </div>
+{/if}
