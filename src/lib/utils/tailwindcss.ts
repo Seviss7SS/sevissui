@@ -4,18 +4,22 @@ import plugin from "tailwindcss/plugin";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 function bestContrast(hexColor) {
-  // Convert hex to RGB
-  const rgb = hexToRgb(hexColor);
+  try {
+    // Convert hex to RGB
+    const rgb = hexToRgb(hexColor);
 
-  // Calculate luminance
-  const luminance = calculateLuminance(rgb);
+    // Calculate luminance
+    const luminance = calculateLuminance(rgb);
 
-  // Calculate contrast ratios
-  const contrastBlack = calculateContrastRatio(luminance, 0);
-  const contrastWhite = calculateContrastRatio(luminance, 1);
+    // Calculate contrast ratios
+    const contrastBlack = calculateContrastRatio(luminance, 0);
+    const contrastWhite = calculateContrastRatio(luminance, 1);
 
-  // Return better contrast color
-  return contrastBlack > contrastWhite ? "#000000" : "#ffffff";
+    // Return better contrast color
+    return contrastBlack > contrastWhite ? "#000000" : "#ffffff";
+  } catch (err) {
+    return "#000000";
+  }
 }
 
 // Helper functions
