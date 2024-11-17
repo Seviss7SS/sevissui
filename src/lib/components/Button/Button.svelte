@@ -10,18 +10,23 @@
   export let href: string = "";
   export let radius = "rounded";
   export let variant: string = "btn-primary";
-  export let size: string = "";
+  export let size: string = "btn-md";
   export let id: string | undefined = undefined;
-  export let onClick: (e: MouseEvent) => void = () => {};
+  export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
+
+  const isClickable: boolean = Boolean(onClick || href);
 
   $: btnClass = cx(
-    "btn font-medium focus:outline-none filter block text-center enabled:hover:opacity-75 enabled:active:opacity-50 relative overflow-hidden",
+    "btn font-medium focus:outline-none filter block text-center relative overflow-hidden",
     {
       [radius]: radius,
       [size]: size,
-      [$$props.class]: $$props.class,
       [variant]: variant,
+      "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
+        isClickable,
+      "cursor-default": !isClickable,
       "animate-pulse": skeleton,
+      [$$props.class]: $$props.class,
     }
   );
 </script>

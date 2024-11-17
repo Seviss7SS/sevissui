@@ -61,12 +61,6 @@ const sevissui = plugin(function ({
   addComponents({
     ".btn": {
       fontWeight: "600",
-      paddingLeft: "1.25rem",
-      paddingRight: "1.25rem",
-      paddingTop: "0.625rem",
-      paddingBottom: "0.625rem",
-      fontSize: "0.875rem",
-      lineHeight: "1.25rem",
       borderRadius: theme("borderRadius.DEFAULT"),
 
       "&:disabled": {
@@ -88,6 +82,14 @@ const sevissui = plugin(function ({
       paddingRight: "0.75rem",
       paddingTop: "0.5rem",
       paddingBottom: "0.5rem",
+      fontSize: "0.875rem",
+      lineHeight: "1.25rem",
+    },
+    ".btn-md": {
+      paddingLeft: "1.25rem",
+      paddingRight: "1.25rem",
+      paddingTop: "0.625rem",
+      paddingBottom: "0.625rem",
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
     },
@@ -186,6 +188,7 @@ const sevissui = plugin(function ({
         display: "block",
         width: "100%",
         padding: theme("spacing.md"),
+        backgroundColor: "white",
       },
       "& label": {
         display: "block",

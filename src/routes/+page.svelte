@@ -10,6 +10,10 @@
       href: "/components/textarea",
       label: "Textarea",
     },
+    {
+      href: "/components/input-field",
+      label: "Input Field",
+    },
   ];
 </script>
 

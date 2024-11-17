@@ -1,29 +1,27 @@
 <script lang="ts">
   import cx from "classnames";
 
-  export let clickable: boolean = false;
   export let href: string = "";
+  export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
 
-  const isClickable = Boolean(clickable || href);
+  const isClickable = Boolean(onClick || href);
+
+  $: cardClass = cx("card shadow filter", {
+    "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
+    [$$props.class]: $$props.class,
+  });
 </script>
 
 {#if href}
-  <a
-    {href}
-    class={cx("card shadow filter", {
-      "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
-      [$$props.class]: $$props.class,
-    })}
-  >
+  <a on:click={onClick} {href} class={cardClass}>
     <slot />
   </a>
+{:else if isClickable}
+  <button on:click={onClick} class={cardClass}>
+    <slot />
+  </button>
 {:else}
-  <div
-    class={cx("card shadow filter", {
-      "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
-      [$$props.class]: $$props.class,
-    })}
-  >
+  <div class={cardClass}>
     <slot />
   </div>
 {/if}

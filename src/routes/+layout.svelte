@@ -2,6 +2,6 @@
   import "../app.scss";
 </script>
 
-<div class="test">
+<div class="test h-screen overflow-y-auto">
   <slot />
 </div>

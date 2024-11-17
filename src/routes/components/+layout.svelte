@@ -6,7 +6,7 @@
 
   // TODO: implement light / dark mode toggle
 
-  $: containerClass = cx("", {
+  $: containerClass = cx("h-full", {
     "bg-gray-darkest dark text-white": !light,
   });
 </script>
