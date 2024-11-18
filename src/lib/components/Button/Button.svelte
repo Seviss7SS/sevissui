@@ -14,7 +14,11 @@
   export let id: string | undefined = undefined;
   export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
 
-  const isClickable: boolean = Boolean(onClick || href);
+  const isClickable: boolean =
+    (Boolean(onClick || href) || type !== "button") &&
+    !disabled &&
+    !loading &&
+    !skeleton;
 
   $: btnClass = cx(
     "btn font-medium focus:outline-none filter block text-center relative overflow-hidden",
