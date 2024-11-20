@@ -11,7 +11,7 @@
   export let containerClass: string = "";
   export let onChange: ChangeEventHandler<HTMLTextAreaElement> = () => {};
 
-  $: className = cx("textarea outline-none focus:ring", {
+  $: className = cx("textarea outline-none focus:ring-1", {
     [$$props.class]: $$props.class,
   });
 

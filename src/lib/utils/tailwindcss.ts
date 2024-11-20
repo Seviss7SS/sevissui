@@ -247,8 +247,10 @@ const sevissui = plugin(function ({
         return {
           backgroundColor: "white",
           color: "black",
-          borderColor: color,
-          "--tw-ring-color": color,
+          "&:focus": {
+            borderColor: color,
+            "--tw-ring-color": color,
+          },
         };
       },
     },
@@ -313,6 +315,51 @@ const sevissui = plugin(function ({
         const color = extractColor(_color);
         return {
           backgroundColor: color,
+        };
+      },
+    },
+    {
+      values: {
+        ...flattenColorPalette(theme("colors")),
+      },
+      type: "color",
+    }
+  );
+
+  // switch
+  addComponents({
+    ".switch-toggle": {
+      position: "relative",
+      backgroundColor: theme("colors.gray.lightest"),
+      borderRadius: "9999px",
+      "&.peer": {
+        "&:focus ~ &": {
+          outline: "2px solid transparent",
+          outlineOffset: "2px",
+        },
+      },
+      "&::after": {
+        backgroundColor: "white",
+        borderStyle: "none",
+        borderContent: "",
+        position: "absolute",
+        borderRadius: "9999px",
+        top: "2px",
+        insetInlineStart: "2px",
+        height: "1.25rem",
+        width: "1.25rem",
+      },
+    },
+  });
+
+  matchUtilities(
+    {
+      switch: (_color) => {
+        const color = extractColor(_color);
+        return {
+          "& .peer:enabled:checked ~ .switch-toggle": {
+            backgroundColor: color,
+          },
         };
       },
     },

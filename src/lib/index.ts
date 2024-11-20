@@ -12,6 +12,7 @@ import Modal from "$lib/components/Modal/Modal.svelte";
 import Pagination from "$lib/components/Pagination/Pagination.svelte";
 import Popover from "$lib/components/Popover/Popover.svelte";
 import Progress from "$lib/components/Progress/Progress.svelte";
+import Switch from "$lib/components/Switch/Switch.svelte";
 import Textarea from "$lib/components/Textarea/Textarea.svelte";
 import { sevissui } from "$lib/utils/tailwindcss.js";
 
@@ -27,6 +28,7 @@ export {
   Pagination,
   Popover,
   Progress,
+  Switch,
   Textarea,
   sevissui,
 };

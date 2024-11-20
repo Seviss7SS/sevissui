@@ -46,7 +46,7 @@ export default {
   },
   plugins: [
     sevissui,
-    createThemes(({ light, dark }) => ({
+    /*     createThemes(({ light, dark }) => ({
       test: dark({
         primary: {
           darkest: "#e50d06",
@@ -72,7 +72,7 @@ export default {
         },
       }),
       sevissrs: {},
-    })),
+    })), */
   ],
   darkMode: "selector",
 };

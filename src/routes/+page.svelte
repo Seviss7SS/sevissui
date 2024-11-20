@@ -14,13 +14,17 @@
       href: "/components/input-field",
       label: "Input Field",
     },
+    {
+      href: "/components/dropdown",
+      label: "Dropdown",
+    },
   ];
 </script>
 
 <div class="w-screen flex justify-center p-lg">
   <div class="max-w-5xl w-full flex flex-col gap-y-lg">
     {#each components as c}
-      <Button href={c.href}>{c.label}</Button>
+      <Button variant="btn-filled-primary" href={c.href}>{c.label}</Button>
     {/each}
   </div>
 </div>

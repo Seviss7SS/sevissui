@@ -6,19 +6,21 @@
   export let loading = false;
   export let skeleton = false;
   export let disabled = false;
+  export let forceClickable = false;
   export let type: "button" | "submit" | "reset" | undefined = "button";
   export let href: string = "";
   export let radius = "rounded";
-  export let variant: string = "btn-primary";
+  export let variant: string = "btn-filled-primary";
   export let size: string = "btn-md";
   export let id: string | undefined = undefined;
   export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
 
   const isClickable: boolean =
-    (Boolean(onClick || href) || type !== "button") &&
-    !disabled &&
-    !loading &&
-    !skeleton;
+    forceClickable ||
+    ((Boolean(onClick || href) || type !== "button") &&
+      !disabled &&
+      !loading &&
+      !skeleton);
 
   $: btnClass = cx(
     "btn font-medium focus:outline-none filter block text-center relative overflow-hidden",

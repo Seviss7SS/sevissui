@@ -3,7 +3,6 @@
 
   import type { InputFieldProps } from "./types.ts";
 
-  export let inputType: InputFieldProps["inputType"] = "text";
   export let id: InputFieldProps["id"] = undefined;
   export let name: InputFieldProps["name"] = undefined;
   export let required: InputFieldProps["required"] = false;
@@ -12,12 +11,13 @@
   export let variant: InputFieldProps["variant"] = "input-primary-light";
   export let radius: InputFieldProps["radius"] = "rounded";
   export let align: InputFieldProps["align"] = "text-left";
+  export let value: InputFieldProps["value"] = "";
 
   $: inputClass = cx("outline-none", {
     [align]: align,
   });
   $: inputGroupClass = cx(
-    "input-group flex items-center relative overflow-hidden focus-within:ring",
+    "input-group flex items-center relative overflow-hidden focus-within:ring-1",
     {
       [radius]: radius,
     }
@@ -37,14 +37,7 @@
     <div class="flex items-center h-full pl-sm">
       <slot name="left" />
     </div>
-    <input
-      {id}
-      {name}
-      {required}
-      {placeholder}
-      type={inputType}
-      class={inputClass}
-    />
+    <input {id} {name} {required} {placeholder} class={inputClass} bind:value />
     <slot name="right" />
   </div>
 </div>

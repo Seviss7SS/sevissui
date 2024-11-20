@@ -1,7 +1,4 @@
-import type { HTMLInputTypeAttribute } from "svelte/elements";
-
 export type InputFieldProps = {
-  inputType?: HTMLInputTypeAttribute | null;
   id?: string;
   name?: string;
   required?: boolean;
@@ -10,4 +7,5 @@ export type InputFieldProps = {
   variant: string;
   radius: string;
   align: string;
+  value: string;
 };
