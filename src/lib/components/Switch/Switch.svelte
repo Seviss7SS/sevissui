@@ -28,8 +28,11 @@
       class="switch-toggle w-11 h-6 peer-focus:ring-4 peer-focus:ring-primary-lighter peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:transition-all"
     ></div>
   {/if}
-  <slot name="active"></slot>
-  <slot name="inactive"></slot>
+  {#if checked}
+    <slot name="active"></slot>
+  {:else}
+    <slot name="inactive"></slot>
+  {/if}
   {#if label}
     <span class="ms-md text-sm font-medium text-gray-darkest">{label}</span>
   {/if}
