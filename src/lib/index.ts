@@ -6,6 +6,7 @@ import Button from "$lib/components/Button/Button.svelte";
 import Card from "$lib/components/Card/Card.svelte";
 import Checkbox from "$lib/components/Checkbox/Checkbox.svelte";
 import Dropdown from "$lib/components/Dropdown/Dropdown.svelte";
+import DropdownItem from "$lib/components/Dropdown/DropdownItem.svelte";
 import FormRenderer from "$lib/components/FormRenderer/FormRenderer.svelte";
 import InputField from "$lib/components/InputField/InputField.svelte";
 import Modal from "$lib/components/Modal/Modal.svelte";
@@ -22,6 +23,7 @@ export {
   Card,
   Checkbox,
   Dropdown,
+  DropdownItem,
   FormRenderer,
   InputField,
   Modal,
