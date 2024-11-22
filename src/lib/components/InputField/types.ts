@@ -1,9 +1,14 @@
-import type { ChangeEventHandler } from "svelte/elements";
+import type {
+  ChangeEventHandler,
+  HTMLInputTypeAttribute,
+} from "svelte/elements";
 
 export type InputFieldProps = {
   id?: string;
   name?: string;
+  type?: HTMLInputTypeAttribute | null | undefined;
   required?: boolean;
+  readonly?: boolean;
   placeholder?: string;
   label?: string;
   onChange: ChangeEventHandler<HTMLInputElement>;

@@ -41,13 +41,21 @@ function calculateLuminance(rgb) {
   return R + G + B;
 }
 
+function decimalToHex(decimal) {
+  return decimal.toString(16);
+}
+
 function calculateContrastRatio(L1, L2) {
   return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
 }
 
-function extractColor(color, opacity) {
+function extractColor(color, opacity = 1) {
+  const opacityHex = decimalToHex(Math.ceil(opacity * 255));
+
   // TODO: string color to support opacity (will require a hex map)
-  return typeof color === "string" ? color : color({ opacityValue: opacity });
+  return typeof color === "string"
+    ? `${color}${opacityHex}`
+    : color({ opacityValue: opacity });
 }
 
 const sevissui = plugin(function ({
@@ -188,7 +196,7 @@ const sevissui = plugin(function ({
         display: "block",
         width: "100%",
         padding: theme("spacing.md"),
-        backgroundColor: "white",
+        backgroundColor: "transparent",
       },
       "& label": {
         display: "block",
@@ -211,6 +219,18 @@ const sevissui = plugin(function ({
           },
           "& .input-group:focus-within": {
             borderColor: color,
+          },
+        };
+      },
+      "input-filled": (_colors) => {
+        const bgColor = extractColor(_colors, 0.25);
+        const color = extractColor(_colors);
+        return {
+          "& .input-group": {
+            backgroundColor: bgColor,
+            color: color,
+            borderColor: color,
+            "--tw-ring-color": color,
           },
         };
       },

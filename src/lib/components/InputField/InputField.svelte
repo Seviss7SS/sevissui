@@ -7,6 +7,7 @@
   export let type: InputFieldProps["type"] = undefined;
   export let name: InputFieldProps["name"] = undefined;
   export let required: InputFieldProps["required"] = false;
+  export let readonly: InputFieldProps["readonly"] = false;
   export let placeholder: InputFieldProps["placeholder"] = undefined;
   export let label: InputFieldProps["label"] = undefined;
   export let variant: InputFieldProps["variant"] = "input-primary-light";
@@ -45,9 +46,10 @@
       {name}
       {required}
       {placeholder}
-      class={inputClass}
+      {readonly}
       {value}
       {type}
+      class={inputClass}
       on:change={onChange}
       on:input={onInput}
     />
