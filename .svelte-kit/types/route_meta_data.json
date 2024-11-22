@@ -1,8 +1,21 @@
 {
-	"/": [],
-	"/components": [],
-	"/components/card": [],
-	"/components/dropdown": [],
-	"/components/input-field": [],
-	"/components/textarea": []
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/components": [
+		"src/routes/+layout.ts"
+	],
+	"/components/card": [
+		"src/routes/+layout.ts"
+	],
+	"/components/dropdown": [
+		"src/routes/+layout.ts"
+	],
+	"/components/input-field": [
+		"src/routes/+layout.ts"
+	],
+	"/components/textarea": [
+		"src/routes/+layout.ts"
+	]
 }

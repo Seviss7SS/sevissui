@@ -4,6 +4,7 @@
   import type { InputFieldProps } from "./types.ts";
 
   export let id: InputFieldProps["id"] = undefined;
+  export let type: InputFieldProps["type"] = undefined;
   export let name: InputFieldProps["name"] = undefined;
   export let required: InputFieldProps["required"] = false;
   export let placeholder: InputFieldProps["placeholder"] = undefined;
@@ -12,6 +13,8 @@
   export let radius: InputFieldProps["radius"] = "rounded";
   export let align: InputFieldProps["align"] = "text-left";
   export let value: InputFieldProps["value"] = "";
+  export let onChange: InputFieldProps["onChange"] = () => {};
+  export let onInput: InputFieldProps["onInput"] = () => {};
 
   $: inputClass = cx("outline-none", {
     [align]: align,
@@ -37,7 +40,17 @@
     <div class="flex items-center h-full pl-sm">
       <slot name="left" />
     </div>
-    <input {id} {name} {required} {placeholder} class={inputClass} bind:value />
+    <input
+      {id}
+      {name}
+      {required}
+      {placeholder}
+      class={inputClass}
+      {value}
+      {type}
+      on:change={onChange}
+      on:input={onInput}
+    />
     <slot name="right" />
   </div>
 </div>
