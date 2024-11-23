@@ -1,39 +1,52 @@
 <script lang="ts">
   import { Pagination } from "bits-ui";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
 
   export let total: number = 0;
   export let pageSize: number = 0;
+  export let page: number = 1;
+  export let onPageChange: (pageNum: number) => void = () => {};
 </script>
 
-<Pagination.Root count={total} perPage={pageSize} let:pages let:range>
+<Pagination.Root
+  count={total}
+  perPage={pageSize}
+  {onPageChange}
+  bind:page
+  let:pages
+  let:range
+>
   <div class="my-8 flex items-center">
-    <Pagination.PrevButton
-      class="mr-[25px] inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent hover:bg-dark-10 active:scale-98 disabled:cursor-not-allowed disabled:text-muted-foreground hover:disabled:bg-transparent"
-    >
-      <ChevronRight class="transform rotate-180" />
+    <Pagination.PrevButton>
+      <Button forceClickable variant="btn-subtle-gray-darkest">
+        <ChevronRight class="transform rotate-180" />
+      </Button>
     </Pagination.PrevButton>
     <div class="flex items-center gap-2.5">
-      {#each pages as page (page.key)}
-        {#if page.type === "ellipsis"}
+      {#each pages as p (p.key)}
+        {#if p.type === "ellipsis"}
           <div class="text-[15px] font-medium text-foreground-alt">...</div>
         {:else}
-          <Pagination.Page
-            {page}
-            class="inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent text-[15px] font-medium hover:bg-dark-10 active:scale-98 disabled:cursor-not-allowed disabled:opacity-50 hover:disabled:bg-transparent data-[selected]:bg-foreground data-[selected]:text-background"
-          >
-            {page.value}
+          <Pagination.Page page={p}>
+            <Button
+              disabled={p.value === page}
+              forceClickable
+              variant={p.value === page
+                ? "btn-filled-primary"
+                : "btn-subtle-gray-darkest"}
+            >
+              {p.value}
+            </Button>
           </Pagination.Page>
         {/if}
       {/each}
     </div>
-    <Pagination.NextButton
-      class="ml-[29px] inline-flex size-10 items-center justify-center rounded-[9px] bg-transparent hover:bg-dark-10 active:scale-98 disabled:cursor-not-allowed disabled:text-muted-foreground hover:disabled:bg-transparent"
-    >
-      <ChevronRight />
+    <Pagination.NextButton>
+      <Button forceClickable variant="btn-subtle-gray">
+        <ChevronRight />
+      </Button>
     </Pagination.NextButton>
   </div>
-  <p class="text-center text-[13px] text-muted-foreground">
-    Showing {range.start} - {range.end}
-  </p>
+  <slot name="range" {range} />
 </Pagination.Root>
