@@ -18,6 +18,10 @@
       href: "/components/dropdown",
       label: "Dropdown",
     },
+    {
+      href: "/components/button",
+      label: "Button",
+    },
   ];
 </script>
 

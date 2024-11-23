@@ -70,6 +70,9 @@ const sevissui = plugin(function ({
     ".btn": {
       fontWeight: "600",
       borderRadius: theme("borderRadius.DEFAULT"),
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
 
       "&:disabled": {
         cursor: "default",
