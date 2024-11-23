@@ -31,13 +31,12 @@
   );
   $: leftClass = cx("items-center h-full", {
     flex: $$slots.left,
-    hidden: !$$slots.left,
-    "absolute left-0": centered,
+    hidden: !$$slots.left && !centered && $$slots.right,
+    invisible: centered && $$slots.right,
   });
   $: rightClass = cx("items-center h-full", {
-    "absolute right-0": centered,
-    hidden: !$$slots.right,
-    flex: $$slots.right,
+    hidden: !$$slots.right && !centered && $$slots.left,
+    invisible: centered && $$slots.left,
   });
 </script>
 
@@ -52,7 +51,9 @@
   {/if}
   <div class={inputGroupClass}>
     <div class={leftClass}>
-      <slot name="left" />
+      <slot name="left">
+        <slot name="right" />
+      </slot>
     </div>
     <input
       {id}
@@ -67,7 +68,9 @@
       on:input={onInput}
     />
     <div class={rightClass}>
-      <slot name="right" />
+      <slot name="right">
+        <slot name="left" />
+      </slot>
     </div>
   </div>
 </div>
