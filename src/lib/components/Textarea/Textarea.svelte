@@ -10,6 +10,7 @@
   export let label: string = "";
   export let containerClass: string = "";
   export let onChange: ChangeEventHandler<HTMLTextAreaElement> = () => {};
+  export let onInput: ChangeEventHandler<HTMLTextAreaElement> = () => {};
 
   $: className = cx("textarea outline-none focus:ring-1", {
     [$$props.class]: $$props.class,
@@ -34,5 +35,6 @@
     rows={typeof rows === "string" ? parseInt(rows) : rows}
     bind:value
     on:change={onChange}
+    on:input={onInput}
   />
 </div>
