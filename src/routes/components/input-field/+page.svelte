@@ -12,11 +12,7 @@
   <div>
     <h3 class={labelClass}>Default</h3>
     <div>Value: {value}</div>
-    <InputField
-      label="Your message"
-      name="message"
-      onInput={(e) => (value = e.currentTarget.value)}
-    />
+    <InputField label="Your message" name="message" bind:value />
   </div>
   <div>
     <h3 class={labelClass}>Filled</h3>
@@ -25,7 +21,7 @@
       label="Your message"
       name="message"
       variant="input-filled-green-400"
-      onInput={(e) => (value = e.currentTarget.value)}
+      bind:value
     />
   </div>
 </div>

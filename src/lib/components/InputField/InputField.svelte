@@ -15,7 +15,9 @@
   export let align: InputFieldProps["align"] = "text-left";
   export let value: InputFieldProps["value"] = "";
   export let onChange: InputFieldProps["onChange"] = () => {};
-  export let onInput: InputFieldProps["onInput"] = () => {};
+  export let onInput: InputFieldProps["onInput"] = (e) => {
+    value = e.currentTarget.value;
+  };
 
   $: inputClass = cx("outline-none", {
     [align]: align,
