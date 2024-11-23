@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Combobox } from "bits-ui";
+  import { Combobox, type Selected } from "bits-ui";
   import cx from "classnames";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
   import Check from "$lib/icons/Check.svelte";
@@ -10,6 +10,9 @@
   export let placeholder: string = "";
   export let disabled: boolean = false;
   export let multiple: boolean = false;
+  export let onChange: (
+    selected: Selected<string> | Selected<string>[] | undefined
+  ) => void = () => {};
 
   let touchedInput = false;
 
@@ -23,7 +26,14 @@
   });
 </script>
 
-<Combobox.Root {items} {disabled} {multiple} bind:inputValue bind:touchedInput>
+<Combobox.Root
+  {items}
+  {disabled}
+  {multiple}
+  bind:inputValue
+  bind:touchedInput
+  onSelectedChange={onChange}
+>
   <div class={inputClass}>
     <Combobox.Input {placeholder} class="border border-gray" />
     <ChevronRight
