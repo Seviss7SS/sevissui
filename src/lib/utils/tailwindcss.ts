@@ -52,7 +52,6 @@ function calculateContrastRatio(L1, L2) {
 function extractColor(color, opacity = 1) {
   const opacityHex = decimalToHex(Math.ceil(opacity * 255));
 
-  // TODO: string color to support opacity (will require a hex map)
   return typeof color === "string"
     ? `${color}${opacityHex}`
     : color({ opacityValue: opacity });
