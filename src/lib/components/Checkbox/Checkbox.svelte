@@ -8,6 +8,7 @@
   export let id: string | undefined = undefined;
   export let disabled: boolean = false;
   export let checked: boolean | "indeterminate" = false;
+  export let onChange: (isChecked: typeof checked) => void = () => {};
 </script>
 
 <div class="flex items-center space-x-3">
@@ -15,7 +16,8 @@
     {id}
     {disabled}
     class="peer inline-flex size-[25px] items-center justify-center rounded border border-muted bg-foreground transition-all duration-150 ease-in-out active:scale-98 data-[state=unchecked]:border-border-input data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-dark-40"
-    {checked}
+    bind:checked
+    onCheckedChange={onChange}
   >
     <Checkbox.Indicator
       let:isChecked
