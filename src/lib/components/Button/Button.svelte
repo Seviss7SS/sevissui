@@ -2,11 +2,12 @@
   import Spinner from "$lib/icons/Spinner.svelte";
   import cx from "classnames";
 
-  export let label = "";
-  export let loading = false;
-  export let skeleton = false;
-  export let disabled = false;
-  export let forceClickable = false;
+  export let label: string = "";
+  export let loading: boolean = false;
+  export let skeleton: boolean = false;
+  export let disabled: boolean = false;
+  export let forceClickable: boolean = false;
+  export let circle: boolean = false;
   export let type: "button" | "submit" | "reset" | undefined = "button";
   export let href: string = "";
   export let radius = "rounded";
@@ -28,6 +29,7 @@
       [radius]: radius,
       [size]: size,
       [variant]: variant,
+      "btn-circle": circle,
       "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
         isClickable,
       "cursor-default": !isClickable,

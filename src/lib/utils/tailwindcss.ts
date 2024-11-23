@@ -78,6 +78,14 @@ const sevissui = plugin(function ({
         backgroundColor: "theme(colors.disabled)",
         color: "theme(colors.disabled.contrast)",
       },
+
+      "&.btn-circle": {
+        paddingLeft: "0px !important",
+        paddingRight: "0px !important",
+        paddingTop: "0px !important",
+        paddingBottom: "0px !important",
+        borderRadius: "9999px !important",
+      },
     },
     ".btn-xs": {
       paddingLeft: "0.75rem",
@@ -86,6 +94,10 @@ const sevissui = plugin(function ({
       paddingBottom: "0.5rem",
       fontSize: "0.75rem",
       lineHeight: "1rem",
+      "&.btn-circle": {
+        height: "1.5rem",
+        width: "1.5rem",
+      },
     },
     ".btn-sm": {
       paddingLeft: "0.75rem",
@@ -94,6 +106,10 @@ const sevissui = plugin(function ({
       paddingBottom: "0.5rem",
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
+      "&.btn-circle": {
+        height: "2.5rem",
+        width: "2.5rem",
+      },
     },
     ".btn-md": {
       paddingLeft: "1.25rem",
@@ -102,6 +118,10 @@ const sevissui = plugin(function ({
       paddingBottom: "0.625rem",
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
+      "&.btn-circle": {
+        height: "3.5rem",
+        width: "3.5rem",
+      },
     },
     ".btn-lg": {
       paddingLeft: "1.25rem",
@@ -110,6 +130,10 @@ const sevissui = plugin(function ({
       paddingBottom: "0.75rem",
       fontSize: "1rem",
       lineHeight: "1.5rem",
+      "&.btn-circle": {
+        height: "4.5rem",
+        width: "4.5rem",
+      },
     },
     ".btn-xl": {
       paddingLeft: "1.5rem",
@@ -118,6 +142,10 @@ const sevissui = plugin(function ({
       paddingBottom: "0.875rem",
       fontSize: "1rem",
       lineHeight: "1.5rem",
+      "&.btn-circle": {
+        height: "5.5rem",
+        width: "5.5rem",
+      },
     },
   });
 
