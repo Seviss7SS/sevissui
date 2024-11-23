@@ -135,6 +135,7 @@ const sevissui = plugin(function ({
         const color = extractColor(_color);
         return {
           borderColor: color,
+          color: color,
           borderWidth: "1px",
           borderStyle: "solid",
         };

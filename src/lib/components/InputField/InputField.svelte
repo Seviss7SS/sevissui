@@ -14,6 +14,7 @@
   export let radius: InputFieldProps["radius"] = "rounded";
   export let align: InputFieldProps["align"] = "text-left";
   export let value: InputFieldProps["value"] = "";
+  export let centered: InputFieldProps["centered"] = false;
   export let onChange: InputFieldProps["onChange"] = () => {};
   export let onInput: InputFieldProps["onInput"] = (e) => {
     value = e.currentTarget.value;
@@ -23,11 +24,21 @@
     [align]: align,
   });
   $: inputGroupClass = cx(
-    "input-group flex items-center relative overflow-hidden focus-within:ring-1",
+    "input-group px-xs flex relative items-center overflow-hidden focus-within:ring-1",
     {
       [radius]: radius,
     }
   );
+  $: leftClass = cx("items-center h-full", {
+    flex: $$slots.left,
+    hidden: !$$slots.left,
+    "absolute left-0": centered,
+  });
+  $: rightClass = cx("items-center h-full", {
+    "absolute right-0": centered,
+    hidden: !$$slots.right,
+    flex: $$slots.right,
+  });
 </script>
 
 <div
@@ -40,7 +51,7 @@
     <label for={name || id}>{label}</label>
   {/if}
   <div class={inputGroupClass}>
-    <div class="flex items-center h-full pl-sm">
+    <div class={leftClass}>
       <slot name="left" />
     </div>
     <input
@@ -55,6 +66,8 @@
       on:change={onChange}
       on:input={onInput}
     />
-    <slot name="right" />
+    <div class={rightClass}>
+      <slot name="right" />
+    </div>
   </div>
 </div>

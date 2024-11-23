@@ -1,5 +1,6 @@
 <script>
   import InputField from "$lib/components/InputField/InputField.svelte";
+  import Button from "$lib/components/Button/Button.svelte";
 
   const labelClass = "text-xl mb-sm font-bold";
 
@@ -16,12 +17,16 @@
   </div>
   <div>
     <h3 class={labelClass}>Filled</h3>
-    <div>Value: {value}</div>
+    <div class="text-center">Value: {value}</div>
     <InputField
       label="Your message"
       name="message"
       variant="input-filled-green-400"
+      align="text-center"
       bind:value
-    />
+      centered
+    >
+      <Button slot="right">{">"}</Button>
+    </InputField>
   </div>
 </div>

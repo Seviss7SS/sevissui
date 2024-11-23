@@ -11,6 +11,7 @@ export type InputFieldProps = {
   readonly?: boolean;
   placeholder?: string;
   label?: string;
+  centered: boolean;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onInput: ChangeEventHandler<HTMLInputElement>;
   variant: string;
