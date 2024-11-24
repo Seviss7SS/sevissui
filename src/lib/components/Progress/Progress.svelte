@@ -5,6 +5,11 @@
   export let color: string = "progress-primary";
   export let size: string = "progress-md";
   export let background: string = "progress-bg-gray-lightest";
+  export let radius: string = "rounded-full";
+
+  $: progressFillClass = cx("progress-fill", {
+    [radius]: radius,
+  });
 </script>
 
 <div
@@ -15,5 +20,5 @@
     [$$props.class]: Boolean($$props.class),
   })}
 >
-  <div class="progress-fill rounded-full" style="width: {progress}%"></div>
+  <div class={progressFillClass} style="width: {progress}%"></div>
 </div>
