@@ -24,7 +24,7 @@
       !skeleton);
 
   $: btnClass = cx(
-    "btn font-medium focus:outline-none filter block text-center relative overflow-hidden",
+    "btn font-medium focus:outline-none filter block text-center overflow-hidden",
     {
       [radius]: radius,
       [size]: size,
@@ -45,7 +45,7 @@
       <slot>{label}</slot>
     {:else}
       <slot name="loader"
-        ><Spinner class="animate-spin text-grayase h-6 w-6" /></slot
+        ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
       >
     {/if}
   </a>
