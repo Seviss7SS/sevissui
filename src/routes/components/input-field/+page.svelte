@@ -26,7 +26,7 @@
       bind:value
       centered
     >
-      <Button slot="right">{">"}</Button>
+      <Button slot="right" class="h-full">{">"}</Button>
     </InputField>
   </div>
 </div>

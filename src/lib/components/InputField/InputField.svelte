@@ -24,17 +24,17 @@
     [align]: align,
   });
   $: inputGroupClass = cx(
-    "input-group px-xs flex relative items-center overflow-hidden focus-within:ring-1",
+    "input-group flex relative items-center overflow-hidden focus-within:ring-1",
     {
       [radius]: radius,
     }
   );
-  $: leftClass = cx("items-center h-full", {
+  $: leftClass = cx("items-center", {
     flex: $$slots.left,
     hidden: !$$slots.left && !centered && $$slots.right,
     invisible: centered && $$slots.right,
   });
-  $: rightClass = cx("items-center h-full", {
+  $: rightClass = cx("items-center", {
     hidden: !$$slots.right && !centered && $$slots.left,
     invisible: centered && $$slots.left,
   });

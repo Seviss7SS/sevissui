@@ -6,7 +6,7 @@
   export let loading: boolean = false;
   export let skeleton: boolean = false;
   export let disabled: boolean = false;
-  export let forceClickable: boolean = false;
+  export let clickable: boolean = true;
   export let circle: boolean = false;
   export let type: "button" | "submit" | "reset" | undefined = "button";
   export let href: string = "";
@@ -16,15 +16,11 @@
   export let id: string | undefined = undefined;
   export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
 
-  const isClickable: boolean =
-    forceClickable ||
-    ((Boolean(onClick || href) || type !== "button") &&
-      !disabled &&
-      !loading &&
-      !skeleton);
+  const isClickable: boolean = clickable;
+  !disabled && !loading && !skeleton;
 
   $: btnClass = cx(
-    "btn font-medium focus:outline-none filter block text-center overflow-hidden",
+    "btn font-medium focus:outline-none filter block text-center overflow-hidden select-none",
     {
       [radius]: radius,
       [size]: size,
@@ -32,7 +28,7 @@
       "btn-circle": circle,
       "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
         isClickable,
-      "cursor-default": !isClickable,
+      "pointer-events-none": !isClickable,
       "animate-pulse": skeleton,
       [$$props.class]: $$props.class,
     }
