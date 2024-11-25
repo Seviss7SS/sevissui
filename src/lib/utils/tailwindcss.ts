@@ -211,6 +211,11 @@ const sevissui = plugin(function ({
         cursor: "pointer",
       },
     },
+    ".card-dark": {
+      backgroundColor: theme("colors.gray.darker"),
+      borderStyle: "none",
+      color: theme("colors.white"),
+    },
   });
 
   // input
@@ -219,6 +224,7 @@ const sevissui = plugin(function ({
       "& .input-group": {
         borderWidth: "1px",
         borderStyle: "solid",
+        backgroundColor: theme("colors.white"),
       },
       "& input": {
         fontSize: "0.875rem",
@@ -236,6 +242,13 @@ const sevissui = plugin(function ({
         lineHeight: "100%",
       },
     },
+    ".input-field-dark": {
+      "& .input-group": {
+        backgroundColor: theme("colors.gray.darker"),
+        color: theme("colors.white"),
+        borderColor: theme("colors.gray.dark"),
+      },
+    },
   });
 
   matchUtilities(
@@ -244,8 +257,13 @@ const sevissui = plugin(function ({
         const color = extractColor(_color);
         return {
           "& .input-group": {
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: theme("colors.white"),
+            color: theme("colors.black"),
+            "--tw-ring-color": color,
+          },
+          "& .input-group-dark": {
+            backgroundColor: theme("colors.gray.darker"),
+            color: theme("colors.white"),
             "--tw-ring-color": color,
           },
           "& .input-group:focus-within": {
@@ -258,10 +276,10 @@ const sevissui = plugin(function ({
         const color = extractColor(_colors);
         return {
           "& .input-group": {
-            backgroundColor: bgColor,
-            color: color,
-            borderColor: color,
-            "--tw-ring-color": color,
+            backgroundColor: `${bgColor} !important`,
+            color: `${color} !important`,
+            borderColor: `${color} !important`,
+            "--tw-ring-color": `${color} !important`,
           },
         };
       },

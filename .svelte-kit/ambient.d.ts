@@ -27,6 +27,7 @@
  */
 declare module '$env/static/private' {
 	export const PYENV_VIRTUALENV_INIT: string;
+	export const GJS_DEBUG_TOPICS: string;
 	export const LESSOPEN: string;
 	export const LANGUAGE: string;
 	export const USER: string;
@@ -53,6 +54,7 @@ declare module '$env/static/private' {
 	export const npm_package_files_2: string;
 	export const PYENV_SHELL: string;
 	export const NVM_INC: string;
+	export const GIO_LAUNCHED_DESKTOP_FILE: string;
 	export const npm_package_exports___node: string;
 	export const npm_package_devDependencies__sveltejs_adapter_static: string;
 	export const GNOME_SHELL_SESSION_MODE: string;
@@ -61,11 +63,13 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_svelte_check: string;
 	export const LC_MONETARY: string;
 	export const VSCODE_GIT_ASKPASS_NODE: string;
+	export const MANAGERPID: string;
 	export const npm_package_scripts_check: string;
 	export const SYSTEMD_EXEC_PID: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
 	export const npm_package_exports___svelte: string;
 	export const COLORTERM: string;
+	export const GIO_LAUNCHED_DESKTOP_FILE_PID: string;
 	export const npm_package_devDependencies_tailwindcss: string;
 	export const npm_package_devDependencies_typescript: string;
 	export const NVM_DIR: string;
@@ -79,6 +83,7 @@ declare module '$env/static/private' {
 	export const GTK_IM_MODULE: string;
 	export const LOGNAME: string;
 	export const npm_package_type: string;
+	export const JOURNAL_STREAM: string;
 	export const _: string;
 	export const npm_package_scripts_check_watch: string;
 	export const npm_package_devDependencies_autoprefixer: string;
@@ -95,6 +100,7 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies__chromatic_com_storybook: string;
 	export const PATH: string;
 	export const SESSION_MANAGER: string;
+	export const INVOCATION_ID: string;
 	export const PAPERSIZE: string;
 	export const npm_package_name: string;
 	export const npm_package_scripts_package: string;
@@ -141,6 +147,7 @@ declare module '$env/static/private' {
 	export const npm_package_svelte: string;
 	export const LC_MEASUREMENT: string;
 	export const GPG_AGENT_INFO: string;
+	export const GJS_DEBUG_OUTPUT: string;
 	export const LC_IDENTIFICATION: string;
 	export const npm_package_devDependencies__storybook_blocks: string;
 	export const npm_package_dependencies_classnames: string;
@@ -202,6 +209,7 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		PYENV_VIRTUALENV_INIT: string;
+		GJS_DEBUG_TOPICS: string;
 		LESSOPEN: string;
 		LANGUAGE: string;
 		USER: string;
@@ -228,6 +236,7 @@ declare module '$env/dynamic/private' {
 		npm_package_files_2: string;
 		PYENV_SHELL: string;
 		NVM_INC: string;
+		GIO_LAUNCHED_DESKTOP_FILE: string;
 		npm_package_exports___node: string;
 		npm_package_devDependencies__sveltejs_adapter_static: string;
 		GNOME_SHELL_SESSION_MODE: string;
@@ -236,11 +245,13 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_svelte_check: string;
 		LC_MONETARY: string;
 		VSCODE_GIT_ASKPASS_NODE: string;
+		MANAGERPID: string;
 		npm_package_scripts_check: string;
 		SYSTEMD_EXEC_PID: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
 		npm_package_exports___svelte: string;
 		COLORTERM: string;
+		GIO_LAUNCHED_DESKTOP_FILE_PID: string;
 		npm_package_devDependencies_tailwindcss: string;
 		npm_package_devDependencies_typescript: string;
 		NVM_DIR: string;
@@ -254,6 +265,7 @@ declare module '$env/dynamic/private' {
 		GTK_IM_MODULE: string;
 		LOGNAME: string;
 		npm_package_type: string;
+		JOURNAL_STREAM: string;
 		_: string;
 		npm_package_scripts_check_watch: string;
 		npm_package_devDependencies_autoprefixer: string;
@@ -270,6 +282,7 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies__chromatic_com_storybook: string;
 		PATH: string;
 		SESSION_MANAGER: string;
+		INVOCATION_ID: string;
 		PAPERSIZE: string;
 		npm_package_name: string;
 		npm_package_scripts_package: string;
@@ -316,6 +329,7 @@ declare module '$env/dynamic/private' {
 		npm_package_svelte: string;
 		LC_MEASUREMENT: string;
 		GPG_AGENT_INFO: string;
+		GJS_DEBUG_OUTPUT: string;
 		LC_IDENTIFICATION: string;
 		npm_package_devDependencies__storybook_blocks: string;
 		npm_package_dependencies_classnames: string;

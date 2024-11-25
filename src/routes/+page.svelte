@@ -22,6 +22,10 @@
       href: "/components/button",
       label: "Button",
     },
+    {
+      href: "/components/combobox",
+      label: "Combobox",
+    },
   ];
 </script>
 

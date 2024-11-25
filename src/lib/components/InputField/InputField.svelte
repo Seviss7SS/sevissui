@@ -41,7 +41,7 @@
 </script>
 
 <div
-  class={cx("input-field", {
+  class={cx("input-field dark:input-field-dark", {
     [variant]: variant,
     [$$props.class]: $$props.class,
   })}

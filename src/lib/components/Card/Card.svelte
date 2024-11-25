@@ -6,7 +6,7 @@
 
   const isClickable = Boolean(onClick || href);
 
-  $: cardClass = cx("card shadow filter", {
+  $: cardClass = cx("card dark:card-dark shadow filter", {
     "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
     [$$props.class]: $$props.class,
   });

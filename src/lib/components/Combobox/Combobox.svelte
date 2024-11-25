@@ -21,9 +21,12 @@
       ? items.filter((item) => item.value.includes(inputValue.toLowerCase()))
       : items;
 
-  $: inputClass = cx("relative input-field", {
-    [$$props.class]: $$props.class,
-  });
+  $: inputClass = cx(
+    "relative input-field dark:input-field-dark bg-white dark:bg-gray-darker",
+    {
+      [$$props.class]: $$props.class,
+    }
+  );
 </script>
 
 <Combobox.Root
@@ -35,14 +38,17 @@
   onSelectedChange={onChange}
 >
   <div class={inputClass}>
-    <Combobox.Input {placeholder} class="border border-gray" />
+    <Combobox.Input
+      {placeholder}
+      class="border border-gray dark:border-gray-dark"
+    />
     <ChevronRight
       class="absolute end-md top-1/2 size-6 -translate-y-1/2 text-gray-lightest transform rotate-90"
     />
   </div>
 
   <Combobox.Content
-    class="w-full rounded-xl border border-solid border-gray-lightest py-md shadow outline-none"
+    class="w-full rounded-xl border border-solid border-gray-lightest py-md shadow outline-none bg-white dark:bg-gray-darker dark:text-white"
     sideOffset={8}
   >
     {#each filteredItems as item (item.value)}

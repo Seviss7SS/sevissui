@@ -3,13 +3,13 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
-	"/components": [
-		"src/routes/+layout.ts"
-	],
 	"/components/button": [
 		"src/routes/+layout.ts"
 	],
 	"/components/card": [
+		"src/routes/+layout.ts"
+	],
+	"/components/combobox": [
 		"src/routes/+layout.ts"
 	],
 	"/components/dropdown": [
