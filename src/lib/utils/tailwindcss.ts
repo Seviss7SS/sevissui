@@ -62,8 +62,16 @@ const sevissui = plugin(function ({
   addComponents,
   e,
   config,
-  theme,
+  theme: _theme,
 }) {
+  function theme(color) {
+    if (_theme(color)) return _theme(color);
+
+    const [c, ...rest] = color.split(".");
+
+    return _theme(`${c}.${rest.join("-")}`);
+  }
+
   // button
   addComponents({
     ".btn": {
@@ -75,8 +83,8 @@ const sevissui = plugin(function ({
 
       "&:disabled": {
         cursor: "default",
-        backgroundColor: "theme(colors.disabled)",
-        color: "theme(colors.disabled.contrast)",
+        backgroundColor: theme("colors.disabled"),
+        color: theme("colors.disabled.contrast"),
       },
 
       "&.btn-circle": {
@@ -192,7 +200,7 @@ const sevissui = plugin(function ({
     },
     {
       values: {
-        ...flattenColorPalette(theme("colors")),
+        ...flattenColorPalette(_theme("colors")),
       },
       type: "color",
     }
@@ -286,7 +294,7 @@ const sevissui = plugin(function ({
     },
     {
       values: {
-        ...flattenColorPalette(theme("colors")),
+        ...flattenColorPalette(_theme("colors")),
       },
       type: "color",
     }
@@ -325,7 +333,7 @@ const sevissui = plugin(function ({
     },
     {
       values: {
-        ...flattenColorPalette(theme("colors")),
+        ...flattenColorPalette(_theme("colors")),
       },
       type: "color",
     }
@@ -389,7 +397,7 @@ const sevissui = plugin(function ({
     },
     {
       values: {
-        ...flattenColorPalette(theme("colors")),
+        ...flattenColorPalette(_theme("colors")),
       },
       type: "color",
     }
@@ -434,7 +442,7 @@ const sevissui = plugin(function ({
     },
     {
       values: {
-        ...flattenColorPalette(theme("colors")),
+        ...flattenColorPalette(_theme("colors")),
       },
       type: "color",
     }
