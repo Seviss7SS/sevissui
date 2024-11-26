@@ -10,6 +10,7 @@
   export let placeholder: string = "";
   export let disabled: boolean = false;
   export let multiple: boolean = false;
+  export let client: boolean = true;
   export let onChange: (
     selected: Selected<string> | Selected<string>[] | undefined
   ) => void = () => {};
@@ -17,7 +18,7 @@
   let touchedInput = false;
 
   $: filteredItems =
-    inputValue && touchedInput
+    inputValue && touchedInput && client
       ? items.filter((item) => item.value.includes(inputValue.toLowerCase()))
       : items;
 
