@@ -26,6 +26,10 @@
       href: "/components/combobox",
       label: "Combobox",
     },
+    {
+      href: "/components/select",
+      label: "Select",
+    },
   ];
 </script>
 
