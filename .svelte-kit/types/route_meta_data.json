@@ -9,6 +9,9 @@
 	"/components/card": [
 		"src/routes/+layout.ts"
 	],
+	"/components/collapse": [
+		"src/routes/+layout.ts"
+	],
 	"/components/combobox": [
 		"src/routes/+layout.ts"
 	],
@@ -16,6 +19,9 @@
 		"src/routes/+layout.ts"
 	],
 	"/components/input-field": [
+		"src/routes/+layout.ts"
+	],
+	"/components/select": [
 		"src/routes/+layout.ts"
 	],
 	"/components/textarea": [

@@ -26,6 +26,14 @@
       href: "/components/combobox",
       label: "Combobox",
     },
+    {
+      href: "/components/collapse",
+      label: "Collapse",
+    },
+    {
+      href: "/components/select",
+      label: "Select",
+    },
   ];
 </script>
 
