@@ -6,7 +6,7 @@
 </script>
 
 <Collapsible.Root class={$$props.class} bind:open>
-  <Collapsible.Trigger>
+  <Collapsible.Trigger class="w-full">
     {#if !$$slots.open && !$$slots.closed}
       <slot />
     {:else if open}
