@@ -15,7 +15,7 @@
     <ChevronRight class="ml-auto size-6 transform -rotate-90" />
   </Select.Trigger>
   <Select.Content
-    class="w-full rounded-xl border px-xs py-md shadow outline-none"
+    class="w-full rounded-xl border px-xs py-md shadow outline-none bg-white"
     sideOffset={8}
   >
     {#each items as item}
