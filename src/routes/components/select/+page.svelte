@@ -27,6 +27,6 @@
   <div>
     <h3 class={labelClass}>Default</h3>
     <div>Value: {value}</div>
-    <Select {items} onChange={(selected) => (value = selected.value)} />
+    <Select {items} onChange={(selected) => (value = selected?.value)} />
   </div>
 </div>
