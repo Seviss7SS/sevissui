@@ -10,9 +10,9 @@
     {#if !$$slots.open && !$$slots.closed}
       <slot />
     {:else if open}
-      <slot name="closed" />
-    {:else}
       <slot name="open" />
+    {:else}
+      <slot name="closed" />
     {/if}
   </Collapsible.Trigger>
 
