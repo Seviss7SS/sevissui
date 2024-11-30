@@ -17,6 +17,7 @@
   }
 
   export let fields: Field[] = [];
+  export let method: "post" | "get" = "post";
   export let gap: string = "gap-md";
   export let cols: string = "grid-cols-1";
   export let items: { value: string; label: string }[] = [];
@@ -40,7 +41,7 @@
   });
 </script>
 
-<form on:submit={onSubmit} class={formClass}>
+<form {method} on:submit={onSubmit} class={formClass}>
   {#each fields as field}
     {#if field.fieldType === "select"}
       <Select
@@ -72,6 +73,7 @@
       />
     {/if}
   {/each}
+  <slot />
   <slot name="submit">
     <Button type="submit" label="Submit" />
   </slot>
