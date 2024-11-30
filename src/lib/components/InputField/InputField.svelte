@@ -15,6 +15,7 @@
   export let align: InputFieldProps["align"] = "text-left";
   export let value: InputFieldProps["value"] = "";
   export let centered: InputFieldProps["centered"] = false;
+  export let error: InputFieldProps["error"] = "";
   export let onChange: InputFieldProps["onChange"] = () => {};
   export let onInput: InputFieldProps["onInput"] = (e) => {
     value = e.currentTarget.value;
@@ -43,6 +44,7 @@
 <div
   class={cx("input-field dark:input-field-dark", {
     [variant]: variant,
+    "input-field-error": error,
     [$$props.class]: $$props.class,
   })}
 >
@@ -74,3 +76,6 @@
     </div>
   </div>
 </div>
+{#if error}
+  <div class="text-error">{error}</div>
+{/if}

@@ -16,6 +16,11 @@
     <InputField label="Your message" name="message" bind:value />
   </div>
   <div>
+    <h3 class={labelClass}>Default - Error</h3>
+    <div>Value: {value}</div>
+    <InputField label="Your message" name="message" error="Error" bind:value />
+  </div>
+  <div>
     <h3 class={labelClass}>Filled</h3>
     <div class="text-center">Value: {value}</div>
     <InputField

@@ -1,18 +1,11 @@
 import { createThemes } from "tw-colors";
+import tailwindColors from "tailwindcss/colors.js";
 import { sevissui } from "./src/lib/utils/tailwindcss.js";
-import { colors } from "./src/lib/utils/colors.js";
-
-const theme = {
-  colors: {
-    ...colors,
-  },
-};
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
-    ...theme,
     extend: {
       width: {
         sidebar: "14.5rem",
@@ -69,6 +62,15 @@ export default {
           light: "#a5a5a5",
           DEFAULT: "#8b8b8b",
           dark: "#575757",
+        },
+        error: {
+          lightest: tailwindColors.red[50],
+          lighter: tailwindColors.red[100],
+          light: tailwindColors.red[200],
+          DEFAULT: tailwindColors.red[400],
+          dark: tailwindColors.red[600],
+          darker: tailwindColors.red[700],
+          darkest: tailwindColors.red[900],
         },
       }),
       sevissrs: {},

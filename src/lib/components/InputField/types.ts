@@ -18,4 +18,5 @@ export type InputFieldProps = {
   radius: string;
   align: string;
   value: string;
+  error: string;
 };

@@ -233,6 +233,7 @@ const sevissui = plugin(function ({
         borderWidth: "1px",
         borderStyle: "solid",
         backgroundColor: theme("colors.white"),
+        overflow: "hidden",
       },
       "& input": {
         fontSize: "0.875rem",
@@ -248,6 +249,12 @@ const sevissui = plugin(function ({
         marginBottom: theme("spacing.sm"),
         fontWeight: "500",
         lineHeight: "100%",
+      },
+      "&.input-field-error": {
+        "& .input-group": {
+          borderColor: theme("colors.error"),
+          color: theme("colors.error"),
+        },
       },
     },
     ".input-field-dark": {
@@ -274,8 +281,21 @@ const sevissui = plugin(function ({
             color: theme("colors.white"),
             "--tw-ring-color": color,
           },
+          "&.input-field-error": {
+            "& .input-group": {
+              "--tw-ring-color": theme("colors.error"),
+            },
+            "& .input-group-dark": {
+              "--tw-ring-color": theme("colors.error"),
+            },
+          },
           "& .input-group:focus-within": {
             borderColor: color,
+          },
+          "& .input-field-error": {
+            "& .input-group:focus-within": {
+              borderColor: theme("colors.error"),
+            },
           },
         };
       },
