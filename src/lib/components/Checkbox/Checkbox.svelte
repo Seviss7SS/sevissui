@@ -5,6 +5,7 @@
   import Minus from "$lib/icons/Minus.svelte";
 
   export let label: string = "";
+  export let name: string = "";
   export let id: string | undefined = undefined;
   export let disabled: boolean = false;
   export let checked: boolean | "indeterminate" = false;
@@ -14,6 +15,7 @@
 <div class="flex items-center space-x-3">
   <Checkbox.Root
     {id}
+    {name}
     {disabled}
     class="peer inline-flex size-[25px] items-center justify-center rounded border border-muted bg-foreground transition-all duration-150 ease-in-out active:scale-98 data-[state=unchecked]:border-border-input data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-dark-40"
     bind:checked
@@ -30,6 +32,7 @@
         <Minus class="size-[15px]" />
       {/if}
     </Checkbox.Indicator>
+    <Checkbox.Input {name} {disabled} />
   </Checkbox.Root>
   {#if label}
     <Label.Root

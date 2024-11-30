@@ -5,11 +5,15 @@
 
   export let items: { value: string; label: string }[] = [];
   export let name: string = "";
+  export let label: string = "";
   export let placeholder: string = "";
   export let onChange: SelectProps<string>["onSelectedChange"];
 </script>
 
 <Select.Root {items} onSelectedChange={onChange}>
+  {#if label}
+    <label for={name}>{label}</label>
+  {/if}
   <Select.Trigger class="w-full card border border-gray-lightest p-md flex">
     <Select.Value class="text-sm" {placeholder} />
     <ChevronRight class="ml-auto size-6 transform -rotate-90" />

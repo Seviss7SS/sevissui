@@ -34,6 +34,10 @@
       href: "/components/select",
       label: "Select",
     },
+    {
+      href: "/components/form-renderer",
+      label: "Form Renderer",
+    },
   ];
 </script>
 
