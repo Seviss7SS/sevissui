@@ -2,18 +2,8 @@
   import Button from "$lib/components/Button/Button.svelte";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
 
-  const breadcrumbs = [
-    {
-      label: "Home",
-      icon: null,
-      href: "/",
-    },
-    {
-      label: "Books",
-      href: "/books",
-      active: true,
-    },
-  ];
+  export let breadcrumbs: { label: string; href: string; active: boolean }[] =
+    [];
 </script>
 
 <nav class="flex">
