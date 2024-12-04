@@ -38,6 +38,10 @@
       href: "/components/form-renderer",
       label: "Form Renderer",
     },
+    {
+      href: "/components/skeleton",
+      label: "Skeleton",
+    },
   ];
 </script>
 
