@@ -3,16 +3,21 @@
 
   export let radius: string = "";
   export let bgColor: string = "bg-gray";
+  export let skeleton: boolean = true;
 </script>
 
-<div
-  class={cx("animate-pulse", {
-    [radius]: radius,
-    [bgColor]: bgColor,
-    [$$props.class]: $$props.class,
-  })}
->
-  <div class="invisible">
-    <slot />
+{#if skeleton}
+  <div
+    class={cx("animate-pulse", {
+      [radius]: radius,
+      [bgColor]: bgColor,
+      [$$props.class]: $$props.class,
+    })}
+  >
+    <div class="invisible">
+      <slot />
+    </div>
   </div>
-</div>
+{:else}
+  <slot />
+{/if}
