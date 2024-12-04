@@ -4,7 +4,6 @@
 
   export let label: string = "";
   export let loading: boolean = false;
-  export let skeleton: boolean = false;
   export let disabled: boolean = false;
   export let clickable: boolean = true;
   export let circle: boolean = false;
@@ -17,7 +16,7 @@
   export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
 
   const isClickable: boolean = clickable;
-  !disabled && !loading && !skeleton;
+  !disabled && !loading;
 
   $: btnClass = cx(
     "btn font-medium focus:outline-none filter block text-center overflow-hidden select-none",
@@ -29,7 +28,6 @@
       "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
         isClickable,
       "pointer-events-none": !isClickable,
-      "animate-pulse": skeleton,
       [$$props.class]: $$props.class,
     }
   );
@@ -47,9 +45,7 @@
   </a>
 {:else}
   <button {id} {disabled} {type} class={btnClass} on:click={onClick}>
-    {#if skeleton}
-      <div></div>
-    {:else if loading}
+    {#if loading}
       <slot name="loader"
         ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
       >
