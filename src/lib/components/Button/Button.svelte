@@ -1,40 +1,46 @@
 <script lang="ts">
   import Spinner from "$lib/icons/Spinner.svelte";
   import cx from "classnames";
+  import type { ButtonProps } from "./types.ts";
 
-  export let label: string = "";
-  export let loading: boolean = false;
-  export let disabled: boolean = false;
-  export let clickable: boolean = true;
-  export let circle: boolean = false;
-  export let type: "button" | "submit" | "reset" | undefined = "button";
-  export let href: string = "";
-  export let radius = "rounded";
-  export let variant: string = "btn-filled-primary";
-  export let size: string = "btn-md";
-  export let id: string | undefined = undefined;
-  export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
+  const {
+    children,
+    label = "",
+    loading = false,
+    disabled = false,
+    clickable = true,
+    circle = true,
+    type = "button",
+    href = "",
+    radius = "rounded",
+    variant = "btn-filled-primary",
+    size = "btn-md",
+    id = undefined,
+    onClick = undefined,
+    class: _class = "",
+    ...rest
+  }: ButtonProps = $props();
 
-  const isClickable: boolean = clickable;
-  !disabled && !loading;
-
-  $: btnClass = cx(
-    "btn font-medium focus:outline-none filter block text-center overflow-hidden select-none",
-    {
-      [radius]: radius,
-      [size]: size,
-      [variant]: variant,
-      "btn-circle": circle,
-      "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
-        isClickable,
-      "pointer-events-none": !isClickable,
-      [$$props.class]: $$props.class,
-    }
+  const isClickable = $derived(clickable && !disabled && !loading);
+  const btnClass = $derived(
+    cx(
+      "btn font-medium focus:outline-none filter block text-center overflow-hidden select-none",
+      {
+        [radius]: radius,
+        [size]: size,
+        [variant]: variant,
+        "btn-circle": circle,
+        "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
+          isClickable,
+        "pointer-events-none": !isClickable,
+        [_class]: _class,
+      }
+    )
   );
 </script>
 
 {#if href && !disabled}
-  <a {id} {href} {type} class={btnClass} on:click={onClick}>
+  <a {...rest} {id} {href} {type} class={btnClass} onclick={onClick}>
     {#if !loading}
       <slot>{label}</slot>
     {:else}
@@ -44,7 +50,7 @@
     {/if}
   </a>
 {:else}
-  <button {id} {disabled} {type} class={btnClass} on:click={onClick}>
+  <button {...rest} {id} {disabled} {type} class={btnClass} onclick={onClick}>
     {#if loading}
       <slot name="loader"
         ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
