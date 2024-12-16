@@ -1,5 +1,6 @@
 export type ButtonProps = {
   children?: any;
+  loader?: any;
   label?: string;
   loading?: boolean;
   disabled?: boolean;

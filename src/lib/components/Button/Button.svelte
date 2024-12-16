@@ -5,11 +5,12 @@
 
   const {
     children,
+    loader,
     label = "",
     loading = false,
     disabled = false,
     clickable = true,
-    circle = true,
+    circle = false,
     type = "button",
     href = "",
     radius = "rounded",
@@ -39,24 +40,26 @@
   );
 </script>
 
+{#snippet content()}
+  {#if !loading}
+    {#if children}
+      {@render children()}
+    {:else}
+      {label}
+    {/if}
+  {:else if loader}
+    {@render loader()}
+  {:else}
+    <Spinner class="animate-spin text-gray h-6 w-6" />
+  {/if}
+{/snippet}
+
 {#if href && !disabled}
   <a {...rest} {id} {href} {type} class={btnClass} onclick={onClick}>
-    {#if !loading}
-      <slot>{label}</slot>
-    {:else}
-      <slot name="loader"
-        ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
-      >
-    {/if}
+    {@render content()}
   </a>
 {:else}
   <button {...rest} {id} {disabled} {type} class={btnClass} onclick={onClick}>
-    {#if loading}
-      <slot name="loader"
-        ><Spinner class="animate-spin text-gray h-6 w-6" /></slot
-      >
-    {:else}
-      <slot>{label}</slot>
-    {/if}
+    {@render content()}
   </button>
 {/if}
