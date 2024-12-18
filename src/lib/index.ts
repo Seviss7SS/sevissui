@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 // components
+import Box from "$lib/components/Box/Box.svelte";
 import Breadcrumbs from "$lib/components/Breadcrumbs/Breadcrumbs.svelte";
 import Button from "$lib/components/Button/Button.svelte";
 import Card from "$lib/components/Card/Card.svelte";
@@ -22,6 +23,7 @@ import Textarea from "$lib/components/Textarea/Textarea.svelte";
 import { sevissui } from "$lib/utils/tailwindcss.js";
 
 export {
+  Box,
   Button,
   Breadcrumbs,
   Card,

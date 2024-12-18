@@ -1,9 +1,14 @@
 <script lang="ts">
   import cx from "classnames";
+  import type { SkeletonProps } from "./types.ts";
 
-  export let radius: string = "";
-  export let bgColor: string = "bg-gray";
-  export let skeleton: boolean = true;
+  const {
+    children,
+    radius = "",
+    bgColor = "bg-gray",
+    skeleton = true,
+    class: _class = "",
+  }: SkeletonProps = $props();
 </script>
 
 {#if skeleton}
@@ -11,13 +16,15 @@
     class={cx("animate-pulse", {
       [radius]: radius,
       [bgColor]: bgColor,
-      [$$props.class]: $$props.class,
+      [_class]: _class,
     })}
   >
     <div class="invisible">
-      <slot />
+      {#if children}
+        {@render children()}
+      {/if}
     </div>
   </div>
-{:else}
-  <slot />
+{:else if children}
+  {@render children()}
 {/if}

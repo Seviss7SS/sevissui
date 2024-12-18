@@ -1,7 +1,8 @@
 <script lang="ts">
-  import Spinner from "$lib/icons/Spinner.svelte";
   import cx from "classnames";
   import type { ButtonProps } from "./types.ts";
+  import Box from "$lib/components/Box/Box.svelte";
+  import Spinner from "$lib/icons/Spinner.svelte";
 
   const {
     children,
@@ -14,7 +15,8 @@
     type = "button",
     href = "",
     radius = "rounded",
-    variant = "btn-filled-primary",
+    variant = "btn-filled",
+    color = "btn-primary",
     size = "btn-md",
     id = undefined,
     onClick = undefined,
@@ -24,19 +26,14 @@
 
   const isClickable = $derived(clickable && !disabled && !loading);
   const btnClass = $derived(
-    cx(
-      "btn font-medium focus:outline-none filter block text-center overflow-hidden select-none",
-      {
-        [radius]: radius,
-        [size]: size,
-        [variant]: variant,
-        "btn-circle": circle,
-        "enabled:hover:opacity-75 enabled:active:opacity-50 cursor-pointer":
-          isClickable,
-        "pointer-events-none": !isClickable,
-        [_class]: _class,
-      }
-    )
+    cx("btn", {
+      [radius]: radius,
+      [size]: size,
+      [color]: color,
+      [variant]: variant,
+      "btn-circle": circle,
+      [_class]: _class,
+    })
   );
 </script>
 
@@ -54,12 +51,15 @@
   {/if}
 {/snippet}
 
-{#if href && !disabled}
-  <a {...rest} {id} {href} {type} class={btnClass} onclick={onClick}>
-    {@render content()}
-  </a>
-{:else}
-  <button {...rest} {id} {disabled} {type} class={btnClass} onclick={onClick}>
-    {@render content()}
-  </button>
-{/if}
+<Box
+  {...rest}
+  {id}
+  {href}
+  {type}
+  {disabled}
+  class={btnClass}
+  {onClick}
+  clickable={isClickable}
+>
+  {@render content()}
+</Box>

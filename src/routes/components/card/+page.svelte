@@ -11,7 +11,7 @@
   <hr />
   <div>
     <h3 class={labelClass}>Default</h3>
-    <Card>
+    <Card href="/">
       <h5 class="card-header mb-sm text-2xl font-bold tracking-tight">
         Noteworthy technology acquisitions 2021
       </h5>
@@ -174,8 +174,12 @@
         />
         <h5 class="mb-sm text-xl font-medium">Bonnie Green</h5>
         <div class="flex mt-lg md:mt-xl gap-x-sm">
-          <Button variant="btn-filled-primary" label="Add Friend" />
-          <Button variant="btn-outlined-gray-light" label="Message" />
+          <Button variant="btn-filled" label="Add Friend" />
+          <Button
+            variant="btn-outlined"
+            color="btn-gray-light"
+            label="Message"
+          />
         </div>
       </div>
     </Card>

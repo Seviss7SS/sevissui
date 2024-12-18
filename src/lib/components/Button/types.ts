@@ -7,6 +7,7 @@ export type ButtonProps = {
   clickable?: boolean;
   circle?: boolean;
   type?: "button" | "submit" | "reset";
+  color?: string;
   href?: string;
   radius?: string;
   variant?: string;

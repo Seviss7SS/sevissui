@@ -72,6 +72,22 @@ const sevissui = plugin(function ({
     return _theme(`${c}.${rest.join("-")}`);
   }
 
+  // box
+  addComponents({
+    ".box": {
+      "&.clickable": {
+        cursor: "pointer",
+
+        "&:hover:not([disabled])": {
+          opacity: 0.75,
+        },
+        "&:active:not([disabled])": {
+          opacity: 0.5,
+        },
+      },
+    },
+  });
+
   // button
   addComponents({
     ".btn": {
@@ -80,6 +96,20 @@ const sevissui = plugin(function ({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      userSelect: "none",
+      overflow: "hidden",
+      textAlign: "center",
+
+      "&:not(.clickable)": {
+        pointerEvents: "none",
+      },
+
+      "&:focus": {
+        outline: "2px solid transparent",
+        outlineOffset: "2px",
+        filter:
+          "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+      },
 
       "&:disabled": {
         cursor: "default",
@@ -155,46 +185,43 @@ const sevissui = plugin(function ({
         width: "5.5rem",
       },
     },
+    ".btn-filled": {
+      backgroundColor: "var(--sevissui-btn-color)",
+      color: "var(--sevissui-btn-text)",
+    },
+    ".btn-outlined": {
+      borderColor: "var(--sevissui-btn-color)",
+      color: "var(--sevissui-btn-color)",
+      borderWidth: "1px",
+      borderStyle: "solid",
+    },
+    ".btn-text": {
+      color: "var(--sevissui-btn-color)",
+      "&:disabled": {
+        backgroundColor: "transparent",
+      },
+    },
+    ".btn-subtle": {
+      color: "var(--sevissui-btn-color)",
+      "&:hover": {
+        backgroundColor: "var(--sevissui-btn-color-25)",
+      },
+      "&:disabled": {
+        backgroundColor: "transparent",
+      },
+    },
   });
 
   matchUtilities(
     {
-      "btn-filled": (_color) => {
+      btn: (_color) => {
         const color = extractColor(_color);
+        const color25 = extractColor(_color, 0.25);
+        const colorText = bestContrast(color);
         return {
-          backgroundColor: color,
-          color: bestContrast(color),
-        };
-      },
-      "btn-outlined": (_color) => {
-        const color = extractColor(_color);
-        return {
-          borderColor: color,
-          color: color,
-          borderWidth: "1px",
-          borderStyle: "solid",
-        };
-      },
-      "btn-text": (_color) => {
-        const color = extractColor(_color);
-        return {
-          color: color,
-          "&:disabled": {
-            backgroundColor: "transparent",
-          },
-        };
-      },
-      "btn-subtle": (_color) => {
-        const color = extractColor(_color);
-        const colorBg = extractColor(_color, 0.25);
-        return {
-          color: color,
-          "&:hover": {
-            backgroundColor: colorBg,
-          },
-          "&:disabled": {
-            backgroundColor: "transparent",
-          },
+          "--sevissui-btn-color": color,
+          "--sevissui-btn-color-25": color25,
+          "--sevissui-btn-text": colorText,
         };
       },
     },

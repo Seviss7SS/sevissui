@@ -1,27 +1,23 @@
 <script lang="ts">
   import cx from "classnames";
+  import Box from "$lib/components/Box/Box.svelte";
 
-  export let href: string = "";
-  export let onClick: ((e: MouseEvent) => void) | undefined = undefined;
+  const {
+    children = null,
+    href = "",
+    onClick = null,
+    class: _class = "",
+  } = $props();
 
-  const isClickable = Boolean(onClick || href);
-
-  $: cardClass = cx("card dark:card-dark shadow filter", {
-    "hover:brightness-90 active:brightness-75 cursor-pointer": isClickable,
-    [$$props.class]: $$props.class,
-  });
+  const cardClass = $derived(
+    cx("card dark:card-dark shadow filter", {
+      [_class]: _class,
+    })
+  );
 </script>
 
-{#if href}
-  <a on:click={onClick} {href} class={cardClass}>
-    <slot />
-  </a>
-{:else if isClickable}
-  <button on:click={onClick} class={cardClass}>
-    <slot />
-  </button>
-{:else}
-  <div class={cardClass}>
-    <slot />
-  </div>
-{/if}
+<Box {onClick} {href} class={cardClass}>
+  {#if children}
+    {@render children()}
+  {/if}
+</Box>

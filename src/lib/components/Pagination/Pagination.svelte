@@ -19,7 +19,7 @@
 >
   <div class="my-8 flex items-center">
     <Pagination.PrevButton>
-      <Button forceClickable variant="btn-subtle-gray-darkest">
+      <Button clickable variant="btn-subtle-gray-darkest">
         <ChevronRight class="transform rotate-180" />
       </Button>
     </Pagination.PrevButton>
@@ -31,10 +31,9 @@
           <Pagination.Page page={p}>
             <Button
               disabled={p.value === page}
-              forceClickable
-              variant={p.value === page
-                ? "btn-filled-primary"
-                : "btn-subtle-gray-darkest"}
+              clickable
+              color={p.value === page ? "btn-primary" : "btn-gray-darkest"}
+              variant={p.value === page ? "btn-filled" : "btn-subtle"}
             >
               {p.value}
             </Button>
@@ -43,7 +42,7 @@
       {/each}
     </div>
     <Pagination.NextButton>
-      <Button forceClickable variant="btn-subtle-gray">
+      <Button variant="btn-subtle-gray">
         <ChevronRight />
       </Button>
     </Pagination.NextButton>

@@ -14,7 +14,7 @@
     <h3 class={labelClass}>Button</h3>
     {#each sizes as size}
       <Skeleton>
-        <Button label="Button" variant="btn-filled-primary" {size} />
+        <Button label="Button" variant="btn-filled" {size} />
       </Skeleton>
     {/each}
   </div>
