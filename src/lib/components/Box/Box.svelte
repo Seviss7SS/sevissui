@@ -32,7 +32,7 @@
         {@render children()}
       {/if}
     </a>
-  {:else if onClick}
+  {:else if onClick || clickable}
     <button {id} {type} onclick={onClick} class={className} {disabled}>
       {#if children}
         {@render children()}
