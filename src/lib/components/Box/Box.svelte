@@ -1,6 +1,6 @@
 <script lang="ts">
   import cx from "classnames";
-  import type { BoxProps } from "./types.ts";
+  import type { BoxProps } from "./types.js";
   import Skeleton from "$lib/components/Skeleton/Skeleton.svelte";
 
   const {

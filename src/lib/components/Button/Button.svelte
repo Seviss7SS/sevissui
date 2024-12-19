@@ -1,6 +1,6 @@
 <script lang="ts">
   import cx from "classnames";
-  import type { ButtonProps } from "./types.ts";
+  import type { ButtonProps } from "./types.js";
   import Box from "$lib/components/Box/Box.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
 
