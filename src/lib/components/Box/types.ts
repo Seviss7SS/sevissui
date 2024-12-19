@@ -9,4 +9,15 @@ export type BoxProps = {
   type?: "button" | "submit" | "reset";
   radius?: string;
   clickable?: boolean;
+  method?:
+    | "get"
+    | "post"
+    | "dialog"
+    | "DIALOG"
+    | "GET"
+    | "POST"
+    | null
+    | undefined;
+  target?: string;
+  action?: string;
 };

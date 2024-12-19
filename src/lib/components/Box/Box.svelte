@@ -14,6 +14,9 @@
     type,
     radius,
     clickable,
+    method,
+    target,
+    action,
   }: BoxProps = $props();
 
   const className = $derived(
@@ -27,11 +30,17 @@
 
 <Skeleton skeleton={loading} {radius}>
   {#if href && !disabled}
-    <a {id} {href} class={className}>
+    <a {id} {target} {href} class={className}>
       {#if children}
         {@render children()}
       {/if}
     </a>
+  {:else if method && action}
+    <form {id} {method} {action} class={className}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </form>
   {:else if onClick || clickable}
     <button {id} {type} onclick={onClick} class={className} {disabled}>
       {#if children}
