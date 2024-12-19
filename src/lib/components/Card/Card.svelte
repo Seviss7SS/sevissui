@@ -1,13 +1,15 @@
 <script lang="ts">
   import cx from "classnames";
   import Box from "$lib/components/Box/Box.svelte";
+  import type { CardProps } from "./types";
 
   const {
     children = null,
     href = "",
-    onClick = null,
+    onClick = undefined,
     class: _class = "",
-  } = $props();
+    ...rest
+  }: CardProps = $props();
 
   const cardClass = $derived(
     cx("card dark:card-dark shadow filter", {
@@ -16,7 +18,7 @@
   );
 </script>
 
-<Box {onClick} {href} class={cardClass}>
+<Box {...rest} {onClick} {href} class={cardClass}>
   {#if children}
     {@render children()}
   {/if}
