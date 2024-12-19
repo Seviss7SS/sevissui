@@ -1,6 +1,6 @@
 {
   "name": "sevissui",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -45,6 +45,7 @@
     "@sveltejs/kit": "^2.9.0",
     "@sveltejs/package": "^2.3.7",
     "@sveltejs/vite-plugin-svelte": "^5.0.1",
+    "@types/node": "^22.10.2",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
@@ -65,5 +66,8 @@
   "dependencies": {
     "bits-ui": "^0.21.16",
     "classnames": "^2.5.1"
+  },
+  "peerDependencies": {
+    "svelte": "^5.7.1"
   }
 }

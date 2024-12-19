@@ -10,8 +10,8 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
+		"module": "Preserve",
+		"moduleResolution": "bundler",
 		"baseUrl": "./",
 		"paths": {
 			"$lib/*": ["./src/lib/*"]
