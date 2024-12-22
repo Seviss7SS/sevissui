@@ -26,29 +26,25 @@
       [_class]: _class,
     })
   );
+
+  const _onClick = disabled ? undefined : onClick;
 </script>
 
 <Skeleton skeleton={loading} {radius}>
   {#if href && !disabled}
-    <a {id} {target} {href} class={className}>
+    <a {id} {target} {href} class={className} onclick={_onClick}>
       {#if children}
         {@render children()}
       {/if}
     </a>
   {:else if method && action}
-    <form {id} {method} {action} class={className}>
+    <form {id} {method} {action} class={className} onclick={_onClick}>
       {#if children}
         {@render children()}
       {/if}
     </form>
-  {:else if onClick || clickable}
-    <button {id} {type} onclick={onClick} class={className} {disabled}>
-      {#if children}
-        {@render children()}
-      {/if}
-    </button>
   {:else}
-    <div {id} class={className}>
+    <div {id} class={className} onclick={_onClick}>
       {#if children}
         {@render children()}
       {/if}

@@ -11,7 +11,11 @@
   <hr />
   <div>
     <h3 class={labelClass}>Default</h3>
-    <Card href="/">
+    <Card
+      method="get"
+      action="/components/card"
+      onClick={(e) => e.currentTarget.submit()}
+    >
       <h5 class="card-header mb-sm text-2xl font-bold tracking-tight">
         Noteworthy technology acquisitions 2021
       </h5>

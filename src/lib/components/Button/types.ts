@@ -1,4 +1,6 @@
-export type ButtonProps = {
+import type { BoxProps } from "../Box/types";
+
+export interface ButtonProps extends BoxProps {
   children?: any;
   loader?: any;
   label?: string;
@@ -15,4 +17,4 @@ export type ButtonProps = {
   id?: string;
   onClick?: (e: MouseEvent) => void;
   class?: string;
-};
+}
