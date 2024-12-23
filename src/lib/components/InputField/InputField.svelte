@@ -2,7 +2,7 @@
   import cx from "classnames";
   import type { InputFieldProps } from "./types.ts";
 
-  const {
+  let {
     left,
     right,
     id,
@@ -16,7 +16,7 @@
     radius = "rounded",
     align = "text-left",
     class: _class = "",
-    value = "",
+    value = $bindable(""),
     centered = false,
     error = "",
     onChange,

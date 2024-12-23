@@ -1,24 +1,31 @@
 <script lang="ts">
   import cx from "classnames";
-  import type { ChangeEventHandler } from "svelte/elements";
+  import type { TextareaProps } from "./types";
 
-  export let value: string = "";
-  export let id: string | undefined = undefined;
-  export let name: string | undefined = undefined;
-  export let placeholder: string = "";
-  export let rows: number | string | undefined = "4";
-  export let label: string = "";
-  export let containerClass: string = "";
-  export let onChange: ChangeEventHandler<HTMLTextAreaElement> = () => {};
-  export let onInput: ChangeEventHandler<HTMLTextAreaElement> = () => {};
+  let {
+    value = $bindable(""),
+    id,
+    name,
+    placeholder,
+    rows = "4",
+    label,
+    class: _class = "",
+    containerClass = "",
+    onChange,
+    onInput,
+  }: TextareaProps = $props();
 
-  $: className = cx("textarea outline-none focus:ring-1", {
-    [$$props.class]: $$props.class,
-  });
+  const className = $derived(
+    cx("textarea outline-none focus:ring-1", {
+      [_class]: _class,
+    })
+  );
 
-  $: containerClassName = cx("textarea-field", {
-    [containerClass]: containerClass,
-  });
+  const containerClassName = $derived(
+    cx("textarea-field", {
+      [containerClass]: containerClass,
+    })
+  );
 </script>
 
 <div class={containerClassName}>
@@ -34,7 +41,7 @@
     class={className}
     rows={typeof rows === "string" ? parseInt(rows) : rows}
     bind:value
-    on:change={onChange}
-    on:input={onInput}
-  />
+    onchange={onChange}
+    oninput={onInput}
+  ></textarea>
 </div>
