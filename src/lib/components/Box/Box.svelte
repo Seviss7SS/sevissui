@@ -17,6 +17,7 @@
     method,
     target,
     action,
+    component,
   }: BoxProps = $props();
 
   const className = $derived(
@@ -28,26 +29,51 @@
   );
 
   const _onClick = disabled ? undefined : onClick;
+
+  const _component = $derived.by(() => {
+    if (component) return component;
+    if (href && !disabled) return "a";
+    if (method || action) return "form";
+    return "div";
+  });
 </script>
 
-<Skeleton skeleton={loading} {radius}>
-  {#if href && !disabled}
-    <a {id} {target} {href} class={className} onclick={_onClick}>
+{#snippet c(props: any)}
+  {#if _component === "a"}
+    <a {...props}>
       {#if children}
         {@render children()}
       {/if}
     </a>
-  {:else if method && action}
-    <form {id} {method} {action} class={className} onclick={_onClick}>
+  {:else if _component === "form"}
+    <form {...props}>
       {#if children}
         {@render children()}
       {/if}
     </form>
+  {:else if _component === "button"}
+    <button {...props}>
+      {#if children}
+        {@render children()}
+      {/if}
+    </button>
   {:else}
-    <div {id} class={className} onclick={_onClick}>
+    <div {...props}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   {/if}
+{/snippet}
+
+<Skeleton skeleton={loading} {radius}>
+  {@render c({
+    id,
+    target,
+    href,
+    class: className,
+    onclick: _onClick,
+    method,
+    action,
+  })}
 </Skeleton>

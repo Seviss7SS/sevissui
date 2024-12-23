@@ -20,4 +20,5 @@ export type BoxProps = {
     | undefined;
   target?: string;
   action?: string;
+  component?: "a" | "div" | "button" | "form";
 };

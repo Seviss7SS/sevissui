@@ -60,6 +60,7 @@
   class={btnClass}
   {onClick}
   clickable={isClickable}
+  component="button"
 >
   {@render content()}
 </Box>

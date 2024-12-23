@@ -1,16 +1,20 @@
 <script lang="ts">
-  import { Select, type SelectProps } from "bits-ui";
+  import { Select } from "bits-ui";
+  import type { SelectProps } from "./types";
   import ChevronRight from "$lib/icons/ChevronRight.svelte";
   import Check from "$lib/icons/Check.svelte";
 
-  export let items: { value: string; label: string }[] = [];
-  export let name: string = "";
-  export let label: string = "";
-  export let placeholder: string = "";
-  export let onChange: SelectProps<string>["onSelectedChange"];
+  const {
+    items = [],
+    name = "",
+    label = "",
+    placeholder = "",
+    value,
+    onChange,
+  }: SelectProps = $props();
 </script>
 
-<Select.Root {items} onSelectedChange={onChange}>
+<Select.Root {items} selected={value} onSelectedChange={onChange}>
   {#if label}
     <label for={name}>{label}</label>
   {/if}

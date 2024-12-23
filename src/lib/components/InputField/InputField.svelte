@@ -1,51 +1,65 @@
 <script lang="ts">
   import cx from "classnames";
-
   import type { InputFieldProps } from "./types.ts";
 
-  export let id: InputFieldProps["id"] = undefined;
-  export let type: InputFieldProps["type"] = undefined;
-  export let name: InputFieldProps["name"] = undefined;
-  export let required: InputFieldProps["required"] = false;
-  export let readonly: InputFieldProps["readonly"] = false;
-  export let placeholder: InputFieldProps["placeholder"] = undefined;
-  export let label: InputFieldProps["label"] = undefined;
-  export let variant: InputFieldProps["variant"] = "input-primary-light";
-  export let radius: InputFieldProps["radius"] = "rounded";
-  export let align: InputFieldProps["align"] = "text-left";
-  export let value: InputFieldProps["value"] = "";
-  export let centered: InputFieldProps["centered"] = false;
-  export let error: InputFieldProps["error"] = "";
-  export let onChange: InputFieldProps["onChange"] = () => {};
-  export let onInput: InputFieldProps["onInput"] = (e) => {
-    value = e.currentTarget.value;
-  };
+  const {
+    left,
+    right,
+    id,
+    type,
+    name,
+    required = false,
+    readonly = false,
+    placeholder,
+    label,
+    variant = "input-primary-light",
+    radius = "rounded",
+    align = "text-left",
+    class: _class = "",
+    value = "",
+    centered = false,
+    error = "",
+    onChange,
+    onInput,
+    onBlur,
+  }: InputFieldProps = $props();
 
-  $: inputClass = cx("outline-none", {
-    [align]: align,
-  });
-  $: inputGroupClass = cx(
-    "input-group flex relative items-center overflow-hidden focus-within:ring-1",
-    {
-      [radius]: radius,
-    }
+  const inputClass = $derived(
+    cx("outline-none", {
+      [align]: align,
+    })
   );
-  $: leftClass = cx("items-center", {
-    flex: $$slots.left,
-    hidden: !$$slots.left && !centered && $$slots.right,
-    invisible: centered && $$slots.right,
-  });
-  $: rightClass = cx("items-center", {
-    hidden: !$$slots.right && !centered && $$slots.left,
-    invisible: centered && $$slots.left,
-  });
+
+  const inputGroupClass = $derived(
+    cx(
+      "input-group flex relative items-center overflow-hidden focus-within:ring-1",
+      {
+        [radius]: radius,
+      }
+    )
+  );
+
+  const leftClass = $derived(
+    cx("items-center", {
+      flex: left,
+      hidden: !left && !centered && right,
+      invisible: centered && right,
+    })
+  );
+
+  const rightClass = $derived(
+    cx("items-center", {
+      hidden: !right && !centered && left,
+      invisible: centered && left,
+    })
+  );
 </script>
 
 <div
   class={cx("input-field dark:input-field-dark", {
     [variant]: variant,
     "input-field-error": error,
-    [$$props.class]: $$props.class,
+    [_class]: _class,
   })}
 >
   {#if label}
@@ -53,9 +67,11 @@
   {/if}
   <div class={inputGroupClass}>
     <div class={leftClass}>
-      <slot name="left">
-        <slot name="right" />
-      </slot>
+      {#if left}
+        {@render left()}
+      {:else if right}
+        {@render right()}
+      {/if}
     </div>
     <input
       {id}
@@ -66,13 +82,16 @@
       {value}
       {type}
       class={inputClass}
-      on:change={onChange}
-      on:input={onInput}
+      onchange={onChange}
+      oninput={onInput}
+      onblur={onBlur}
     />
     <div class={rightClass}>
-      <slot name="right">
-        <slot name="left" />
-      </slot>
+      {#if right}
+        {@render right()}
+      {:else if left}
+        {@render left()}
+      {/if}
     </div>
   </div>
 </div>

@@ -7,18 +7,21 @@
     {
       label: "Value 1",
       value: "1",
+      placeholder: "",
     },
     {
       label: "Value 2",
       value: "2",
+      placeholder: "",
     },
     {
       label: "Value 3",
       value: "3",
+      placeholder: "",
     },
   ];
 
-  let value: string | undefined = "";
+  let value: string | undefined = "1";
 </script>
 
 <div class="p-lg flex flex-col gap-y-md">
@@ -27,6 +30,10 @@
   <div>
     <h3 class={labelClass}>Default</h3>
     <div>Value: {value}</div>
-    <Select {items} onChange={(selected) => (value = selected?.value)} />
+    <Select
+      {items}
+      value={{ value: "1" }}
+      onChange={(selected) => (value = selected?.value)}
+    />
   </div>
 </div>
