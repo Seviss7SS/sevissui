@@ -60,7 +60,7 @@
   class={btnClass}
   {onClick}
   clickable={isClickable}
-  component="button"
+  component={href ? "a" : "button"}
 >
   {@render content()}
 </Box>
