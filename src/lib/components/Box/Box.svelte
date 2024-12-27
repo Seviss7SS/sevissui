@@ -75,5 +75,6 @@
     onclick: _onClick,
     method,
     action,
+    type,
   })}
 </Skeleton>
