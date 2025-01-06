@@ -21,6 +21,7 @@
     id = undefined,
     onClick = undefined,
     class: _class = "",
+    component,
     ...rest
   }: ButtonProps = $props();
 
@@ -60,7 +61,7 @@
   class={btnClass}
   {onClick}
   clickable={isClickable}
-  component={href ? "a" : "button"}
+  component={component ?? (href ? "a" : "button")}
 >
   {@render content()}
 </Box>
