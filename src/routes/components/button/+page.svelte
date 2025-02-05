@@ -23,4 +23,14 @@
       <Button circle label="Button" variant="btn-filled" {size} />
     {/each}
   </div>
+  <div class="flex flex-col gap-y-md">
+    <h3 class={labelClass}>Form</h3>
+    <Button
+      action="/components/button"
+      method="get"
+      component="form"
+      label="Button"
+      variant="btn-filled"
+    />
+  </div>
 </div>

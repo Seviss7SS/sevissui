@@ -18,17 +18,28 @@
     target,
     action,
     component,
+    ...rest
   }: BoxProps = $props();
 
   const className = $derived(
     cx("box", {
       radius: radius,
-      clickable: (onClick || href || clickable) && !disabled,
+      clickable: (onClick || href || clickable || action) && !disabled,
       [_class]: _class,
     })
   );
 
-  const _onClick = disabled ? undefined : onClick;
+  const _onClick = $derived.by(() => {
+    if (disabled) return undefined;
+
+    if (!onClick && action) {
+      return (e: MouseEvent) => {
+        (e.target as HTMLFormElement).submit();
+      };
+    }
+
+    return onClick;
+  });
 
   const _component = $derived.by(() => {
     if (component) return component;
@@ -76,5 +87,6 @@
     method,
     action,
     type,
+    ...rest,
   })}
 </Skeleton>
