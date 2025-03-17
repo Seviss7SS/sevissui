@@ -1,7 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  // btn-xs
+  /*
+  ================== 
+  COLORS
+  ==================
+  */  
+  --color-primary-darkest: rgb(229, 13, 6);
+  --color-primary: rgb(255, 0, 0);
+
+  /*
+  ================== 
+  BUTTON
+  ==================
+  */
+
+  /* btn-xs */
   --btn-pl-xs: 0.75rem;
   --btn-pr-xs: 0.75rem;
   --btn-pt-xs: 0.5rem;
@@ -9,7 +23,7 @@
   --btn-text-xs: 0.75rem;
   --btn-leading-xs: 1rem;
 
-  // btn-sm
+  /* btn-sm */
   --btn-pl-sm: 0.75rem;
   --btn-pr-sm: 0.75rem;
   --btn-pt-sm: 0.5rem;
@@ -17,7 +31,7 @@
   --btn-text-sm: 0.875rem;
   --btn-leading-sm: 1.25rem;
 
-  // btn-md
+  /* btn-md */
   --btn-pl-md: 1.25rem;
   --btn-pr-md: 1.25rem;
   --btn-pt-md: 0.625rem;
@@ -25,7 +39,7 @@
   --btn-text-md: 0.875rem;
   --btn-leading-md: 1.25rem;
 
-  // btn-lg
+  /* btn-lg */
   --btn-pl-lg: 1.25rem;
   --btn-pr-lg: 1.25rem;
   --btn-pt-lg: 0.75rem;
@@ -33,7 +47,7 @@
   --btn-text-lg: 1rem;
   --btn-leading-lg: 1.5rem;
 
-  // btn-xl
+  /* btn-xl */
   --btn-pl-lg: 1.5rem;
   --btn-pr-lg: 1.5rem;
   --btn-pt-lg: 0.875rem;
@@ -42,11 +56,19 @@
   --btn-leading-lg: 1.5rem;
 }
 
+@utility btn {
+  cursor: pointer;
+}
+
 @utility btn-* {
+  /* sizing */
   padding-left: --value(--btn-pl-*);
   padding-right: --value(--btn-pr-*);
   padding-top: --value(--btn-pt-*);
   padding-bottom: --value(--btn-pb-*);
   font-size: --value(--btn-text-*);
   line-height: --value(--btn-leading-*);
+
+  /* color */
+  background-color: --value(--color-*);
 }
