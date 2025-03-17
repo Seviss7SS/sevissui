@@ -49,12 +49,12 @@
   </div>
 
   <Combobox.Content
-    class="w-full rounded-xl border border-solid border-gray-lightest py-md shadow outline-none bg-white dark:bg-gray-darker dark:text-white"
+    class="w-full rounded-xl border border-solid border-gray-lightest py-md shadow outline-hidden bg-white dark:bg-gray-darker dark:text-white"
     sideOffset={8}
   >
     {#each filteredItems as item (item.value)}
       <Combobox.Item
-        class="flex h-10 w-full select-none items-center rounded-button py-md pl-xl pr-sm text-sm capitalize outline-none transition-all duration-75 data-[highlighted]:bg-gray-lightest data-[highlighted]:bg-opacity-25 cursor-pointer"
+        class="flex h-10 w-full select-none items-center rounded-button py-md pl-xl pr-sm text-sm capitalize outline-hidden transition-all duration-75 data-[highlighted]:bg-gray-lightest/25 cursor-pointer"
         value={item.value}
         label={item.label}
       >

@@ -16,7 +16,7 @@
   }: TextareaProps = $props();
 
   const className = $derived(
-    cx("textarea outline-none focus:ring-1", {
+    cx("textarea outline-hidden focus:ring-1", {
       [_class]: _class,
     })
   );

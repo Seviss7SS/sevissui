@@ -23,12 +23,12 @@
     <ChevronRight class="ml-auto size-6 transform -rotate-90" />
   </Select.Trigger>
   <Select.Content
-    class="w-full rounded-xl border px-xs py-md shadow outline-none bg-white"
+    class="w-full rounded-xl border px-xs py-md shadow outline-hidden bg-white"
     sideOffset={8}
   >
     {#each items as item}
       <Select.Item
-        class="flex h-10 w-full select-none items-center rounded-button py-md pl-lg pr-sm text-sm outline-none transition-all duration-75 data-[highlighted]:bg-gray-lightest"
+        class="flex h-10 w-full select-none items-center rounded-button py-md pl-lg pr-sm text-sm outline-hidden transition-all duration-75 data-[highlighted]:bg-gray-lightest"
         value={item.value}
         label={item.label}
       >

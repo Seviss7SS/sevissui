@@ -25,7 +25,7 @@
   }: InputFieldProps = $props();
 
   const inputClass = $derived(
-    cx("outline-none", {
+    cx("outline-hidden", {
       [align]: align,
     })
   );
