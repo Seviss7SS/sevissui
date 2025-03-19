@@ -6,8 +6,51 @@
   COLORS
   ==================
   */  
-  --color-primary-darkest: rgb(229, 13, 6);
-  --color-primary: rgb(255, 0, 0);
+  --color-primary-darkest: #e50d06;
+  --color-primary-darker: #ed4125;
+  --color-primary-dark: #f45f3f;
+  --color-primary: #ff0000;
+  --color-primary-contrast: #ffffff;
+  --color-primary-light: #ff9073;
+  --color-primary-lighter: #ffa78e;
+  --color-primary-lightest: #ffdbd8;
+
+  --color-gray-darkest: #121212;
+  --color-gray-darker: #282828;
+  --color-gray-dark: #3f3f3f;
+  --color-gray: #575757;
+  --color-gray-light: #717171;
+  --color-gray-lighter: #8b8b8b;
+  --color-gray-lightest: #a5a5a5;
+
+  --color-error-darkest: var(--color-red-900);
+  --color-error-darker: var(--color-red-700);
+  --color-error-dark: var(--color-red-600);
+  --color-error: var(--color-red-400);
+  --color-error-light: var(--color-red-200);
+  --color-error-lighter: var(--color-red-100);
+  --color-error-lightest: var(--color-red-100);
+
+  --color-disabled: #a5a5a5;
+  --color-disabled-contrast: #575757;
+
+  /*
+  ================== 
+  SPACING
+  ==================
+  */ 
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+
+  /*
+  ================== 
+  RADIUS
+  ==================
+  */ 
+  --radius: 0.5rem;
 
   /*
   ================== 
@@ -22,6 +65,7 @@
   --btn-pb-xs: 0.5rem;
   --btn-text-xs: 0.75rem;
   --btn-leading-xs: 1rem;
+  --btn-circle-xs: 1.5rem;
 
   /* btn-sm */
   --btn-pl-sm: 0.75rem;
@@ -30,6 +74,7 @@
   --btn-pb-sm: 0.5rem;
   --btn-text-sm: 0.875rem;
   --btn-leading-sm: 1.25rem;
+  --btn-circle-sm: 2.5rem;
 
   /* btn-md */
   --btn-pl-md: 1.25rem;
@@ -38,6 +83,7 @@
   --btn-pb-md: 0.625rem;
   --btn-text-md: 0.875rem;
   --btn-leading-md: 1.25rem;
+  --btn-circle-md: 3.5rem;
 
   /* btn-lg */
   --btn-pl-lg: 1.25rem;
@@ -46,18 +92,70 @@
   --btn-pb-lg: 0.75rem;
   --btn-text-lg: 1rem;
   --btn-leading-lg: 1.5rem;
+  --btn-circle-lg: 4.5rem;
 
   /* btn-xl */
-  --btn-pl-lg: 1.5rem;
-  --btn-pr-lg: 1.5rem;
-  --btn-pt-lg: 0.875rem;
-  --btn-pb-lg: 0.875rem;
-  --btn-text-lg: 1rem;
-  --btn-leading-lg: 1.5rem;
+  --btn-pl-xl: 1.5rem;
+  --btn-pr-xl: 1.5rem;
+  --btn-pt-xl: 0.875rem;
+  --btn-pb-xl: 0.875rem;
+  --btn-text-xl: 1rem;
+  --btn-leading-xl: 1.5rem;
+  --btn-circle-xl: 5.5rem;
+
+  /*
+  ================== 
+  PROGRESS
+  ==================
+  */
+  --progress-h-xs: 0.25rem;
+  --progress-h-sm: 0.375rem;
+  --progress-h-md: 0.625rem;
+  --progress-h-lg: 1rem;
+  --progress-h-xl: 1.5rem;
 }
 
-@utility btn {
+/*
+================== 
+BOX
+==================
+*/
+
+.box.clickable {
   cursor: pointer;
+}
+
+.box.clickable:hover:not([disabled]) {
+  opacity: 0.75;
+}
+
+.box.clickable:active:not([disabled]) {
+  opacity: 0.5;
+}
+
+/*
+================== 
+BUTTON
+==================
+*/
+
+@utility btn {
+  @apply font-semibold flex rounded justify-center items-center select-none overflow-hidden text-center border-none;
+  @apply not-[.clickable]:pointer-events-none;
+  @apply focus:outline-hidden;
+  @apply disabled:cursor-default disabled:bg-disabled disabled:text-disabled-contrast;
+}
+
+@utility btn-text {
+  @apply bg-transparent;
+}
+
+@utility btn-outlined {
+  @apply border border-solid bg-transparent;
+}
+
+@utility btn-circle {
+  @apply p-0 !rounded-full;
 }
 
 @utility btn-* {
@@ -69,6 +167,121 @@
   font-size: --value(--btn-text-*);
   line-height: --value(--btn-leading-*);
 
+  &.btn-circle {
+    width: --value(--btn-circle-*);
+    height: --value(--btn-circle-*);
+  }
+
   /* color */
-  background-color: --value(--color-*);
+  border-color: --value(--color-*);
+  color: --value(--color-*);
+  
+  &.btn-filled:not(:disabled) {
+    background-color: --value(--color-*);
+    color: --value(--color-*-contrast);
+  }
+
+  &.btn-subtle:hover {
+    @apply bg-[--value(--color-*)]/25;
+  }
+}
+
+/*
+================== 
+CARD
+==================
+*/
+
+@utility card {
+  @apply block rounded overflow-hidden bg-white relative p-xl shadow filter;
+}
+
+@utility card-* {
+  @apply bg-[--value(--color-*)] text-[--value(--color-*-contrast)];
+}
+
+/*
+================== 
+INPUT
+==================
+*/
+
+.input-field {
+  & .input-group {
+    @apply border border-solid overflow-hidden;
+  }
+
+  & input {
+    @apply text-sm leading-5 rounded block w-full p-md bg-transparent;
+  }
+
+  & label {
+    @apply block mb-sm font-medium leading-none;
+  }
+
+  &.input-field-error {
+    & .input-group {
+      @apply border-error text-error;
+    }
+  }
+}
+
+@utility input-* {
+  &.input-filled {
+    & .input-group {
+      @apply bg-[--value(--color-*)]/25 text-[--value(--color-*)] border-[--value(--color-*)] ring-[--value(--color-*)];
+    }
+  }
+
+  &.input-outlined {
+    & .input-group {
+      @apply focus-within:border-[--value(--color-*)] focus-within:ring-[--value(--color-*)];
+    }
+  }
+
+  &.input-field-error {
+    & .input-group {
+      @apply ring-error;
+    }
+  }
+
+  & .input-field-error {
+    & .input-group:focus-within {
+      @apply border-error;
+    }
+  }
+}
+
+/*
+================== 
+TEXTAREA
+==================
+*/
+
+.textarea-field {
+  &  > textarea {
+    @apply block p-sm w-full text-sm leading-tight bg-white rounded border;
+  }
+}
+
+@utility textarea-* {
+  @apply bg-white text-black focus-within:border-[--value(--color-*)] focus-within:ring-[--value(--color-*)];
+}
+
+/*
+================== 
+PROGRESS
+==================
+*/
+
+.progress {
+  @apply w-full rounded-full;
+}
+
+@utility progress-* {
+  height: --value(--progress-h-*);
+  
+  & .progress-fill {
+    height: --value(--progress-h-*);
+  }
 }

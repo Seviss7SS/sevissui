@@ -87,6 +87,7 @@
     method,
     action,
     type,
+    disabled,
     ...rest,
   })}
 </Skeleton>

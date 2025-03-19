@@ -12,7 +12,7 @@
   }: CardProps = $props();
 
   const cardClass = $derived(
-    cx("card dark:card-dark shadow filter", {
+    cx("card card-white", {
       [_class]: _class,
     })
   );

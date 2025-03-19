@@ -23,4 +23,5 @@ export type InputFieldProps = {
   align?: string;
   value?: string;
   error?: string;
+  color?: string;
 };

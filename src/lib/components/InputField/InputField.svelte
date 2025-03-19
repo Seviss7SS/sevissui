@@ -12,7 +12,8 @@
     readonly = false,
     placeholder,
     label,
-    variant = "input-primary-light",
+    variant = "input-outlined",
+    color = "input-primary-light",
     radius = "rounded",
     align = "text-left",
     class: _class = "",
@@ -56,8 +57,9 @@
 </script>
 
 <div
-  class={cx("input-field dark:input-field-dark", {
+  class={cx("input-field", {
     [variant]: variant,
+    [color]: color,
     "input-field-error": error,
     [_class]: _class,
   })}

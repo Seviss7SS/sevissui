@@ -26,7 +26,8 @@
     <InputField
       label="Your message"
       name="message"
-      variant="input-filled-green-400"
+      color="input-primary"
+      variant="input-filled"
       align="text-center"
       bind:value
       centered
