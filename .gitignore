@@ -132,5 +132,4 @@ dist
 *storybook.log
 .svelte-kit/*
 
-src/components/*
 src/routes/(custom)/*

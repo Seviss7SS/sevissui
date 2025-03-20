@@ -2,21 +2,39 @@
   import { Collapsible } from "bits-ui";
   import { slide } from "svelte/transition";
 
-  export let open: boolean = false;
+  interface CollapseProps {
+    class?: string;
+    open?: boolean;
+    triggerContent?: any;
+    children?: any;
+    openContent?: any;
+    closedContent?: any;
+  }
+
+  let {
+    class: _class = "",
+    open = $bindable(false),
+    triggerContent,
+    children,
+    openContent,
+    closedContent,
+  }: CollapseProps = $props();
 </script>
 
-<Collapsible.Root class={$$props.class} bind:open>
+<Collapsible.Root class={_class} bind:open>
   <Collapsible.Trigger class="w-full">
-    {#if !$$slots.open && !$$slots.closed}
-      <slot />
-    {:else if open}
-      <slot name="open" />
-    {:else}
-      <slot name="closed" />
+    {#if !openContent && !closedContent && triggerContent}
+      {@render triggerContent()}
+    {:else if open && openContent}
+      {@render openContent()}
+    {:else if closedContent}
+      {@render closedContent()}
     {/if}
   </Collapsible.Trigger>
 
   <Collapsible.Content transition={slide}>
-    <slot name="content" />
+    {#if children}
+      {@render children()}
+    {/if}
   </Collapsible.Content>
 </Collapsible.Root>

@@ -119,7 +119,7 @@
   </div>
   <div>
     <h3 class={labelClass}>User Profile</h3>
-    <Card class="w-full max-w-sm p-xl">
+    <Card class="w-full max-w-96 p-xl">
       <div class="flex justify-end">
         <button
           id="dropdownButton"
