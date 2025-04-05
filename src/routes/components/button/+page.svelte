@@ -44,4 +44,19 @@
     <h3 class={labelClass}>Disabled</h3>
     <Button disabled label="Button" variant="btn-filled" />
   </div>
+
+  <div class="flex flex-col gap-y-md">
+    <h3 class={labelClass}>View More Button</h3>
+    <Button 
+      variant="btn-outlined" 
+      color="text-blue-400 border-blue-400 hover:bg-white hover:text-blue-400"
+      size="btn-md"
+      class="rounded-full gap-x-2 shadow-sm hover:scale-[0.97] transition-transform"
+    >
+      View More
+      <span class="w-5 h-5 rounded-full border-2 border-current flex items-center justify-center">
+        <span class="w-1.5 h-1.5 border-t-2 border-r-2 border-current rotate-45" />
+      </span>
+    </Button>
+  </div>
 </div>
